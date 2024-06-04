@@ -1,0 +1,2 @@
+#!/bin/sh
+fstrim -v /boot/efi | logger -t fstrim -p daemon.info

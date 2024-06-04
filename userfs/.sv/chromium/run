@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+TMP="${XDG_RUNTIME_DIR:-/tmp}/chromium"
+
+if [ -z "$HOME" ]; then
+  HOME=$(getent passwd "$(id -un)" | cut -d : -f 6)
+fi
+
+XDG_CONFIG_HOME="$HOME/.config"
+
+CHROMIUM="$XDG_CONFIG_HOME/chromium"
+
+# ungraceful shutdown
+if [ -L "$CHROMIUM" ]; then
+  unlink "$CHROMIUM"
+fi
+
+# default state
+if [ -e "$CHROMIUM" ]; then
+  rm -rf "$CHROMIUM"
+fi
+
+install -d -m 700 "$TMP"
+
+ln -s "$TMP" "$CHROMIUM"
+
+exec chpst -b chromium pause

@@ -1,0 +1,51 @@
+* {
+    font-family: "Iosevka Extended", "Font Awesome 5 Free";
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+button {
+    all: initial; /* workaround */
+}
+
+#workspaces button,
+#mode,
+#clock,
+#wireplumber,
+#battery,
+#network {
+    color: #d4be98;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    padding: 0 15px;
+}
+
+#workspaces button.focused {
+    color: #e78a4e;
+}
+
+#mode {
+    color: #282828;
+    background-color: #d8a657;
+}
+
+#battery.charging, #battery.plugged {
+    color: #282828;
+    background-color: #a9b665;
+}
+
+#battery.warning:not(.charging) {
+    color: #282828;
+    background-color: #d8a657;
+}
+#battery.critical:not(.charging) {
+    color: #282828;
+    background-color: #ea6962;
+}

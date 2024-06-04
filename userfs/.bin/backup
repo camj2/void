@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+BACKUP=/dev/disk/by-id/<nvme>-part2
+
+if [ ! -b "$BACKUP" ]; then
+  exit 1
+fi
+
+for _f in /mnt/*; do
+  if [ -e "$_f" ]; then
+    exit 1
+  fi
+done
+
+set -x
+
+xfs_repair "$BACKUP"
+
+mount -o noatime "$BACKUP" /mnt
+
+rsync -aAXHvh --delete /home/ /mnt/
+
+sync
+
+rsync -aAXHvh --checksum --delete /home/ /mnt/ # scrub
+
+sync
+
+# fstrim -v /mnt
+
+umount /mnt

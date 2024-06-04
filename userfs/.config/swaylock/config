@@ -1,0 +1,16 @@
+image=/home/cameron/Pictures/Background/Fog.jpg
+#image=/home/cameron/Pictures/Background/Forest.jpg
+#image=/home/cameron/Pictures/Background/Frozen.jpg
+#image=/home/cameron/Pictures/Background/Leaves.jpg
+#image=/home/cameron/Pictures/Background/Mist.jpg
+#image=/home/cameron/Pictures/Background/Rain.jpg
+#image=/home/cameron/Pictures/Background/Space.png
+#image=/home/cameron/Pictures/Background/Tree.jpg
+#image=/home/cameron/Pictures/Background/Wind.jpg
+#image=/home/cameron/Pictures/Background/Yellow.jpg
+
+scaling=fill
+
+no-unlock-indicator
+ignore-empty-password
+daemonize
