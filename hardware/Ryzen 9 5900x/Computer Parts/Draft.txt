@@ -1,0 +1,22 @@
+Parts:
+	Main:
+		Enclosure - Fractal Design Define 7 Compact
+		Motherboard - Aorus x570s Master
+		Processor - Ryzen 5 3600
+		Drive - Samsung 970 Evo Plus
+		Memory - Samsung DDR4 B-Die ECC Memory
+		Graphics - Sapphire rx580 Pulse
+		Sound - Asus Xonar Essence STX 2
+		Power - EVGA 1000 Watt Gold Modular
+		Power cord - Tripp Lite Heavy Duty Computer Power Cord
+
+	Cooling:
+		Heatsink - Noctua CPU Cooler
+		Compound - Noctua Thermal Compound
+		Fan - Noctua Fan
+
+	Miscellaneous:
+		Controller - 8Bitdo SN30 Pro Plus
+		Cable - USB Type C Cable
+		Mouse - Razer Naga Chroma
+		Keyboard - Razer Ornata Chroma

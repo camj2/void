@@ -1,0 +1,130 @@
+magick mogrify -format jpg *.webp
+
+ffmpeg -i <input> -c:v libx265 -crf 24 -c:a libopus <output>
+
+gpg --full-gen-key --expert
+
+wf-recorder -a -c libx264rgb -f test.mkv
+
+libreoffice --convert-to pdf *.odt
+
+cryptsetup luksFormat --sector-size 4096 <dev>
+cryptsetup open <dev> backup
+mkfs.xfs /dev/mapper/backup
+cryptsetup close backup
+
+mount -t zfs <fs> /mnt
+
+git remote add gitlab git@gitlab.com:camj/server.git
+git remote add github git@github.com:camj2/server.git
+
+git push -u gitlab master
+git push github master
+
+git push -d gitlab <branch/tag>
+git push -d github <branch/tag>
+
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+
+git revert <commit> # :wq
+
+https://calver.org/
+
+dd if=/dev/zero of=/dev/<dev> bs=1M count=1024 status=progress
+
+https://shotstack.io/learn/use-ffmpeg-to-trim-video/
+
+https://github.com/onemarcfifty/cheat-sheets/blob/main/networking/ipv6.md
+
+swaymsg seat seat0 hide_cursor 3000
+
+xbps-pkgdb -a
+
+magick mogrify -rotate 90 <file>
+
+ssh-keygen -t ed25519
+
+libreoffice --calc # note - disable protected cells
+
+rsync -aAXH /home/ /mnt/
+
+chown -R cameron:cameron /mnt
+chmod -R 0755 /mnt
+find /mnt -type f -exec chmod 0644 {} +
+
+rsync -aAX --chown=root:root /mnt/ /tmp/exfat/
+
+generate-zbm -k /boot/vmlinuz-6.6.38_1
+
+cryptsetup luksFormat --sector-size 4096 --integrity hmac-sha256 <dev>
+
+rsync -aAX --exclude=/.cache /home/cameron/ /mnt/
+
+mount -o ro,norecovery <dev> /mnt # xfs
+
+rsync -aAX <directory> server@'[fd72:c9b6:48e4:8dd0::1]':/tmp/
+
+cat <file> | ssh server lpr # print to default printer
+
+fdupes -R -d -N <directory>
+
+rename -v .jpeg .jpg *.jpeg
+
+zfs set org.zfsbootmenu:kernel=6.6 system
+
+generate-zbm - Kernel: 6.6*
+
+qrencode -r <file> -o output.png
+
+wpa_passphrase network password # /var/lib/iwd/<network>.psk
+
+zfs.zfs_bclone_enabled=0
+
+forcefsck
+
+git clone --depth 1 <repo>
+
+cat /sys/module/zfs/parameters/zfs_bclone_enabled
+
+zfs-prune-snapshots 4w
+
+cbonsai -li
+
+find <dir> -maxdepth 1 -type f -name '*.png' | while IFS= read -r file; do mv -vn "$file" "$(date -u -r "$file" '+%Y%m%d_%H%M%S').png"; done
+
+find <dir> -mtime 0 -print -exec touch -r <file> {} +
+
+rm -rf .local/state/wireplumber # reset pipewire
+
+printf ",,c" | sfdisk <dev>
+
+hexdump -C /dev/urandom
+
+xbps-pkgdb -m hold zfs
+
+find <dir> -newermt 20220101 ! -newermt 20230101
+
+rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir>
+
+rsync -aAX -f"+ */" -f"- *" <src> <dst> # copy structure
+
+mount -o ro,umask=022,dmask=022,fmask=022 <dev> /mnt # ro
+
+mount -t ntfs-3g <dev> /mnt # rw
+
+lsd -la --total-size <dir>
+
+stat -c "%n: %h" <dir>/* | column -t
+
+cp -rfal <dir> <dir>
+
+find <dir> -type f -exec stat -c "%n: %h" <dir>/* {} + | sort | column -t
+
+dir="${0%/*}"
+pre="${file%.*}"
+ext="${file#*.}"
+
+find <dir> -printf "%T@ %Tc %p\n" | sort -n
+
+touch -d '1 December 2024 6:00' <file>

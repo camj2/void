@@ -1,0 +1,4 @@
+fix user.txt xanmod section void-packages dir; cp -rf command doesn't copy to right sub directory
+fix ERROR: xbps-src: nonexistent file: /tmp/void-packages/void-packages-master/srcpkgs/linux6.1-xanmod/template
+
+add nvme-cli package

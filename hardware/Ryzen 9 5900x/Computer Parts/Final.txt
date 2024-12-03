@@ -1,0 +1,28 @@
+Computer:
+	Enclosure - Fractal Design Define 7 Compact
+	Motherboard - Gigabyte X570s Aorus Master
+	Processor - Ryzen 9 5950x
+	Graphics - Sapphire Nitro rx 6600 xt
+	Memory - (4) https://www.newegg.com/crucial-8gb-288-pin-ddr4-sdram/p/2SJ-000W-02ZX7
+	Drive - (4) Samsung 970 Evo Plus 500 GB
+	Power - EVGA P2 850 Watt 80+ Platinum
+
+Cooling:
+	Processor fan - Noctua NH-D15 Black
+	Thermal compound - Noctua NT-H2
+	Rear fan - Noctua F12 PWM Black 120mm
+	Front fan - (2) Noctua A14 PWM Black 140mm
+
+Peripherals:
+	Monitor - https://www.amazon.com/ViewSonic-VX3268-2KPC-MHD-Monitor-FreeSync-Premium/dp/B08D5H24N8/
+	Monitor mount - https://www.amazon.com/Articulating-Extension-Rotation-200x200mm-Pipishell/dp/B07SHFPD8S/
+	Speaker - https://www.amazon.com/Edifier-R1280T-Powered-Bookshelf-Speakers/dp/B016P9HJIA/
+	Speaker interface - https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2
+	Keyboard - Razer Ornata
+	Mouse - Razer Naga Trinity
+	Controller - 8Bitdo SN30 Pro Plus
+
+Miscellaneous:
+	Surge protector - https://www.amazon.com/Tripp-Lite-Right-Angle-Protection-TLP1208TELTV/dp/B0035PQGKU/
+	Power cable - https://www.amazon.com/gp/product/B0027JRMD0/
+	External drive - https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRGSR16/

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+GPU=amdgpu_bl0
+
+cat "/sys/class/backlight/${GPU}/brightness" > ./save

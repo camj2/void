@@ -1,0 +1,287 @@
+2023-09-17T07:58:12.84412 kern.err: [    0.222766] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-17T07:58:12.84419 kern.err: [    0.222769] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-17T07:58:12.85493 daemon.err: [    4.229932] udevd[968]: Unknown key identifier 'zoom'
+2023-09-17T07:58:12.93463 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93511 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93529 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93540 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93553 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93567 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T07:58:12.93581 daemon.err: Sep 17 01:58:12 wpa_supplicant[1575]: nl80211: Could not configure driver mode
+2023-09-17T08:00:14.98289 kern.err: [    0.221621] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-17T08:00:14.98334 kern.err: [    0.221625] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-17T08:00:14.99518 daemon.err: [    4.310100] udevd[1064]: Unknown key identifier 'zoom'
+2023-09-17T08:00:15.06029 daemon.err: Sep 17 02:00:15 wpa_supplicant[1598]: nl80211: Could not configure driver mode
+2023-09-17T08:00:15.06062 daemon.err: Sep 17 02:00:15 wpa_supplicant[1598]: nl80211: Could not configure driver mode
+2023-09-17T08:00:15.06079 daemon.err: Sep 17 02:00:15 wpa_supplicant[1598]: nl80211: Could not configure driver mode
+2023-09-17T08:00:15.06096 daemon.err: Sep 17 02:00:15 wpa_supplicant[1598]: nl80211: Could not configure driver mode
+2023-09-17T08:00:31.57037 daemon.err: Sep 17 02:00:31 wpa_supplicant[1598]: nl80211: Could not configure driver mode
+2023-09-17T08:01:47.77662 kern.err: [    0.221557] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-17T08:01:47.77681 kern.err: [    0.221560] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-17T08:01:47.78589 daemon.err: [    4.187189] udevd[1036]: Unknown key identifier 'zoom'
+2023-09-17T08:01:47.78687 daemon.err: Sep 17 02:01:47 dhcpcd[1509]: no valid interfaces found
+2023-09-17T08:01:47.79377 daemon.err: Sep 17 02:01:47 wpa_supplicant[1553]: Could not read interface wlan0 flags: No such device
+2023-09-17T08:01:47.79518 daemon.err: Sep 17 02:01:47 wpa_supplicant[1553]: Could not read interface wlan0 flags: No such device
+2023-09-17T08:01:47.79523 daemon.err: Sep 17 02:01:47 wpa_supplicant[1553]: wlan0: Failed to initialize driver interface
+2023-09-17T08:01:48.83730 daemon.err: Sep 17 02:01:48 wpa_supplicant[2017]: nl80211: Could not configure driver mode
+2023-09-17T08:01:48.83752 daemon.err: Sep 17 02:01:48 wpa_supplicant[2017]: nl80211: Could not configure driver mode
+2023-09-17T08:01:48.83789 daemon.err: Sep 17 02:01:48 wpa_supplicant[2017]: nl80211: Could not configure driver mode
+2023-09-17T08:01:48.83802 daemon.err: Sep 17 02:01:48 wpa_supplicant[2017]: nl80211: Could not configure driver mode
+2023-09-17T09:05:16.60426 kern.err: [    0.221581] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-17T09:05:16.60444 kern.err: [    0.221584] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-17T09:05:16.61206 daemon.err: [    4.035303] udevd[1326]: Unknown key identifier 'zoom'
+2023-09-17T09:05:16.61289 daemon.err: Sep 17 03:05:16 dhcpcd[1838]: no valid interfaces found
+2023-09-17T09:05:16.61970 daemon.err: Sep 17 03:05:16 wpa_supplicant[1869]: Could not read interface wlan0 flags: No such device
+2023-09-17T09:05:16.62129 daemon.err: Sep 17 03:05:16 wpa_supplicant[1869]: Could not read interface wlan0 flags: No such device
+2023-09-17T09:05:16.62133 daemon.err: Sep 17 03:05:16 wpa_supplicant[1869]: wlan0: Failed to initialize driver interface
+2023-09-17T09:05:17.65955 daemon.err: Sep 17 03:05:17 wpa_supplicant[2497]: nl80211: Could not configure driver mode
+2023-09-17T09:05:17.65977 daemon.err: Sep 17 03:05:17 wpa_supplicant[2497]: nl80211: Could not configure driver mode
+2023-09-17T09:05:17.66024 daemon.err: Sep 17 03:05:17 wpa_supplicant[2497]: nl80211: Could not configure driver mode
+2023-09-17T09:05:17.66036 daemon.err: Sep 17 03:05:17 wpa_supplicant[2497]: nl80211: Could not configure driver mode
+2023-09-17T09:07:57.89764 kern.err: [  166.545398] list_del corruption. prev->next should be ffff927978a84698, but was 0000000000000178. (prev=ffff92794e773098)
+2023-09-17T09:07:57.89833 kern.crit: [  166.545412] kernel BUG at lib/list_debug.c:59!
+2023-09-17T09:32:33.81199 kern.err: [    0.222613] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-17T09:32:33.81234 kern.err: [    0.222616] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-17T09:32:33.82459 daemon.err: [    4.167986] udevd[1038]: Unknown key identifier 'zoom'
+2023-09-17T09:32:33.82557 daemon.err: Sep 17 03:32:33 dhcpcd[1534]: no valid interfaces found
+2023-09-17T09:32:33.82576 daemon.err: Sep 17 03:32:33 wpa_supplicant[1565]: Could not read interface wlan0 flags: No such device
+2023-09-17T09:32:33.82704 daemon.err: Sep 17 03:32:33 wpa_supplicant[1565]: Could not read interface wlan0 flags: No such device
+2023-09-17T09:32:33.82710 daemon.err: Sep 17 03:32:33 wpa_supplicant[1565]: wlan0: Failed to initialize driver interface
+2023-09-17T09:32:34.86703 daemon.err: Sep 17 03:32:34 wpa_supplicant[2132]: nl80211: Could not configure driver mode
+2023-09-17T09:32:34.86726 daemon.err: Sep 17 03:32:34 wpa_supplicant[2132]: nl80211: Could not configure driver mode
+2023-09-17T09:32:34.86767 daemon.err: Sep 17 03:32:34 wpa_supplicant[2132]: nl80211: Could not configure driver mode
+2023-09-17T09:32:34.86778 daemon.err: Sep 17 03:32:34 wpa_supplicant[2132]: nl80211: Could not configure driver mode
+2023-09-17T09:55:18.11161 daemon.err: Sep 17 03:55:18 dhcpcd[1534]: arp_read: unexpected event 0x0100
+2023-09-17T09:55:18.11207 daemon.err: Sep 17 03:55:18 dhcpcd[1534]: arp_read: wlan0: Network is down
+2023-09-17T09:55:18.11227 kern.err: [ 1343.203195] [drm:dc_dmub_srv_wait_idle [amdgpu]] *ERROR* Error waiting for DMUB idle: status=3
+2023-09-17T09:55:18.11489 kern.err: [ 1363.455723] mhi mhi0: Did not enter M0 state, MHI state: M3, PM state: M3->M0
+2023-09-17T09:55:18.11493 kern.err: [ 1363.455743] ath11k_pci 0000:02:00.0: PM: dpm_run_callback(): pci_pm_resume+0x0/0xe0 returns -5
+2023-09-17T09:55:18.11494 kern.err: [ 1363.455763] ath11k_pci 0000:02:00.0: PM: failed to resume async: error -5
+2023-09-17T09:55:18.11497 kern.err: [ 1366.463747] ath11k_pci 0000:02:00.0: failed to enable dynamic bw: -11
+2023-09-17T09:55:18.11693 kern.err: [ 1366.466061] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume+0x0/0x150 [cfg80211] returns -11
+2023-09-17T09:55:18.11694 kern.err: [ 1366.466137] ieee80211 phy0: PM: failed to resume async: error -11
+2023-09-18T00:01:11.30165 kern.err: [    0.221412] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-18T00:01:11.30199 kern.err: [    0.221416] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-18T00:01:11.31377 daemon.err: [    3.624889] udevd[1024]: Unknown key identifier 'zoom'
+2023-09-18T00:01:11.38258 daemon.err: Sep 17 18:01:11 wpa_supplicant[1579]: nl80211: Could not configure driver mode
+2023-09-18T00:01:11.38305 daemon.err: Sep 17 18:01:11 wpa_supplicant[1579]: nl80211: Could not configure driver mode
+2023-09-18T00:01:11.38322 daemon.err: Sep 17 18:01:11 wpa_supplicant[1579]: nl80211: Could not configure driver mode
+2023-09-18T00:01:11.38334 daemon.err: Sep 17 18:01:11 wpa_supplicant[1579]: nl80211: Could not configure driver mode
+2023-09-18T00:01:33.63823 daemon.err: Sep 17 18:01:33 wpa_supplicant[1579]: nl80211: Could not configure driver mode
+2023-09-18T00:07:33.41323 kern.err: [    0.221832] ACPI BIOS Error (bug): Failure creating named object [\_SB.WMI6], AE_ALREADY_EXISTS (20221020/dswload2-326)
+2023-09-18T00:07:33.41346 kern.err: [    0.221835] ACPI Error: AE_ALREADY_EXISTS, During name lookup/catalog (20221020/psobject-220)
+2023-09-18T00:07:33.42101 daemon.err: [    3.952021] udevd[1030]: Unknown key identifier 'zoom'
+2023-09-18T00:07:33.42157 daemon.err: Sep 17 18:07:33 dhcpcd[1572]: no valid interfaces found
+2023-09-18T00:07:33.43257 daemon.err: Sep 17 18:07:33 wpa_supplicant[1597]: Could not read interface wlan0 flags: No such device
+2023-09-18T00:07:33.43412 daemon.err: Sep 17 18:07:33 wpa_supplicant[1597]: Could not read interface wlan0 flags: No such device
+2023-09-18T00:07:33.43419 daemon.err: Sep 17 18:07:33 wpa_supplicant[1597]: wlan0: Failed to initialize driver interface
+2023-09-18T00:07:34.47028 daemon.err: Sep 17 18:07:34 wpa_supplicant[2243]: nl80211: Could not configure driver mode
+2023-09-18T00:07:34.47042 daemon.err: Sep 17 18:07:34 wpa_supplicant[2243]: nl80211: Could not configure driver mode
+2023-09-18T00:07:34.47074 daemon.err: Sep 17 18:07:34 wpa_supplicant[2243]: nl80211: Could not configure driver mode
+2023-09-18T00:07:34.47088 daemon.err: Sep 17 18:07:34 wpa_supplicant[2243]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.14679 daemon.err: [    3.991396] udevd[1045]: Unknown key identifier 'zoom'
+2023-09-18T00:21:49.14779 daemon.err: Sep 17 18:21:49 dhcpcd[1546]: no valid interfaces found
+2023-09-18T00:21:49.22629 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22699 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22721 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22737 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22753 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22769 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:21:49.22787 daemon.err: Sep 17 18:21:49 wpa_supplicant[1581]: nl80211: Could not configure driver mode
+2023-09-18T00:24:17.33906 daemon.err: Sep 17 18:24:17 dhcpcd[1546]: arp_read: unexpected event 0x0100
+2023-09-18T00:24:17.34006 daemon.err: Sep 17 18:24:17 dhcpcd[1546]: arp_read: wlan0: Network is down
+2023-09-18T00:24:17.34010 kern.err: [  110.537877] [drm:dc_dmub_srv_wait_idle [amdgpu]] *ERROR* Error waiting for DMUB idle: status=3
+2023-09-18T00:24:17.34355 kern.err: [  131.010658] mhi mhi0: Did not enter M0 state, MHI state: M3, PM state: M3->M0
+2023-09-18T00:24:17.34374 kern.err: [  131.010679] ath11k_pci 0000:02:00.0: PM: dpm_run_callback(): pci_pm_resume+0x0/0xe0 returns -5
+2023-09-18T00:24:17.34385 kern.err: [  131.010700] ath11k_pci 0000:02:00.0: PM: failed to resume async: error -5
+2023-09-18T00:24:17.34413 kern.err: [  134.018583] ath11k_pci 0000:02:00.0: failed to enable dynamic bw: -11
+2023-09-18T00:24:17.34769 kern.err: [  134.020531] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume+0x0/0x150 [cfg80211] returns -11
+2023-09-18T00:24:17.34770 kern.err: [  134.020545] ieee80211 phy0: PM: failed to resume async: error -11
+[Sun Sep 17 18:22:01 2023]   #2  #3  #4  #5  #6  #7  #8  #9 #10 #11 #12 #13 #14 #15
+[Sun Sep 17 18:22:01 2023] pci 0000:00:00.2: can't derive routing for PCI INT A
+[Sun Sep 17 18:22:01 2023] pci 0000:00:00.2: PCI INT A: not connected
+[Sun Sep 17 18:22:01 2023] nvme nvme0: missing or invalid SUBNQN field.
+[Sun Sep 17 18:22:01 2023] spl: loading out-of-tree module taints kernel.
+[Sun Sep 17 18:22:01 2023] znvpair: module license 'CDDL' taints kernel.
+[Sun Sep 17 18:22:01 2023] Disabling lock debugging due to kernel taint
+[Sun Sep 17 18:22:04 2023] amdgpu: SRAT table not found
+[Sun Sep 17 18:22:04 2023] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[Sun Sep 17 18:22:04 2023] udevd[1045]: Unknown key identifier 'zoom'
+[Sun Sep 17 18:22:06 2023] ath11k_pci 0000:02:00.0: Failed to set the requested Country regulatory setting
+[Sun Sep 17 18:22:06 2023] ath11k_pci 0000:02:00.0: Failed to set the requested Country regulatory setting
+[Sun Sep 17 18:22:06 2023] Bluetooth: hci0: HCI Enhanced Setup Synchronous Connection command is advertised, but not supported.
+[Sun Sep 17 18:22:06 2023] overlayfs: null uuid detected in lower fs '.mozilla/firefox-lower', falling back to xino=off,index=off,nfs_export=off.
+[Sun Sep 17 18:22:07 2023] memfd_create() without MFD_EXEC nor MFD_NOEXEC_SEAL, pid=2061 'waybar'
+[Sun Sep 17 18:23:51 2023] [drm:dc_dmub_srv_wait_idle [amdgpu]] *ERROR* Error waiting for DMUB idle: status=3
+[Sun Sep 17 18:23:51 2023] mhi mhi0: Resuming from non M3 state (RESET)
+[Sun Sep 17 18:23:51 2023] pci 0000:00:00.2: can't derive routing for PCI INT A
+[Sun Sep 17 18:23:51 2023] pci 0000:00:00.2: PCI INT A: no GSI
+[Sun Sep 17 18:24:12 2023] mhi mhi0: Did not enter M0 state, MHI state: M3, PM state: M3->M0
+[Sun Sep 17 18:24:12 2023] ath11k_pci 0000:02:00.0: failed to resume mhi: -5
+[Sun Sep 17 18:24:12 2023] ath11k_pci 0000:02:00.0: failed to resume hif during resume: -5
+[Sun Sep 17 18:24:12 2023] ath11k_pci 0000:02:00.0: failed to resume core: -5
+[Sun Sep 17 18:24:12 2023] ath11k_pci 0000:02:00.0: PM: dpm_run_callback(): pci_pm_resume+0x0/0xe0 returns -5
+[Sun Sep 17 18:24:12 2023] ath11k_pci 0000:02:00.0: PM: failed to resume async: error -5
+[Sun Sep 17 18:24:15 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Sun Sep 17 18:24:15 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Sun Sep 17 18:24:15 2023] ath11k_pci 0000:02:00.0: failed to enable dynamic bw: -11
+[Sun Sep 17 18:24:15 2023] ------------[ cut here ]------------
+[Sun Sep 17 18:24:15 2023] Hardware became unavailable upon resume. This could be a software issue prior to suspend or a hardware issue.
+[Sun Sep 17 18:24:15 2023] WARNING: CPU: 3 PID: 4315 at net/mac80211/util.c:2540 ieee80211_reconfig+0x9a/0x16f0 [mac80211]
+[Sun Sep 17 18:24:15 2023] Modules linked in: ctr ccm michael_mic rfcomm cmac algif_hash algif_skcipher af_alg bnep snd_seq_dummy snd_hrtimer overlay wireguard curve25519_x86_64 libchacha20poly1305 chacha_x86_64 poly1305_x86_64 libcurve25519_generic libchacha ip6_udp_tunnel udp_tunnel 8021q garp mrp stp llc binfmt_misc nft_ct nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 nf_tables nfnetlink nls_iso8859_1 nls_cp437 vfat fat qrtr_mhi btusb btrtl btbcm btintel btmtk joydev qrtr snd_sof_amd_rembrandt ath11k_pci snd_sof_amd_renoir mhi snd_sof_amd_acp snd_sof_pci snd_sof_xtensa_dsp ath11k snd_sof snd_ctl_led qmi_helpers snd_hda_codec_realtek snd_sof_utils snd_hda_codec_generic mac80211 intel_rapl_msr intel_rapl_common snd_soc_core snd_hda_codec_hdmi edac_mce_amd snd_compress ac97_bus snd_pcm_dmaengine hid_multitouch snd_pci_ps snd_hda_intel kvm_amd snd_rpl_pci_acp6x hid_generic snd_acp_pci snd_intel_dspcfg snd_pci_acp6x cfg80211 snd_intel_sdw_acpi kvm snd_pci_acp5x snd_hda_codec snd_rn_pci_acp3x irqbypass snd_hda_core snd_acp_config
+[Sun Sep 17 18:24:15 2023]  think_lmi snd_soc_acpi snd_hwdep rapl psmouse input_leds firmware_attributes_class wmi_bmof libarc4 snd_pcm k10temp snd_pci_acp3x i2c_piix4 thermal ac evdev mac_hid acpi_cpufreq i2c_designware_platform i2c_designware_core tiny_power_button i2c_dev snd_seq snd_seq_device snd_timer vhost_vsock vmw_vsock_virtio_transport_common vsock vhost_net vhost vhost_iotlb tap hci_vhci bluetooth ecdh_generic ecc crc16 vfio_iommu_type1 vfio iommufd uhid uinput userio ppp_generic slhc tun loop cuse fuse amdgpu zfs(PO) zunicode(PO) zzstd(O) zlua(O) zavl(PO) iommu_v2 icp(PO) drm_buddy gpu_sched i2c_algo_bit drm_display_helper cec rc_core thinkpad_acpi nvram drm_kms_helper snd syscopyarea xhci_pci crct10dif_pclmul sysfillrect crc32_pclmul xhci_pci_renesas soundcore sysimgblt polyval_clmulni zcommon(PO) drm_ttm_helper ledtrig_audio polyval_generic xhci_hcd gf128mul platform_profile znvpair(PO) ghash_clmulni_intel ttm sha512_ssse3 rfkill aesni_intel spl(O) crypto_simd usbcore cryptd drm ccp serio_raw sp5100_tco rng_core
+[Sun Sep 17 18:24:15 2023]  usb_common video i2c_hid_acpi i2c_hid agpgart battery hid wmi button dm_mirror dm_region_hash dm_log dm_mod btrfs blake2b_generic xor raid6_pq libcrc32c crc32c_generic crc32c_intel
+[Sun Sep 17 18:24:15 2023] CPU: 3 PID: 4315 Comm: kworker/u32:10 Tainted: P           O       6.3.13_1 #1
+[Sun Sep 17 18:24:15 2023] Hardware name: LENOVO 20XGS06B00/20XGS06B00, BIOS R1NET57W (1.27) 05/15/2023
+[Sun Sep 17 18:24:15 2023] Workqueue: events_unbound async_run_entry_fn
+[Sun Sep 17 18:24:15 2023] RIP: 0010:ieee80211_reconfig+0x9a/0x16f0 [mac80211]
+[Sun Sep 17 18:24:15 2023] Code: 89 d7 4c 89 14 24 e8 15 a4 fb ff 4c 8b 14 24 85 c0 41 89 c6 0f 84 27 03 00 00 48 c7 c7 00 4b ff c1 4c 89 14 24 e8 a6 00 11 dd <0f> 0b 4c 8b 14 24 eb 3d 84 c0 0f 85 79 01 00 00 c6 87 8d 05 00 00
+[Sun Sep 17 18:24:15 2023] RSP: 0018:ffffaaf8d6a3fd80 EFLAGS: 00010282
+[Sun Sep 17 18:24:15 2023] RAX: 0000000000000000 RBX: ffff972905158518 RCX: 0000000000000000
+[Sun Sep 17 18:24:15 2023] RDX: 0000000000000002 RSI: 0000000000000086 RDI: 00000000ffffffff
+[Sun Sep 17 18:24:15 2023] RBP: 0000000000000001 R08: ffffffffa086ab40 R09: ffffaaf8d6a3fd08
+[Sun Sep 17 18:24:15 2023] R10: 3fffffffffffffff R11: 000000000000006f R12: ffffffffa017f9bb
+[Sun Sep 17 18:24:15 2023] R13: 0000000000000010 R14: 00000000fffffff5 R15: 0000000000000000
+[Sun Sep 17 18:24:15 2023] FS:  0000000000000000(0000) GS:ffff972bedec0000(0000) knlGS:0000000000000000
+[Sun Sep 17 18:24:15 2023] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[Sun Sep 17 18:24:15 2023] CR2: 0000000000000000 CR3: 00000003ec832000 CR4: 0000000000750ee0
+[Sun Sep 17 18:24:15 2023] PKRU: 55555554
+[Sun Sep 17 18:24:15 2023] Call Trace:
+[Sun Sep 17 18:24:15 2023]  <TASK>
+[Sun Sep 17 18:24:15 2023]  ? ieee80211_reconfig+0x9a/0x16f0 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? __warn+0x7d/0x130
+[Sun Sep 17 18:24:15 2023]  ? ieee80211_reconfig+0x9a/0x16f0 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? report_bug+0x18d/0x1c0
+[Sun Sep 17 18:24:15 2023]  ? handle_bug+0x41/0x70
+[Sun Sep 17 18:24:15 2023]  ? exc_invalid_op+0x13/0x60
+[Sun Sep 17 18:24:15 2023]  ? asm_exc_invalid_op+0x16/0x20
+[Sun Sep 17 18:24:15 2023]  ? ieee80211_reconfig+0x9a/0x16f0 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? _raw_spin_lock_irq+0x19/0x40
+[Sun Sep 17 18:24:15 2023]  ? wait_for_completion+0x91/0x160
+[Sun Sep 17 18:24:15 2023]  ? preempt_count_add+0x6a/0xa0
+[Sun Sep 17 18:24:15 2023]  wiphy_resume+0x7c/0x150 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  ? __pfx_wiphy_resume+0x10/0x10 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  dpm_run_callback+0x34/0x120
+[Sun Sep 17 18:24:15 2023]  device_resume+0x88/0x190
+[Sun Sep 17 18:24:15 2023]  async_resume+0x19/0x50
+[Sun Sep 17 18:24:15 2023]  async_run_entry_fn+0x30/0x130
+[Sun Sep 17 18:24:15 2023]  process_one_work+0x1c8/0x3c0
+[Sun Sep 17 18:24:15 2023]  worker_thread+0x4d/0x380
+[Sun Sep 17 18:24:15 2023]  ? __pfx_worker_thread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  kthread+0xe9/0x110
+[Sun Sep 17 18:24:15 2023]  ? __pfx_kthread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  ret_from_fork+0x2c/0x50
+[Sun Sep 17 18:24:15 2023]  </TASK>
+[Sun Sep 17 18:24:15 2023] ---[ end trace 0000000000000000 ]---
+[Sun Sep 17 18:24:15 2023] ------------[ cut here ]------------
+[Sun Sep 17 18:24:15 2023] wlan0: Failed check-sdata-in-driver check, flags: 0x0
+[Sun Sep 17 18:24:15 2023] WARNING: CPU: 3 PID: 4315 at net/mac80211/driver-ops.c:99 drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023] Modules linked in: ctr ccm michael_mic rfcomm cmac algif_hash algif_skcipher af_alg bnep snd_seq_dummy snd_hrtimer overlay wireguard curve25519_x86_64 libchacha20poly1305 chacha_x86_64 poly1305_x86_64 libcurve25519_generic libchacha ip6_udp_tunnel udp_tunnel 8021q garp mrp stp llc binfmt_misc nft_ct nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 nf_tables nfnetlink nls_iso8859_1 nls_cp437 vfat fat qrtr_mhi btusb btrtl btbcm btintel btmtk joydev qrtr snd_sof_amd_rembrandt ath11k_pci snd_sof_amd_renoir mhi snd_sof_amd_acp snd_sof_pci snd_sof_xtensa_dsp ath11k snd_sof snd_ctl_led qmi_helpers snd_hda_codec_realtek snd_sof_utils snd_hda_codec_generic mac80211 intel_rapl_msr intel_rapl_common snd_soc_core snd_hda_codec_hdmi edac_mce_amd snd_compress ac97_bus snd_pcm_dmaengine hid_multitouch snd_pci_ps snd_hda_intel kvm_amd snd_rpl_pci_acp6x hid_generic snd_acp_pci snd_intel_dspcfg snd_pci_acp6x cfg80211 snd_intel_sdw_acpi kvm snd_pci_acp5x snd_hda_codec snd_rn_pci_acp3x irqbypass snd_hda_core snd_acp_config
+[Sun Sep 17 18:24:15 2023]  think_lmi snd_soc_acpi snd_hwdep rapl psmouse input_leds firmware_attributes_class wmi_bmof libarc4 snd_pcm k10temp snd_pci_acp3x i2c_piix4 thermal ac evdev mac_hid acpi_cpufreq i2c_designware_platform i2c_designware_core tiny_power_button i2c_dev snd_seq snd_seq_device snd_timer vhost_vsock vmw_vsock_virtio_transport_common vsock vhost_net vhost vhost_iotlb tap hci_vhci bluetooth ecdh_generic ecc crc16 vfio_iommu_type1 vfio iommufd uhid uinput userio ppp_generic slhc tun loop cuse fuse amdgpu zfs(PO) zunicode(PO) zzstd(O) zlua(O) zavl(PO) iommu_v2 icp(PO) drm_buddy gpu_sched i2c_algo_bit drm_display_helper cec rc_core thinkpad_acpi nvram drm_kms_helper snd syscopyarea xhci_pci crct10dif_pclmul sysfillrect crc32_pclmul xhci_pci_renesas soundcore sysimgblt polyval_clmulni zcommon(PO) drm_ttm_helper ledtrig_audio polyval_generic xhci_hcd gf128mul platform_profile znvpair(PO) ghash_clmulni_intel ttm sha512_ssse3 rfkill aesni_intel spl(O) crypto_simd usbcore cryptd drm ccp serio_raw sp5100_tco rng_core
+[Sun Sep 17 18:24:15 2023]  usb_common video i2c_hid_acpi i2c_hid agpgart battery hid wmi button dm_mirror dm_region_hash dm_log dm_mod btrfs blake2b_generic xor raid6_pq libcrc32c crc32c_generic crc32c_intel
+[Sun Sep 17 18:24:15 2023] CPU: 3 PID: 4315 Comm: kworker/u32:10 Tainted: P        W  O       6.3.13_1 #1
+[Sun Sep 17 18:24:15 2023] Hardware name: LENOVO 20XGS06B00/20XGS06B00, BIOS R1NET57W (1.27) 05/15/2023
+[Sun Sep 17 18:24:15 2023] Workqueue: events_unbound async_run_entry_fn
+[Sun Sep 17 18:24:15 2023] RIP: 0010:drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023] Code: ff ff 48 8b 83 70 07 00 00 48 8d b3 90 07 00 00 48 c7 c7 48 35 ff c1 c6 05 21 cd 0e 00 01 48 85 c0 48 0f 45 f0 e8 e0 56 15 dd <0f> 0b 5b 5d c3 cc cc cc cc 0f 1f 80 00 00 00 00 90 90 90 90 90 90
+[Sun Sep 17 18:24:15 2023] RSP: 0018:ffffaaf8d6a3fc58 EFLAGS: 00010286
+[Sun Sep 17 18:24:15 2023] RAX: 0000000000000000 RBX: ffff97290b3309c0 RCX: 0000000000000000
+[Sun Sep 17 18:24:15 2023] RDX: 0000000000000002 RSI: 0000000000000096 RDI: 00000000ffffffff
+[Sun Sep 17 18:24:15 2023] RBP: ffff9729051588e0 R08: ffffffffa086ab40 R09: 0000000000ffff10
+[Sun Sep 17 18:24:15 2023] R10: 0000000000000000 R11: 0000000000000037 R12: ffff9729051588e0
+[Sun Sep 17 18:24:15 2023] R13: ffff97290b331bc8 R14: ffff9729051591e0 R15: 0000000000000000
+[Sun Sep 17 18:24:15 2023] FS:  0000000000000000(0000) GS:ffff972bedec0000(0000) knlGS:0000000000000000
+[Sun Sep 17 18:24:15 2023] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[Sun Sep 17 18:24:15 2023] CR2: 0000000000000000 CR3: 00000003ec832000 CR4: 0000000000750ee0
+[Sun Sep 17 18:24:15 2023] PKRU: 55555554
+[Sun Sep 17 18:24:15 2023] Call Trace:
+[Sun Sep 17 18:24:15 2023]  <TASK>
+[Sun Sep 17 18:24:15 2023]  ? drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? __warn+0x7d/0x130
+[Sun Sep 17 18:24:15 2023]  ? drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? report_bug+0x18d/0x1c0
+[Sun Sep 17 18:24:15 2023]  ? handle_bug+0x41/0x70
+[Sun Sep 17 18:24:15 2023]  ? exc_invalid_op+0x13/0x60
+[Sun Sep 17 18:24:15 2023]  ? asm_exc_invalid_op+0x16/0x20
+[Sun Sep 17 18:24:15 2023]  ? drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? drv_remove_interface+0x110/0x120 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ieee80211_do_stop+0x631/0x870 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? __raise_softirq_irqoff+0x16/0x70
+[Sun Sep 17 18:24:15 2023]  ? preempt_count_add+0x6a/0xa0
+[Sun Sep 17 18:24:15 2023]  ieee80211_stop+0x49/0x170 [mac80211]
+[Sun Sep 17 18:24:15 2023]  __dev_close_many+0x9e/0x110
+[Sun Sep 17 18:24:15 2023]  dev_close_many+0x8b/0x140
+[Sun Sep 17 18:24:15 2023]  ? ieee80211_handle_reconfig_failure+0x69/0x90 [mac80211]
+[Sun Sep 17 18:24:15 2023]  dev_close+0x7f/0xb0
+[Sun Sep 17 18:24:15 2023]  cfg80211_shutdown_all_interfaces+0x49/0xf0 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  wiphy_resume+0x94/0x150 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  ? __pfx_wiphy_resume+0x10/0x10 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  dpm_run_callback+0x34/0x120
+[Sun Sep 17 18:24:15 2023]  device_resume+0x88/0x190
+[Sun Sep 17 18:24:15 2023]  async_resume+0x19/0x50
+[Sun Sep 17 18:24:15 2023]  async_run_entry_fn+0x30/0x130
+[Sun Sep 17 18:24:15 2023]  process_one_work+0x1c8/0x3c0
+[Sun Sep 17 18:24:15 2023]  worker_thread+0x4d/0x380
+[Sun Sep 17 18:24:15 2023]  ? __pfx_worker_thread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  kthread+0xe9/0x110
+[Sun Sep 17 18:24:15 2023]  ? __pfx_kthread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  ret_from_fork+0x2c/0x50
+[Sun Sep 17 18:24:15 2023]  </TASK>
+[Sun Sep 17 18:24:15 2023] ---[ end trace 0000000000000000 ]---
+[Sun Sep 17 18:24:15 2023] ------------[ cut here ]------------
+[Sun Sep 17 18:24:15 2023] WARNING: CPU: 3 PID: 4315 at net/mac80211/driver-ops.c:38 drv_stop+0xf1/0x100 [mac80211]
+[Sun Sep 17 18:24:15 2023] Modules linked in: ctr ccm michael_mic rfcomm cmac algif_hash algif_skcipher af_alg bnep snd_seq_dummy snd_hrtimer overlay wireguard curve25519_x86_64 libchacha20poly1305 chacha_x86_64 poly1305_x86_64 libcurve25519_generic libchacha ip6_udp_tunnel udp_tunnel 8021q garp mrp stp llc binfmt_misc nft_ct nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 nf_tables nfnetlink nls_iso8859_1 nls_cp437 vfat fat qrtr_mhi btusb btrtl btbcm btintel btmtk joydev qrtr snd_sof_amd_rembrandt ath11k_pci snd_sof_amd_renoir mhi snd_sof_amd_acp snd_sof_pci snd_sof_xtensa_dsp ath11k snd_sof snd_ctl_led qmi_helpers snd_hda_codec_realtek snd_sof_utils snd_hda_codec_generic mac80211 intel_rapl_msr intel_rapl_common snd_soc_core snd_hda_codec_hdmi edac_mce_amd snd_compress ac97_bus snd_pcm_dmaengine hid_multitouch snd_pci_ps snd_hda_intel kvm_amd snd_rpl_pci_acp6x hid_generic snd_acp_pci snd_intel_dspcfg snd_pci_acp6x cfg80211 snd_intel_sdw_acpi kvm snd_pci_acp5x snd_hda_codec snd_rn_pci_acp3x irqbypass snd_hda_core snd_acp_config
+[Sun Sep 17 18:24:15 2023]  think_lmi snd_soc_acpi snd_hwdep rapl psmouse input_leds firmware_attributes_class wmi_bmof libarc4 snd_pcm k10temp snd_pci_acp3x i2c_piix4 thermal ac evdev mac_hid acpi_cpufreq i2c_designware_platform i2c_designware_core tiny_power_button i2c_dev snd_seq snd_seq_device snd_timer vhost_vsock vmw_vsock_virtio_transport_common vsock vhost_net vhost vhost_iotlb tap hci_vhci bluetooth ecdh_generic ecc crc16 vfio_iommu_type1 vfio iommufd uhid uinput userio ppp_generic slhc tun loop cuse fuse amdgpu zfs(PO) zunicode(PO) zzstd(O) zlua(O) zavl(PO) iommu_v2 icp(PO) drm_buddy gpu_sched i2c_algo_bit drm_display_helper cec rc_core thinkpad_acpi nvram drm_kms_helper snd syscopyarea xhci_pci crct10dif_pclmul sysfillrect crc32_pclmul xhci_pci_renesas soundcore sysimgblt polyval_clmulni zcommon(PO) drm_ttm_helper ledtrig_audio polyval_generic xhci_hcd gf128mul platform_profile znvpair(PO) ghash_clmulni_intel ttm sha512_ssse3 rfkill aesni_intel spl(O) crypto_simd usbcore cryptd drm ccp serio_raw sp5100_tco rng_core
+[Sun Sep 17 18:24:15 2023]  usb_common video i2c_hid_acpi i2c_hid agpgart battery hid wmi button dm_mirror dm_region_hash dm_log dm_mod btrfs blake2b_generic xor raid6_pq libcrc32c crc32c_generic crc32c_intel
+[Sun Sep 17 18:24:15 2023] CPU: 3 PID: 4315 Comm: kworker/u32:10 Tainted: P        W  O       6.3.13_1 #1
+[Sun Sep 17 18:24:15 2023] Hardware name: LENOVO 20XGS06B00/20XGS06B00, BIOS R1NET57W (1.27) 05/15/2023
+[Sun Sep 17 18:24:15 2023] Workqueue: events_unbound async_run_entry_fn
+[Sun Sep 17 18:24:15 2023] RIP: 0010:drv_stop+0xf1/0x100 [mac80211]
+[Sun Sep 17 18:24:15 2023] Code: 0f 00 48 85 c0 74 0c 48 8b 78 08 48 89 de e8 f6 ea 04 00 65 ff 0d 37 7a 0d 3e 0f 85 39 ff ff ff 0f 1f 44 00 00 e9 2f ff ff ff <0f> 0b 5b c3 cc cc cc cc 0f 1f 80 00 00 00 00 90 90 90 90 90 90 90
+[Sun Sep 17 18:24:15 2023] RSP: 0018:ffffaaf8d6a3fc60 EFLAGS: 00010246
+[Sun Sep 17 18:24:15 2023] RAX: 0000000000000000 RBX: ffff9729051588e0 RCX: 0000000000000000
+[Sun Sep 17 18:24:15 2023] RDX: 0000000080000000 RSI: 0000000000000282 RDI: ffff9729051588e0
+[Sun Sep 17 18:24:15 2023] RBP: ffff972905159b10 R08: ffffffffa086ab40 R09: 0000000000ffff10
+[Sun Sep 17 18:24:15 2023] R10: 0000000000000000 R11: 0000000000000037 R12: ffff9729051588e0
+[Sun Sep 17 18:24:15 2023] R13: ffff97290b331bc8 R14: ffff9729051591e0 R15: 0000000000000000
+[Sun Sep 17 18:24:15 2023] FS:  0000000000000000(0000) GS:ffff972bedec0000(0000) knlGS:0000000000000000
+[Sun Sep 17 18:24:15 2023] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[Sun Sep 17 18:24:15 2023] CR2: 0000000000000000 CR3: 00000003ec832000 CR4: 0000000000750ee0
+[Sun Sep 17 18:24:15 2023] PKRU: 55555554
+[Sun Sep 17 18:24:15 2023] Call Trace:
+[Sun Sep 17 18:24:15 2023]  <TASK>
+[Sun Sep 17 18:24:15 2023]  ? drv_stop+0xf1/0x100 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? __warn+0x7d/0x130
+[Sun Sep 17 18:24:15 2023]  ? drv_stop+0xf1/0x100 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? report_bug+0x18d/0x1c0
+[Sun Sep 17 18:24:15 2023]  ? handle_bug+0x41/0x70
+[Sun Sep 17 18:24:15 2023]  ? exc_invalid_op+0x13/0x60
+[Sun Sep 17 18:24:15 2023]  ? asm_exc_invalid_op+0x16/0x20
+[Sun Sep 17 18:24:15 2023]  ? drv_stop+0xf1/0x100 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ieee80211_do_stop+0x663/0x870 [mac80211]
+[Sun Sep 17 18:24:15 2023]  ? __raise_softirq_irqoff+0x16/0x70
+[Sun Sep 17 18:24:15 2023]  ? preempt_count_add+0x6a/0xa0
+[Sun Sep 17 18:24:15 2023]  ieee80211_stop+0x49/0x170 [mac80211]
+[Sun Sep 17 18:24:15 2023]  __dev_close_many+0x9e/0x110
+[Sun Sep 17 18:24:15 2023]  dev_close_many+0x8b/0x140
+[Sun Sep 17 18:24:15 2023]  ? ieee80211_handle_reconfig_failure+0x69/0x90 [mac80211]
+[Sun Sep 17 18:24:15 2023]  dev_close+0x7f/0xb0
+[Sun Sep 17 18:24:15 2023]  cfg80211_shutdown_all_interfaces+0x49/0xf0 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  wiphy_resume+0x94/0x150 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  ? __pfx_wiphy_resume+0x10/0x10 [cfg80211]
+[Sun Sep 17 18:24:15 2023]  dpm_run_callback+0x34/0x120
+[Sun Sep 17 18:24:15 2023]  device_resume+0x88/0x190
+[Sun Sep 17 18:24:15 2023]  async_resume+0x19/0x50
+[Sun Sep 17 18:24:15 2023]  async_run_entry_fn+0x30/0x130
+[Sun Sep 17 18:24:15 2023]  process_one_work+0x1c8/0x3c0
+[Sun Sep 17 18:24:15 2023]  worker_thread+0x4d/0x380
+[Sun Sep 17 18:24:15 2023]  ? __pfx_worker_thread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  kthread+0xe9/0x110
+[Sun Sep 17 18:24:15 2023]  ? __pfx_kthread+0x10/0x10
+[Sun Sep 17 18:24:15 2023]  ret_from_fork+0x2c/0x50
+[Sun Sep 17 18:24:15 2023]  </TASK>
+[Sun Sep 17 18:24:15 2023] ---[ end trace 0000000000000000 ]---
+[Sun Sep 17 18:24:15 2023] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume+0x0/0x150 [cfg80211] returns -11
+[Sun Sep 17 18:24:15 2023] ieee80211 phy0: PM: failed to resume async: error -11
+[Sun Sep 17 18:24:15 2023] done.
+[Sun Sep 17 18:24:15 2023] Bluetooth: hci0: HCI Enhanced Setup Synchronous Connection command is advertised, but not supported.

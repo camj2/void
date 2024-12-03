@@ -1,0 +1,275 @@
+2023-09-22T02:07:23.10214 daemon.err: Sep 21 20:07:23 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:23.15839 daemon.err: Sep 21 20:07:23 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:23.15874 daemon.err: Sep 21 20:07:23 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:23.16574 daemon.err: Sep 21 20:07:23 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:23.16606 daemon.err: Sep 21 20:07:23 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:23.51825 daemon.err: Sep 21 20:07:23 bluetoothd[1140]: src/adapter.c:reset_adv_monitors_complete() Failed to reset Adv Monitors: Failed (0x03)
+2023-09-22T02:07:23.53165 daemon.err: Sep 21 20:07:23 bluetoothd[1140]: Failed to clear UUIDs: Failed (0x03)
+2023-09-22T02:07:23.53175 daemon.err: Sep 21 20:07:23 bluetoothd[1140]: Failed to add UUID: Failed (0x03)
+2023-09-22T02:07:23.53176 daemon.err: Sep 21 20:07:23 bluetoothd[1140]: Failed to add UUID: Failed (0x03)
+2023-09-22T02:07:23.53180 daemon.err: Sep 21 20:07:23 bluetoothd[1140]: Failed to add UUID: Failed (0x03)
+2023-09-22T02:07:24.09134 daemon.err: [    5.521252] udevd[740]: Unknown key identifier 'zoom'
+2023-09-22T02:07:50.72244 daemon.err: Sep 21 20:07:50 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:50.75588 daemon.err: Sep 21 20:07:50 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:50.75615 daemon.err: Sep 21 20:07:50 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:53.70187 daemon.err: Sep 21 20:07:53 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:07:53.70218 daemon.err: Sep 21 20:07:53 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:11:04.18218 daemon.err: Sep 21 20:11:04 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:11:04.18348 kern.err: [  217.798781] mhi mhi0: Did not enter M0 state, MHI state: M3, PM state: M3->M0
+2023-09-22T02:11:04.18353 kern.err: [  217.798809] ath11k_pci 0000:02:00.0: PM: dpm_run_callback(): pci_pm_resume+0x0/0xf0 returns -5
+2023-09-22T02:11:04.18354 kern.err: [  217.798833] ath11k_pci 0000:02:00.0: PM: failed to resume async: error -5
+2023-09-22T02:11:04.18357 kern.err: [  220.806717] ath11k_pci 0000:02:00.0: failed to enable dynamic bw: -11
+2023-09-22T02:11:04.18399 daemon.err: Sep 21 20:11:04 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:11:04.18485 kern.err: [  220.809320] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume+0x0/0x1a0 [cfg80211] returns -11
+2023-09-22T02:11:04.18486 kern.err: [  220.809346] ieee80211 phy0: PM: failed to resume async: error -11
+2023-09-22T02:11:04.22394 daemon.err: Sep 21 20:11:04 wpa_supplicant[1145]: nl80211: Could not configure driver mode
+2023-09-22T02:11:07.73587 daemon.err: Sep 21 20:11:07 wpa_supplicant[1145]: Could not read interface eth0 flags: No such device
+2023-09-22T02:11:07.73752 daemon.err: Sep 21 20:11:07 wpa_supplicant[1145]: Could not read interface eth0 flags: No such device
+2023-09-22T02:12:24.42685 daemon.err: Sep 21 20:12:24 dhcpcd[2198]: dhcpcd_prestartinterface: Resource temporarily unavailable
+2023-09-22T02:12:24.42761 kern.err: [  301.063574] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:27.49879 daemon.err: Sep 21 20:12:27 wpa_supplicant[2222]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:27.49887 daemon.err: Sep 21 20:12:27 wpa_supplicant[2222]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:27.50602 daemon.err: Sep 21 20:12:27 wpa_supplicant[2222]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:27.50608 kern.err: [  304.135586] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:30.50683 daemon.err: Sep 21 20:12:30 wpa_supplicant[2232]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:30.50693 daemon.err: Sep 21 20:12:30 wpa_supplicant[2232]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:30.50702 daemon.err: Sep 21 20:12:30 wpa_supplicant[2232]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:30.50753 kern.err: [  307.143629] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:33.51482 daemon.err: Sep 21 20:12:33 wpa_supplicant[2287]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:33.51493 daemon.err: Sep 21 20:12:33 wpa_supplicant[2287]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:33.51499 daemon.err: Sep 21 20:12:33 wpa_supplicant[2287]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:33.51547 kern.err: [  310.151640] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:36.52281 daemon.err: Sep 21 20:12:36 wpa_supplicant[2288]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:36.52291 daemon.err: Sep 21 20:12:36 wpa_supplicant[2288]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:36.52300 daemon.err: Sep 21 20:12:36 wpa_supplicant[2288]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:36.52351 kern.err: [  313.159663] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:39.53081 daemon.err: Sep 21 20:12:39 wpa_supplicant[2290]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:39.53090 daemon.err: Sep 21 20:12:39 wpa_supplicant[2290]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:39.53101 daemon.err: Sep 21 20:12:39 wpa_supplicant[2290]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:39.53147 kern.err: [  316.167688] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:42.53876 daemon.err: Sep 21 20:12:42 wpa_supplicant[2291]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:42.53885 daemon.err: Sep 21 20:12:42 wpa_supplicant[2291]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:42.53895 daemon.err: Sep 21 20:12:42 wpa_supplicant[2291]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:42.53948 kern.err: [  319.175662] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:45.54693 daemon.err: Sep 21 20:12:45 wpa_supplicant[2292]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:45.55422 daemon.err: Sep 21 20:12:45 wpa_supplicant[2292]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:45.55438 daemon.err: Sep 21 20:12:45 wpa_supplicant[2292]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:45.55446 kern.err: [  322.183862] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:48.55483 daemon.err: Sep 21 20:12:48 wpa_supplicant[2293]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:48.55492 daemon.err: Sep 21 20:12:48 wpa_supplicant[2293]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:48.55502 daemon.err: Sep 21 20:12:48 wpa_supplicant[2293]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:48.55552 kern.err: [  325.191794] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:51.56290 daemon.err: Sep 21 20:12:51 wpa_supplicant[2294]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:51.56302 daemon.err: Sep 21 20:12:51 wpa_supplicant[2294]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:51.56310 daemon.err: Sep 21 20:12:51 wpa_supplicant[2294]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:51.56348 kern.err: [  328.199866] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:54.57084 daemon.err: Sep 21 20:12:54 wpa_supplicant[2295]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:54.57093 daemon.err: Sep 21 20:12:54 wpa_supplicant[2295]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:54.57105 daemon.err: Sep 21 20:12:54 wpa_supplicant[2295]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:54.57148 kern.err: [  331.207861] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:12:57.57861 daemon.err: Sep 21 20:12:57 wpa_supplicant[2297]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:12:57.57869 daemon.err: Sep 21 20:12:57 wpa_supplicant[2297]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:12:57.57880 daemon.err: Sep 21 20:12:57 wpa_supplicant[2297]: wlan0: Failed to initialize driver interface
+2023-09-22T02:12:57.57954 kern.err: [  334.215643] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:13:00.58685 daemon.err: Sep 21 20:13:00 wpa_supplicant[2302]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:13:00.58694 daemon.err: Sep 21 20:13:00 wpa_supplicant[2302]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:13:00.58703 daemon.err: Sep 21 20:13:00 wpa_supplicant[2302]: wlan0: Failed to initialize driver interface
+2023-09-22T02:13:00.58751 kern.err: [  337.223922] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:13:03.59482 daemon.err: Sep 21 20:13:03 wpa_supplicant[2303]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:13:03.59491 daemon.err: Sep 21 20:13:03 wpa_supplicant[2303]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:13:03.59502 daemon.err: Sep 21 20:13:03 wpa_supplicant[2303]: wlan0: Failed to initialize driver interface
+2023-09-22T02:13:03.59547 kern.err: [  340.231919] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+2023-09-22T02:13:06.60281 daemon.err: Sep 21 20:13:06 wpa_supplicant[2304]: Could not set interface wlan0 flags (UP): Resource temporarily unavailable
+2023-09-22T02:13:06.60290 daemon.err: Sep 21 20:13:06 wpa_supplicant[2304]: nl80211: Could not set interface 'wlan0' UP
+2023-09-22T02:13:06.60301 daemon.err: Sep 21 20:13:06 wpa_supplicant[2304]: wlan0: Failed to initialize driver interface
+2023-09-22T02:13:06.60351 kern.err: [  343.239919] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:07:23 2023] Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+[Thu Sep 21 20:07:23 2023] Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+[Thu Sep 21 20:07:23 2023] pci 0000:00:00.2: can't derive routing for PCI INT A
+[Thu Sep 21 20:07:23 2023] pci 0000:00:00.2: PCI INT A: not connected
+[Thu Sep 21 20:07:23 2023] nvme nvme0: missing or invalid SUBNQN field.
+[Thu Sep 21 20:07:28 2023] i2c_hid_acpi i2c-ELAN901C:00: i2c_hid_get_input: IRQ triggered but there's no data
+[Thu Sep 21 20:07:28 2023] udevd[740]: Unknown key identifier 'zoom'
+[Thu Sep 21 20:07:28 2023] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[Thu Sep 21 20:07:29 2023] Bluetooth: hci0: HCI Enhanced Setup Synchronous Connection command is advertised, but not supported.
+[Thu Sep 21 20:07:30 2023] ath11k_pci 0000:02:00.0: Failed to set the requested Country regulatory setting
+[Thu Sep 21 20:07:30 2023] ath11k_pci 0000:02:00.0: Failed to set the requested Country regulatory setting
+[Thu Sep 21 20:07:32 2023] waybar[1444]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+[Thu Sep 21 20:09:11 2023] NOHZ tick-stop error: local softirq work is pending, handler #08!!!
+[Thu Sep 21 20:09:17 2023] NOHZ tick-stop error: local softirq work is pending, handler #08!!!
+[Thu Sep 21 20:10:12 2023] NOHZ tick-stop error: local softirq work is pending, handler #08!!!
+[Thu Sep 21 20:10:39 2023] ACPI: button: The lid device is not compliant to SW_LID.
+[Thu Sep 21 20:10:40 2023] mhi mhi0: Resuming from non M3 state (RESET)
+[Thu Sep 21 20:11:00 2023] mhi mhi0: Did not enter M0 state, MHI state: M3, PM state: M3->M0
+[Thu Sep 21 20:11:00 2023] ath11k_pci 0000:02:00.0: failed to resume mhi: -5
+[Thu Sep 21 20:11:00 2023] ath11k_pci 0000:02:00.0: failed to resume hif during resume: -5
+[Thu Sep 21 20:11:00 2023] ath11k_pci 0000:02:00.0: failed to resume core: -5
+[Thu Sep 21 20:11:00 2023] ath11k_pci 0000:02:00.0: PM: dpm_run_callback(): pci_pm_resume+0x0/0xf0 returns -5
+[Thu Sep 21 20:11:00 2023] ath11k_pci 0000:02:00.0: PM: failed to resume async: error -5
+[Thu Sep 21 20:11:03 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:11:03 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:11:03 2023] ath11k_pci 0000:02:00.0: failed to enable dynamic bw: -11
+[Thu Sep 21 20:11:03 2023] ------------[ cut here ]------------
+[Thu Sep 21 20:11:03 2023] Hardware became unavailable upon resume. This could be a software issue prior to suspend or a hardware issue.
+[Thu Sep 21 20:11:03 2023] WARNING: CPU: 8 PID: 113 at net/mac80211/util.c:2568 ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023] Modules linked in: r8153_ecm cdc_ether usbnet r8152 rfcomm snd_seq_dummy snd_hrtimer cmac algif_hash algif_skcipher af_alg bnep wireguard curve25519_x86_64 libchacha20poly1305 chacha_x86_64 poly1305_x86_64 libcurve25519_generic libchacha ip6_udp_tunnel udp_tunnel 8021q garp mrp stp llc binfmt_misc nft_ct nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 nf_tables nfnetlink nls_iso8859_1 nls_cp437 vfat fat qrtr_mhi btusb btrtl btbcm btintel btmtk joydev qrtr snd_sof_amd_rembrandt snd_sof_amd_renoir ath11k_pci snd_sof_amd_acp mhi snd_sof_pci snd_sof_xtensa_dsp ath11k snd_sof snd_sof_utils qmi_helpers snd_ctl_led snd_soc_core snd_hda_codec_realtek mac80211 snd_hda_codec_generic snd_hda_codec_hdmi snd_compress ac97_bus snd_pcm_dmaengine snd_pci_ps intel_rapl_msr snd_rpl_pci_acp6x snd_hda_intel snd_acp_pci intel_rapl_common snd_pci_acp6x snd_intel_dspcfg edac_mce_amd snd_intel_sdw_acpi hid_multitouch snd_pci_acp5x hid_generic cfg80211 snd_hda_codec kvm_amd think_lmi snd_rn_pci_acp3x snd_hda_core snd_acp_config kvm
+[Thu Sep 21 20:11:03 2023]  irqbypass snd_hwdep snd_soc_acpi rapl psmouse input_leds wmi_bmof firmware_attributes_class k10temp snd_pcm libarc4 snd_pci_acp3x i2c_piix4 thermal ac evdev mac_hid i2c_designware_platform i2c_designware_core tiny_power_button i2c_dev snd_seq snd_seq_device snd_timer vhost_vsock vmw_vsock_virtio_transport_common vsock vhost_net vhost vhost_iotlb tap hci_vhci bluetooth ecdh_generic ecc vfio_iommu_type1 vfio iommufd uhid uinput userio ppp_generic slhc tun loop cuse fuse ext4 crc16 mbcache jbd2 amdgpu amdxcp iommu_v2 drm_buddy gpu_sched i2c_algo_bit drm_suballoc_helper drm_display_helper thinkpad_acpi cec rc_core nvram snd xhci_pci xhci_pci_renesas drm_kms_helper soundcore crct10dif_pclmul crc32_pclmul drm_ttm_helper ledtrig_audio polyval_clmulni xhci_hcd platform_profile polyval_generic ttm rfkill gf128mul ghash_clmulni_intel sha512_ssse3 aesni_intel drm usbcore crypto_simd cryptd ccp serio_raw video rng_core usb_common sp5100_tco i2c_hid_acpi i2c_hid agpgart battery wmi hid button dm_mirror dm_region_hash
+[Thu Sep 21 20:11:03 2023]  dm_log dm_mod btrfs blake2b_generic xor raid6_pq libcrc32c crc32c_generic crc32c_intel
+[Thu Sep 21 20:11:03 2023] CPU: 8 PID: 113 Comm: kworker/u32:1 Not tainted 6.5.4_1 #1
+[Thu Sep 21 20:11:03 2023] Hardware name: LENOVO 20XGS06B00/20XGS06B00, BIOS R1NET57W (1.27) 05/15/2023
+[Thu Sep 21 20:11:03 2023] Workqueue: events_unbound async_run_entry_fn
+[Thu Sep 21 20:11:03 2023] RIP: 0010:ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023] Code: 48 8b 04 24 c6 80 8d 05 00 00 00 48 89 c7 e8 ce 83 fb ff 41 89 c5 85 c0 0f 84 04 03 00 00 48 c7 c7 38 3d 2e c2 e8 e7 6f eb d8 <0f> 0b eb 34 84 c0 0f 85 82 01 00 00 48 8b 04 24 c6 80 8d 05 00 00
+[Thu Sep 21 20:11:03 2023] RSP: 0018:ffffbf1640537cc8 EFLAGS: 00010286
+[Thu Sep 21 20:11:03 2023] RAX: 0000000000000000 RBX: ffffa01107e78900 RCX: 0000000000000000
+[Thu Sep 21 20:11:03 2023] RDX: 0000000000000002 RSI: 0000000000000096 RDI: 00000000ffffffff
+[Thu Sep 21 20:11:03 2023] RBP: ffffa01107e783c0 R08: ffffffff9ca58e20 R09: ffffbf1640537c50
+[Thu Sep 21 20:11:03 2023] R10: 3fffffffffffffff R11: 000000000000006f R12: 0000000000000010
+[Thu Sep 21 20:11:03 2023] R13: 00000000fffffff5 R14: ffffffff9c309b71 R15: ffffa01118d82f88
+[Thu Sep 21 20:11:03 2023] FS:  0000000000000000(0000) GS:ffffa013df000000(0000) knlGS:0000000000000000
+[Thu Sep 21 20:11:03 2023] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[Thu Sep 21 20:11:03 2023] CR2: 0000000000000000 CR3: 0000000114a20000 CR4: 0000000000750ee0
+[Thu Sep 21 20:11:03 2023] PKRU: 55555554
+[Thu Sep 21 20:11:03 2023] Call Trace:
+[Thu Sep 21 20:11:03 2023]  <TASK>
+[Thu Sep 21 20:11:03 2023]  ? ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? __warn+0x81/0x130
+[Thu Sep 21 20:11:03 2023]  ? ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? report_bug+0x191/0x1c0
+[Thu Sep 21 20:11:03 2023]  ? handle_bug+0x41/0x70
+[Thu Sep 21 20:11:03 2023]  ? exc_invalid_op+0x17/0x70
+[Thu Sep 21 20:11:03 2023]  ? asm_exc_invalid_op+0x1a/0x20
+[Thu Sep 21 20:11:03 2023]  ? ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? ieee80211_reconfig+0xa9/0x1620 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? wq_worker_running+0xf/0x80
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? schedule_timeout+0x147/0x160
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? preempt_count_add+0x6e/0xa0
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? _raw_spin_lock_irq+0x1d/0x50
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? preempt_count_add+0x6e/0xa0
+[Thu Sep 21 20:11:03 2023]  wiphy_resume+0x85/0x1a0 [cfg80211]
+[Thu Sep 21 20:11:03 2023]  ? __pfx_wiphy_resume+0x10/0x10 [cfg80211]
+[Thu Sep 21 20:11:03 2023]  dpm_run_callback+0x8c/0x1e0
+[Thu Sep 21 20:11:03 2023]  device_resume+0xa2/0x1f0
+[Thu Sep 21 20:11:03 2023]  async_resume+0x1e/0x60
+[Thu Sep 21 20:11:03 2023]  async_run_entry_fn+0x34/0x130
+[Thu Sep 21 20:11:03 2023]  process_one_work+0x1e2/0x3e0
+[Thu Sep 21 20:11:03 2023]  worker_thread+0x51/0x390
+[Thu Sep 21 20:11:03 2023]  ? __pfx_worker_thread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  kthread+0xf7/0x130
+[Thu Sep 21 20:11:03 2023]  ? __pfx_kthread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  ret_from_fork+0x34/0x50
+[Thu Sep 21 20:11:03 2023]  ? __pfx_kthread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  ret_from_fork_asm+0x1b/0x30
+[Thu Sep 21 20:11:03 2023]  </TASK>
+[Thu Sep 21 20:11:03 2023] ---[ end trace 0000000000000000 ]---
+[Thu Sep 21 20:11:03 2023] ------------[ cut here ]------------
+[Thu Sep 21 20:11:03 2023] WARNING: CPU: 8 PID: 113 at net/mac80211/driver-ops.c:39 drv_stop+0xf5/0x100 [mac80211]
+[Thu Sep 21 20:11:03 2023] Modules linked in: r8153_ecm cdc_ether usbnet r8152 rfcomm snd_seq_dummy snd_hrtimer cmac algif_hash algif_skcipher af_alg bnep wireguard curve25519_x86_64 libchacha20poly1305 chacha_x86_64 poly1305_x86_64 libcurve25519_generic libchacha ip6_udp_tunnel udp_tunnel 8021q garp mrp stp llc binfmt_misc nft_ct nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 nf_tables nfnetlink nls_iso8859_1 nls_cp437 vfat fat qrtr_mhi btusb btrtl btbcm btintel btmtk joydev qrtr snd_sof_amd_rembrandt snd_sof_amd_renoir ath11k_pci snd_sof_amd_acp mhi snd_sof_pci snd_sof_xtensa_dsp ath11k snd_sof snd_sof_utils qmi_helpers snd_ctl_led snd_soc_core snd_hda_codec_realtek mac80211 snd_hda_codec_generic snd_hda_codec_hdmi snd_compress ac97_bus snd_pcm_dmaengine snd_pci_ps intel_rapl_msr snd_rpl_pci_acp6x snd_hda_intel snd_acp_pci intel_rapl_common snd_pci_acp6x snd_intel_dspcfg edac_mce_amd snd_intel_sdw_acpi hid_multitouch snd_pci_acp5x hid_generic cfg80211 snd_hda_codec kvm_amd think_lmi snd_rn_pci_acp3x snd_hda_core snd_acp_config kvm
+[Thu Sep 21 20:11:03 2023]  irqbypass snd_hwdep snd_soc_acpi rapl psmouse input_leds wmi_bmof firmware_attributes_class k10temp snd_pcm libarc4 snd_pci_acp3x i2c_piix4 thermal ac evdev mac_hid i2c_designware_platform i2c_designware_core tiny_power_button i2c_dev snd_seq snd_seq_device snd_timer vhost_vsock vmw_vsock_virtio_transport_common vsock vhost_net vhost vhost_iotlb tap hci_vhci bluetooth ecdh_generic ecc vfio_iommu_type1 vfio iommufd uhid uinput userio ppp_generic slhc tun loop cuse fuse ext4 crc16 mbcache jbd2 amdgpu amdxcp iommu_v2 drm_buddy gpu_sched i2c_algo_bit drm_suballoc_helper drm_display_helper thinkpad_acpi cec rc_core nvram snd xhci_pci xhci_pci_renesas drm_kms_helper soundcore crct10dif_pclmul crc32_pclmul drm_ttm_helper ledtrig_audio polyval_clmulni xhci_hcd platform_profile polyval_generic ttm rfkill gf128mul ghash_clmulni_intel sha512_ssse3 aesni_intel drm usbcore crypto_simd cryptd ccp serio_raw video rng_core usb_common sp5100_tco i2c_hid_acpi i2c_hid agpgart battery wmi hid button dm_mirror dm_region_hash
+[Thu Sep 21 20:11:03 2023]  dm_log dm_mod btrfs blake2b_generic xor raid6_pq libcrc32c crc32c_generic crc32c_intel
+[Thu Sep 21 20:11:03 2023] CPU: 8 PID: 113 Comm: kworker/u32:1 Tainted: G        W          6.5.4_1 #1
+[Thu Sep 21 20:11:03 2023] Hardware name: LENOVO 20XGS06B00/20XGS06B00, BIOS R1NET57W (1.27) 05/15/2023
+[Thu Sep 21 20:11:03 2023] Workqueue: events_unbound async_run_entry_fn
+[Thu Sep 21 20:11:03 2023] RIP: 0010:drv_stop+0xf5/0x100 [mac80211]
+[Thu Sep 21 20:11:03 2023] Code: 0c 00 48 85 c0 74 0c 48 8b 78 08 48 89 de e8 82 0e 05 00 65 ff 0d 33 69 e8 3d 0f 85 39 ff ff ff 0f 1f 44 00 00 e9 2f ff ff ff <0f> 0b 5b e9 d3 2a a3 d9 0f 1f 00 90 90 90 90 90 90 90 90 90 90 90
+[Thu Sep 21 20:11:03 2023] RSP: 0018:ffffbf1640537c30 EFLAGS: 00010246
+[Thu Sep 21 20:11:03 2023] RAX: 0000000000000000 RBX: ffffa01107e78900 RCX: 0000000000000000
+[Thu Sep 21 20:11:03 2023] RDX: 0000000080000000 RSI: 0000000000000282 RDI: ffffa01107e78900
+[Thu Sep 21 20:11:03 2023] RBP: ffffa01107e79b38 R08: ffffffff9cc1b630 R09: 0000000000000000
+[Thu Sep 21 20:11:03 2023] R10: 0000000000000001 R11: 0000000000000100 R12: ffffa01107e78900
+[Thu Sep 21 20:11:03 2023] R13: ffffa0110c96dc88 R14: ffffa01107e79208 R15: 0000000000000000
+[Thu Sep 21 20:11:03 2023] FS:  0000000000000000(0000) GS:ffffa013df000000(0000) knlGS:0000000000000000
+[Thu Sep 21 20:11:03 2023] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[Thu Sep 21 20:11:03 2023] CR2: 0000000000000000 CR3: 0000000114a20000 CR4: 0000000000750ee0
+[Thu Sep 21 20:11:03 2023] PKRU: 55555554
+[Thu Sep 21 20:11:03 2023] Call Trace:
+[Thu Sep 21 20:11:03 2023]  <TASK>
+[Thu Sep 21 20:11:03 2023]  ? drv_stop+0xf5/0x100 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? __warn+0x81/0x130
+[Thu Sep 21 20:11:03 2023]  ? drv_stop+0xf5/0x100 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? report_bug+0x191/0x1c0
+[Thu Sep 21 20:11:03 2023]  ? handle_bug+0x41/0x70
+[Thu Sep 21 20:11:03 2023]  ? exc_invalid_op+0x17/0x70
+[Thu Sep 21 20:11:03 2023]  ? asm_exc_invalid_op+0x1a/0x20
+[Thu Sep 21 20:11:03 2023]  ? drv_stop+0xf5/0x100 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ieee80211_do_stop+0x672/0x880 [mac80211]
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  ? preempt_count_add+0x6e/0xa0
+[Thu Sep 21 20:11:03 2023]  ieee80211_stop+0x4d/0x180 [mac80211]
+[Thu Sep 21 20:11:03 2023]  __dev_close_many+0x9e/0x110
+[Thu Sep 21 20:11:03 2023]  dev_close_many+0x8f/0x150
+[Thu Sep 21 20:11:03 2023]  ? srso_alias_return_thunk+0x5/0x7f
+[Thu Sep 21 20:11:03 2023]  dev_close+0x83/0xb0
+[Thu Sep 21 20:11:03 2023]  cfg80211_shutdown_all_interfaces+0x4d/0xf0 [cfg80211]
+[Thu Sep 21 20:11:03 2023]  wiphy_resume+0xbe/0x1a0 [cfg80211]
+[Thu Sep 21 20:11:03 2023]  ? __pfx_wiphy_resume+0x10/0x10 [cfg80211]
+[Thu Sep 21 20:11:03 2023]  dpm_run_callback+0x8c/0x1e0
+[Thu Sep 21 20:11:03 2023]  device_resume+0xa2/0x1f0
+[Thu Sep 21 20:11:03 2023]  async_resume+0x1e/0x60
+[Thu Sep 21 20:11:03 2023]  async_run_entry_fn+0x34/0x130
+[Thu Sep 21 20:11:03 2023]  process_one_work+0x1e2/0x3e0
+[Thu Sep 21 20:11:03 2023]  worker_thread+0x51/0x390
+[Thu Sep 21 20:11:03 2023]  ? __pfx_worker_thread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  kthread+0xf7/0x130
+[Thu Sep 21 20:11:03 2023]  ? __pfx_kthread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  ret_from_fork+0x34/0x50
+[Thu Sep 21 20:11:03 2023]  ? __pfx_kthread+0x10/0x10
+[Thu Sep 21 20:11:03 2023]  ret_from_fork_asm+0x1b/0x30
+[Thu Sep 21 20:11:03 2023]  </TASK>
+[Thu Sep 21 20:11:03 2023] ---[ end trace 0000000000000000 ]---
+[Thu Sep 21 20:11:03 2023] ieee80211 phy0: PM: dpm_run_callback(): wiphy_resume+0x0/0x1a0 [cfg80211] returns -11
+[Thu Sep 21 20:11:03 2023] ieee80211 phy0: PM: failed to resume async: error -11
+[Thu Sep 21 20:11:03 2023] done.
+[Thu Sep 21 20:11:04 2023] Bluetooth: hci0: HCI Enhanced Setup Synchronous Connection command is advertised, but not supported.
+[Thu Sep 21 20:12:24 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:24 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:24 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:27 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:27 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:27 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:30 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:30 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:30 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:33 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:33 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:33 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:36 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:36 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:36 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:39 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:39 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:39 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:42 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:42 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:42 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:45 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:45 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:45 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:48 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:48 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:48 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:51 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:51 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:51 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:54 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:54 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:54 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:12:57 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:12:57 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:12:57 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:13:00 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:13:00 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:13:00 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:13:03 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:13:03 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:13:03 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11
+[Thu Sep 21 20:13:06 2023] ath11k_pci 0000:02:00.0: wmi command 16387 timeout
+[Thu Sep 21 20:13:06 2023] ath11k_pci 0000:02:00.0: failed to send WMI_PDEV_SET_PARAM cmd
+[Thu Sep 21 20:13:06 2023] ath11k_pci 0000:02:00.0: failed to enable PMF QOS: (-11

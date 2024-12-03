@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# todo: delete apple live photos
+
+set -e
+
+search() {
+  while [ $# -gt 0 ]; do
+    find . -maxdepth 1 -type f -name "*.${1}" -printf '%f\n'
+    shift
+  done | sort
+}
+
+arrange() {
+  int=10000 # arbitrary integer
+
+  search "$@" | while IFS= read -r file; do
+    int=$((int + 1))
+
+    new="$int"."${file#*.}"
+
+    mv -n "$file" "$new"
+  done
+}
+
+move() {
+  file="$1"
+  new="$2"
+
+  org="$new"
+  int=0
+
+  while ! mv -n "$file" "$new" > /dev/null 2>&1; do
+    new="$org" # reset
+
+    int=$((int + 1))
+
+    pre="${new%.*}"
+    ext="${new#*.}"
+
+    new="$pre"_"$int"."$ext"
+
+    # limit number of retries
+    if [ "$int" -gt 100 ]; then
+      printf "skipping '%s': too many retries\n" "$file" >&2
+      break
+    fi
+  done
+}
+
+arrange jpg jpeg png mp4 # move out of the way first
+
+# jpg
+
+search jpg jpeg | while IFS= read -r file; do
+  new=$(date -u -r "$file" '+%Y%m%d_%H%M%S').jpg
+
+  move "$file" "$new"
+done
+
+# png
+
+search png | while IFS= read -r file; do
+  new=$(date -u -r "$file" '+%Y%m%d_%H%M%S').png
+
+  move "$file" "$new"
+done
+
+# mp4
+
+search mp4 | while IFS= read -r file; do
+  new=$(date -u -r "$file" '+%Y%m%d_%H%M%S').mp4
+
+  move "$file" "$new"
+done

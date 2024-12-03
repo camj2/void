@@ -1,0 +1,46 @@
+* {
+    font-family: Iosevka Extended;
+    font-size: 18px;
+    background: transparent;
+}
+
+#workspaces button {
+    color: #d4be98;
+    padding: 0 2px;
+}
+
+#workspaces button.focused {
+    color: #e78a4e;
+}
+
+#mode {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#battery,
+#clock,
+#wireplumber {
+    color: #d4be98;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#battery {
+    color: #d4be98;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

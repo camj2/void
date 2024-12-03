@@ -1,0 +1,55 @@
+#!/bin/sh
+
+set -e
+
+SWAYSOCK=$(find "${XDG_RUNTIME_DIR:?}" -maxdepth 1 -type s -name "sway*" -print -quit)
+
+export SWAYSOCK
+
+run() {
+  swaymsg exec -- "$@"
+}
+
+case $1 in
+  pause)
+    run playerctl play-pause
+    ;;
+
+  next)
+    run playerctl next
+    ;;
+
+  prev)
+    run playerctl previous
+    ;;
+
+  mute)
+    run pactl set-sink-mute @DEFAULT_SINK@ toggle
+    ;;
+
+  up)
+    run pactl set-sink-volume @DEFAULT_SINK@ +5%
+    ;;
+
+  down)
+    run pactl set-sink-volume @DEFAULT_SINK@ -5%
+    ;;
+
+  exec)
+    shift
+    run "${1:?}"
+    ;;
+
+  shell)
+    exec "${SHELL:?}"
+    ;;
+
+  kill)
+    swaymsg kill
+    ;;
+
+  *)
+    printf "menu: unknown command '%s'\n" "$1" >&2
+    exit 1
+    ;;
+esac

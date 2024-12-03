@@ -1,0 +1,6 @@
+disable gammastep
+alacritty font - 15
+waybar - height 40, font-size 18
+spotify - CTRL + -/+ to decrease/increase font size
+note - rfkill.default_state=0 doesn't work
+https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#NVMe_drive

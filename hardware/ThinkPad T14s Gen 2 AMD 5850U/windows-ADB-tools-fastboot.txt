@@ -1,0 +1,1 @@
+https://grapheneos.org/install/cli#standalone-platform-tools

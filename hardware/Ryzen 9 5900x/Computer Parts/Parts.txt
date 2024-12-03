@@ -1,0 +1,47 @@
+Computer:
+	Samsung B Die ECC Memory - https://memory.net/product/m391a1g43eb1-crc-samsung-1x-8gb-ddr4-2400-udimm-pc4-19200t-e-dual-rank-x8-module/
+	Micron Rev B ECC Memory - https://www.newegg.com/crucial-8gb-288-pin-ddr4-sdram/p/2SJ-000W-02ZX7
+	Tripp Lite 8 Outlet Surge Protector
+	Aorus x570s Master
+	Ryzen 5 5600
+	Razer Ornata Chroma Keyboard
+	Monitor - https://www.amazon.com/ViewSonic-VX3268-2KPC-MHD-Monitor-FreeSync-Premium/dp/B08D5H24N8/ref=sr_1_3?dchild=1&keywords=32+inch+1440p+freesync+monitor&qid=1605225246&sr=8-3
+	Monitor wall mount - https://www.amazon.com/Articulating-Extension-Rotation-200x200mm-Pipishell/dp/B07SHFPD8S/ref=sr_1_14?dchild=1&keywords=vesa+wall+mount&qid=1633325184&sr=8-14
+	Desktop speakers - https://www.reddit.com/r/audiophile/comments/prldbe/raudiophile_shopping_setup_and_technical_help/
+	Bookshelf speakers - https://www.amazon.com/Edifier-R1280T-Powered-Bookshelf-Speakers/dp/B016P9HJIA?pldnSite=1
+	Focusrite USB DAC - https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2
+	External hard drive - https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRGSR16/ref=sr_1_3?crid=1TK99MRLSTC00&dchild=1&keywords=seagate+4tb+external+hard+drive&qid=1633205074&sprefix=seagate+4tb+%2Caps%2C216&sr=8-3
+	RX 580 - https://www.amazon.com/Sapphire-11265-05-20G-Backplate-Graphics-Graphic/dp/B06ZZ6FMF8/ref=sr_1_3?dchild=1&keywords=Radeon+RX+580&qid=1594998923&sr=8-3
+	Power Color graphics cards - https://www.powercolor.com/products?id=1492658578
+	G Skill Ram - https://www.gskill.com/products/1/165/Desktop-Memory
+	Microphone - https://www.bluemic.com/en-us/products/bluebird-sl/
+	Samsung 970 Evo Plus Nvme M.2 SSD
+	120mm Computer Fan Filter
+
+Other:
+	ECC memory video along with comments describing proper timings and frequencies - https://www.youtube.com/watch?v=1NxSZil8KS8
+	ECC memory working example - https://www.reddit.com/r/Amd/comments/piulfk/what_unbuffered_ecc_memory_is_good_for_a_5950x/
+	ECC memory discussion - https://www.reddit.com/r/Amd/comments/l493wy/my_experience_overclocking_ecc_memory_on_ryzen/
+	ECC memory kernel overview - https://www.reddit.com/r/Amd/comments/ggmyyg/an_overview_of_ecc_memory_on_ryzen/
+	ECC Memory stress test and possible confirmation - http://memtest.org/
+	ECC memory check if error correcting is supported - sudo dmidecode -t memory
+	ECC memory error log package - edac-utils
+	Check ram frequency - sudo lshw -short -C memory
+	Part purchase location - Micro Center
+	Linux benchmark - https://github.com/akopytov/sysbench
+	Kernel compilation benchmark - https://www.kernel.org/
+	Kernel compilation command - time make -j$(nproc)
+	CPU stress test - https://wiki.archlinux.org/title/Stress_testing#stress
+	Read and write speed test - https://github.com/axboe/fio
+	Linux RGB control - https://gitlab.com/CalcProgrammer1/OpenRGB
+	Controller - https://www.8bitdo.com/sn30-pro-plus/
+	Velcro cable ties - https://www.amazon.com/VELCRO-Brand-Reusable-Fastening-Organizing/dp/B001E1Y5O6/ref=sr_1_3?dchild=1&keywords=velcro+cable+ties&qid=1602446261&sr=8-3
+	Setup example - https://www.youtube.com/watch?v=L8HjzG55hjY
+	Thunderbolt 3 optical cable - Allows computer to be stored in separate room whilst being connected to some form of dock
+
+Monitor:
+	Freesync test - https://github.com/Nixola/VRRTest
+
+Sound:
+	Linux supported sound cards - https://www.alsa-project.org/main/index.php/Matrix:Main
+	Sound left and right test - https://youtu.be/MkObqRUvpRY

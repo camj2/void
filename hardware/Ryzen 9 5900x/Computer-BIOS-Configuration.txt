@@ -1,0 +1,9 @@
+Tweaker -> Advanced CPU Settings -> SVM Mode: Enabled
+Settings -> Miscellaneous -> LEDs in System Power On State: Off # Note - Check that this line is in the correct order as it appears in the BIOS and ensure all words are using the same capitalization
+Boot -> Full Screen LOGO Show: Disabled
+Boot -> Fast Boot: Disabled
+Boot -> CSM Support: Disabled
+Boot -> Secure Boot -> Secure Boot: Disabled
+Boot -> Preferred Operating Mode: Advanced Mode
+Smart Fan 6 (F6): 30,32,34,36,38,40,80
+Favorites (F11): Press 'Insert' key until favorite list has been cleared

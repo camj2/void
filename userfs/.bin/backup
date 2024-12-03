@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+BACKUP=/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_1TB_REDACTED-part2
+
+if [ ! -b "$BACKUP" ]; then
+  printf "backup drive '%s': not found\n" "$BACKUP" >&2
+  exit 1
+fi
+
+mount -o discard,noatime "$BACKUP" /mnt
+
+rsync -aAXHvh --delete /home/ /mnt/
+
+sync
+
+umount /mnt

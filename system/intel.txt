@@ -1,0 +1,5 @@
+intel-ucode
+mesa-dri
+vulkan-loader
+mesa-vulkan-intel
+intel-video-accel

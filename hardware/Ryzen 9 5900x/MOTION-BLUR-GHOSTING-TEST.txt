@@ -1,0 +1,25 @@
+https://www.testufo.com/ghosting
+zsh - https://github.com/graysky2/configs/blob/master/dotfiles/.zshrc
+sway - https://mindsforge.com/Notes/VoidInstall
+https://gist.github.com/gagarine/5cf8f861abe0dd035b7af19e4f691cd8
+https://askubuntu.com/questions/475584/cache-size-of-firefox
+
+screen -S bedrock /bin/sh -c "LD_LIBRARY_PATH=. ./bedrock_server"
+screen -S bedrock -X stuff "stop$(printf "\r")"
+screen -S bedrock -X stuff "say test$(printf "\r")"
+
+MCPE spawn spear resource pack - https://foxynotail.com/
+
+https://wiki.archlinux.org/title/PipeWire#Troubleshooting
+
+Hollow Knight: '-force-opengl'
+
+Note - Ensure smartd service is enabled when using void-zfs.txt
+
+https://wiki.archlinux.org/title/desktop_entries - $HOME/.app
+
+cursor/font gtk theme sway - https://github.com/swaywm/sway/issues/4323#issuecomment-514941349
+
+Uninstall nerd-fonts and find alternative; nerd-fonts uses about 5GB of disk space
+
+https://github.com/zbm-dev/zfsbootmenu/wiki/Kernel-management-on-Void-Linux

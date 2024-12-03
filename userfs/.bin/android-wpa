@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# convert iwd config files to android compatible qr codes
+
+set -e
+
+while [ $# -gt 0 ]; do
+  pre="${1%.*}"
+  key=$(grep PreSharedKey "$1" | cut -d = -f 2)
+
+  printf "'%s':\n\n" "$pre"
+
+  # T = type
+  # H = hidden (true/false)
+  # S = SSID
+  # P = passphrase
+
+  qrencode -t ansiutf8 "WIFI:T:WPA;S:${pre:?};P:${key:?};;"
+
+  shift
+
+  if [ $# -gt 0 ]; then
+    printf '\n'
+  fi
+done

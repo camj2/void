@@ -1,0 +1,11 @@
+#!/bin/sh
+exec rsync -aAXHvh --delete --checksum \
+  --exclude=/.config/alacritty \
+  --exclude=/.config/mako \
+  --exclude=/.config/spotify \
+  --exclude=/.config/sway \
+  --exclude=/.config/waybar \
+  --exclude=/.config/wofi \
+  --exclude=/.local/state \
+  --exclude=/.zcompdump \
+  ~/ laptop:~/

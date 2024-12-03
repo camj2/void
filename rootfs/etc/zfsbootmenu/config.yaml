@@ -1,0 +1,13 @@
+Global:
+  ManageImages: true
+  InitCPIO: false
+  PreHooksDir: /etc/zfsbootmenu/generate-zbm.pre.d
+  PostHooksDir: /etc/zfsbootmenu/generate-zbm.post.d
+Components:
+  Enabled: false
+EFI:
+  Enabled: true
+  Versions: false
+  ImageDir: /boot/efi/EFI/zbm
+Kernel:
+  CommandLine: quiet loglevel=0 zbm.show zbm.sort_key=creation zbm.skip_hooks=20-console-autosize.sh video=efifb:1920x1080

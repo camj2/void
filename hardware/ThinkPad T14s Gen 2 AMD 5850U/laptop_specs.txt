@@ -1,0 +1,11 @@
+USB C charging port
+NVMe drive
+SD Card/Micro SD Card reader
+AMD CPU
+AMG GPU
+
+HDMI
+WLAN
+Bluetooth
+
+Note - Lower resolution using sway config to avoid using fractional scaling

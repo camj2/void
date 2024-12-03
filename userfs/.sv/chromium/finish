@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+TMP="${XDG_RUNTIME_DIR:-/tmp}/chromium"
+
+if [ -z "$HOME" ]; then
+  HOME=$(getent passwd "$(id -un)" | cut -d : -f 6)
+fi
+
+XDG_CONFIG_HOME="$HOME/.config"
+
+CHROMIUM="$XDG_CONFIG_HOME/chromium"
+
+if [ -L "$CHROMIUM" ]; then
+  unlink "$CHROMIUM"
+fi
+
+if [ -e "$TMP" ]; then
+  rm -rf "$TMP"
+fi

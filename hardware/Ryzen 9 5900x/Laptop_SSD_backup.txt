@@ -1,0 +1,14 @@
+Disk /dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z: 465.76 GiB, 500107862016 bytes, 976773168 sectors
+Disk model: Samsung SSD 860 
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 19171A6D-2809-4A75-AF33-709BD5760511
+
+Device                                                                  Start       End   Sectors   Size Type
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z-part1      2048   1050622   1048575   512M EFI System
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z-part2   1050624 135268350 134217727    64G Linux filesystem
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z-part3 135268352 964194302 828925951 395.3G Linux filesystem
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z-part4 964194304 968384510   4190207     2G Linux swap
+/dev/disk/by-id/ata-Samsung_SSD_860_EVO_500GB_S4CMNG0KB03600Z-part5 968384512 976773118   8388607     4G Microsoft basic data

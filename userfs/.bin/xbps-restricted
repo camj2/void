@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -ex
+
+TMP=/tmp/void-packages
+
+if [ -z "$1" ]; then
+  exit 1
+fi
+
+install -d -m 700 "$TMP"
+
+cd "$TMP"
+
+if [ -d void-packages ]; then
+  cd void-packages
+else
+  # curl -sLO https://github.com/void-linux/void-packages/archive/master.zip
+
+  # unzip -q master.zip
+
+  git clone --depth 1 https://github.com/void-linux/void-packages
+
+  cd void-packages
+
+  ./xbps-src binary-bootstrap
+
+  printf "XBPS_ALLOW_RESTRICTED=yes\n" >> etc/conf
+fi
+
+./xbps-src pkg "$1"
+
+root_cmd() {
+  if command -v doas > /dev/null; then
+    doas "$@"
+  else
+    sudo "$@"
+  fi
+}
+
+root_cmd xbps-install -Syu -R hostdir/binpkgs/nonfree "$1"

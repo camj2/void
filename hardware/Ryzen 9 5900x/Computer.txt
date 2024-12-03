@@ -1,0 +1,39 @@
+Hardware:
+	Enclosure - Fractal Design Meshify 2 Compact - https://www.fractal-design.com/products/cases/meshify/meshify-2-compact/black-tg-light-tint/
+	Motherboard - Gigabyte X570S Aorus Master - https://www.gigabyte.com/Motherboard/X570S-AORUS-MASTER-rev-10#kf
+	Processor - Ryzen 7 5800x3d - https://www.amd.com/en/products/cpu/amd-ryzen-7-5800x3d - https://www.mersenne.org/download/
+	Graphics - PowerColor Fighter RX 6600 - https://www.powercolor.com/product?id=1623918331
+	Nand - (3) Samsung 970 Evo Plus 1TB - https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S1T0B/dp/B07MFZY2F2 - https://github.com/void-linux/void-packages/blob/master/srcpkgs/fio/template
+	Power - EVGA G6 1000W 80+ Gold - https://pcpartpicker.com/product/QdFbt6/evga-supernova-1000-g6-1000-w-80-gold-certified-fully-modular-atx-power-supply-220-g6-1000-x1 - https://cultists.network/140/psu-tier-list/
+
+Memory:
+	Module - (2) https://www.newegg.com/kingston-32gb-288-pin-ddr4-sdram/p/1B4-00M4-003X5
+	Data - https://www.kingston.com/dataSheets/KSM32ED8_32ME.pdf
+	Test - https://memtest.org/
+	Forum - https://www.reddit.com/r/Amd/comments/lf3i6b/overclocked_ecc_memory_with_a_5900x_my_results/
+	Guide - https://github.com/integralfx/MemTestHelper/blob/oc-guide/DDR4%20OC%20Guide.md
+	Backup - 3800 MHZ 18-22-16-30 1T 1.38V FCLK 1:1
+
+Cooling:
+	Enclosure - (4) Noctua F12 PWM Black 120mm - https://noctua.at/en/nf-f12-pwm-chromax-black-swap
+	Cover - (4) https://www.phanteks.com/DRGB.html
+	Notice - https://www.reddit.com/r/aorus/comments/js7rlk/x570_aorus_master_argb_fans/
+	Support - https://www.reddit.com/r/linux_gaming/comments/ydr13h/new_build_rgb_question/
+	Control - https://openrgb.org/index.html
+	Compound - Noctua NT-H2 - https://noctua.at/en/nt-h2-3-5g
+	Processor - Noctua NH-D15 Black - https://noctua.at/en/nh-d15-chromax-black
+
+Peripherals:
+	Monitor - https://www.amazon.com/ViewSonic-VX3268-2KPC-MHD-Monitor-FreeSync-Premium/dp/B08D5H24N8/
+	Monitor mount - https://www.amazon.com/Articulating-Extension-Rotation-200x200mm-Pipishell/dp/B07SHFPD8S/
+	Speaker - https://www.amazon.com/Edifier-R1280T-Powered-Bookshelf-Speakers/dp/B016P9HJIA/
+	Speaker interface - https://focusrite.com/en/usb-audio-interface/scarlett/scarlett-2i2
+	Keyboard - Razer Ornata - https://pcpartpicker.com/product/yL92FT/razer-ornata-v2-rgb-wired-gaming-keyboard-rz03-03380200-r3u1
+	Mouse - Razer Naga Trinity - https://pcpartpicker.com/product/9wc48d/razer-naga-trinity-wired-optical-mouse-rz01-02410100-r3u1
+	Controller - 8Bitdo SN30 Pro Plus - https://www.8bitdo.com/pro2/
+
+Miscellaneous:
+	Internal drive - https://pcpartpicker.com/product/wbsmP6/seagate-ironwolf-10-tb-35-7200rpm-internal-hard-drive-st10000vn0008
+	Surge protector - https://www.amazon.com/Tripp-Lite-Right-Angle-Protection-TLP1208TELTV/dp/B0035PQGKU/
+	Power cable - https://www.amazon.com/gp/product/B0027JRMD0/
+	External drive - https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRGSR16/

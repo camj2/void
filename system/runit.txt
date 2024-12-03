@@ -1,0 +1,15 @@
+acpid
+binfmt-support
+bluetoothd
+dbus
+nanoklogd
+ntpd
+seatd
+snooze-daily
+snooze-hourly
+snooze-monthly
+snooze-weekly
+socklog-unix
+sshd
+wireguard
+zed

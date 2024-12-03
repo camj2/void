@@ -1,0 +1,7 @@
+#!/bin/sh
+
+GPU=amdgpu_bl0
+
+[ -r ./save ] && cat ./save > "/sys/class/backlight/${GPU}/brightness"
+
+exec chpst -b backlight pause

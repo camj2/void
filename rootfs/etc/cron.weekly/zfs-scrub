@@ -1,0 +1,2 @@
+#!/bin/sh
+zpool scrub system
