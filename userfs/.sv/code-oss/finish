@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+[ -n "${HOME}" ]
+[ -n "${XDG_RUNTIME_DIR}" ]
+
+XDG_CONFIG_HOME="${HOME}/.config"
+TMP="${XDG_RUNTIME_DIR}/code-oss"
+LOW="${XDG_CONFIG_HOME}/Code - OSS"
+
+[ -L "${LOW}" ] && rm -f "${LOW}"
+[ -e "${TMP}" ] && rm -rf "${TMP}"

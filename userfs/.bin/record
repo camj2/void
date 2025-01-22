@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+[ -d /storage ]
+
+pgrep wf-recorder && exit 1
+
+name=$(date -u +%Y%m%d_%H%M%S)
+
+exec wf-recorder -a -c libx264rgb -C libopus -f "/storage/${name}.mp4"

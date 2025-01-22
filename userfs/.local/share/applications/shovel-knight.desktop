@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Shovel Knight
+Comment=A sweeping classic action-adventure game series
+Icon=/home/cameron/Documents/Games/Shovel Knight/shovel-knight.png
+Exec="/home/cameron/Documents/Games/Shovel Knight/start"
+Categories=Game;

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+[ -n "${HOME}" ]
+[ -n "${XDG_RUNTIME_DIR}" ]
+
+XDG_CACHE_HOME="${HOME}/.cache"
+TMP="${XDG_RUNTIME_DIR}/.cache"
+
+[ -L "${XDG_CACHE_HOME}" ] && rm -f "${XDG_CACHE_HOME}"
+[ -e "${TMP}" ] && rm -rf "${TMP}"

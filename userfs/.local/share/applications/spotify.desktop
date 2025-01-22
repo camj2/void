@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify
+Icon=spotify-client
+Exec=env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Categories=Audio;Music;Player;AudioVideo;

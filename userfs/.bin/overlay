@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+for dir in /tmp/overlay /tmp/upper /tmp/work; do
+  if [ -e "$dir" ]; then
+    exit 1
+  fi
+done
+
+install -d -m 700 -o cameron -g cameron \
+  /tmp/overlay \
+  /tmp/upper \
+  /tmp/work
+
+mount -t overlay overlay -o nosuid,nodev,noexec,noatime \
+  -o lowerdir=/home/cameron \
+  -o upperdir=/tmp/upper \
+  -o workdir=/tmp/work \
+  /tmp/overlay
+
+touch -r /home/cameron /tmp/overlay

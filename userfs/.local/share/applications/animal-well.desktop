@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Animal Well
+Comment=Explore a surreal, interconnected, labyrinth, and unravel its many secrets
+Icon=/home/cameron/Documents/Games/Animal Well/logo.png
+Exec="/home/cameron/Documents/Games/Animal Well/start"
+Categories=Game;

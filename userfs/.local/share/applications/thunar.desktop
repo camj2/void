@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=File Manager
+Comment=Browse the filesystem
+Icon=org.xfce.thunar
+Exec=thunar %U
+Categories=GTK;FileTools;FileManager;

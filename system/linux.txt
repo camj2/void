@@ -1,0 +1,240 @@
+libreoffice --convert-to pdf *.odt
+
+magick mogrify -define preserve-timestamp=true -format gif *.webp
+
+magick mogrify -define preserve-timestamp=true -format jpg *.png
+
+magick mogrify -define preserve-timestamp=true -rotate 90 <file>
+
+convert -append <file1> <file2> <output>
+
+convert <input> -resize 512x512 <output>
+
+identify -format '%f:\n%[EXIF:*]' *.jpg
+
+exiftool -overwrite_original_in_place -preserve -EXIF= <file>
+
+wf-recorder -a -c libx264rgb -f video.mp4
+
+ffmpeg -i <input> -c:v libx265 -crf 24 -c:a copy <output>
+ffmpeg -i <input> -c:v libx265 -crf 24 -c:a libopus <output>
+ffmpeg -i <input> -c:v libx265 -crf 24 -an <output>
+
+ffmpeg -i <input> -c:v libx264 -c:a libopus -ss 00:00:00 -to 00:00:00 <output>
+ffmpeg -i <input> -c:v libx264 -c:a libopus -ss 00:00:00 <output>
+ffmpeg -i <input> -c:v libx264 -c:a libopus -to 00:00:00 <output>
+
+ffplay -i <input> -vf cropdetect 2>&1 | grep -o 'crop=[^ ]*'
+ffmpeg -i <input> -vf crop=<crop> -c:v libx264 -c:a copy <output>
+
+gpg --full-gen-key --expert
+gpg --export --armor --output key.asc cameron
+
+echo "default-key cameron" > ~/.gnupg/gpg.conf
+chmod 640 ~/.gnupg/gpg.conf
+
+printf ",,c" | sfdisk <dev> # FAT32
+mkfs.vfat -F32 <dev>
+
+printf ",,7" | sfdisk <dev> # exFAT
+mkfs.exfat <dev>
+
+sgdisk -n 1 <dev> # xfs
+mkfs.xfs <dev>
+
+readlink -f /usr/bin/mount.ntfs
+mount -t ntfs-3g -o ro <dev> /mnt
+
+cryptsetup luksFormat <dev>
+cryptsetup luksFormat --sector-size 4096 <dev>
+cryptsetup luksFormat --integrity hmac-sha256 <dev>
+
+cryptsetup --allow-discards --persistent open <dev> backup
+
+mkfs.xfs /dev/mapper/backup
+
+mount -o noatime /dev/mapper/backup /mnt
+
+xfs_repair /dev/mapper/backup
+
+mount -o ro,norecovery /dev/mapper/backup /mnt
+
+cryptsetup close backup
+
+git remote add github git@github.com:camj2/server.git
+git remote add gitlab git@gitlab.com:camj/server.git
+
+git push -u github master
+git push gitlab master
+
+git push -d github <ref>
+git push -d gitlab <ref>
+
+git reset --soft HEAD~1
+git reset --hard HEAD~1
+
+git restore --staged .
+
+git add .
+git commit -m <commit>
+git revert <commit> # :wq
+git grep <pattern>
+
+https://calver.org/
+
+dd if=/dev/zero of=/dev/<dev> bs=1M status=progress
+dd if=/dev/zero of=/dev/<dev> bs=1M count=1024 status=progress
+
+rsync -avh --inplace --chown=root:root <dir> /mnt # exFAT
+
+# fix metadata
+chown -R cameron:cameron /mnt
+chmod -R 0755 /mnt
+find /mnt -type f -exec chmod 0644 {} +
+
+swaymsg seat seat0 hide_cursor 3000
+
+gammastep -O 6000
+
+ssh-keygen -t ed25519
+
+rsync -a <dir>/ root@'[fd72:c9b6:48e4:8dd0::1]':/tmp/<dir>/
+
+ssh <user>@<host> lpr < <file> # print document from server
+
+sync
+
+zpool sync
+
+zfs allow <user> snapshot,rollback,diff <dataset>
+
+zfs snapshot -r <pool>@<snapshot>
+
+ls -la /.zfs /home/.zfs
+
+mount -t zfs <snapshot> /mnt
+
+find /usr/share/zfs/compatibility.d
+
+zpool set compatibility=openzfs-2.2 <pool>
+
+zpool set compatibility=off <pool>
+
+zpool upgrade -a
+
+zpool history
+
+zfs.zfs_bclone_enabled=0
+
+cat /sys/module/zfs/parameters/zfs_bclone_enabled
+
+xbps-pkgdb -m hold zfs libzfs
+xbps-pkgdb -m unhold zfs libzfs
+
+forcefsck
+
+fsck -a -f /boot/efi
+
+fstrim -v /boot/efi
+
+fstrim -v /backup
+
+zpool trim <pool>
+
+zpool scrub <pool>
+
+zfs-prune-snapshots 4w
+
+https://docs.zfsbootmenu.org
+
+generate-zbm -k /boot/vmlinuz-<version>
+
+zfs set org.zfsbootmenu:kernel=6.6 <pool>
+
+zfs inherit org.zfsbootmenu:kernel <pool>
+
+find /usr/share/zfsbootmenu/hooks -type f -executable
+
+find /dev/disk/by-id
+
+pstree -a
+
+nft flush ruleset
+
+touch -d 'Dec 1 6:00 2024' <file>
+
+cmp <file1> <file2>; echo $?
+
+rename -v .jpeg .jpg -- *.jpeg
+
+qrencode -r <file> -o output.png
+
+wpa_passphrase <ssid> <password> # /var/lib/iwd/<network>.psk
+
+cbonsai -li
+
+hexdump -C /dev/urandom
+
+xbps-reconfigure -fa
+
+xbps-pkgdb -a
+
+xbps-pkgdb -m hold <pkg>
+
+rm -rf ~/.local/state/wireplumber # reset
+
+rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir>
+
+rsync -aAX -f"+ */" -f"- *" <src> <dst> # copy tree
+
+lsd -la --total-size <dir>
+
+lsd -la --tree --depth 2 <dir>
+
+stat -c "%n: %h" <dir>/* | column -t
+
+cp -rfal <src> <dst>
+
+dir="${0%/*}"    # dir
+sub="${0##*/}"   # dirname
+pre="${src%.*}"  # prefix
+ext="${src##*.}" # extension
+
+feh --quiet --auto-zoom --scale-down --image-bg=black --sort=name --version-sort --start-at <file>
+feh --quiet --auto-zoom --scale-down --image-bg=black --randomize <dir>
+
+bat -l sh < <script>
+
+shfmt -mn <script>
+
+tabs 4
+
+showkey -a
+
+fastfetch -h zpool-format
+
+curl -fsSLO --skip-existing <url>
+
+echo "   " | tr -s " "
+
+pkill tumblerd
+
+tail -f /var/log/socklog/everything/current
+
+nmap 10.0.0.0/8
+nmap 10.0.0.0/24
+nmap 192.168.0.0/16
+nmap 192.168.0.0/24
+
+tzupdate
+
+zpool status -t
+
+zfs list -t fs
+
+bsdtar -cp --acls --xattrs -C <dir> . | xz -T0 -9 > backup.tar.xz
+
+rustup update
+
+uuidgen
+cat /proc/sys/kernel/random/uuid

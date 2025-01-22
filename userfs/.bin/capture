@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+[ -n "$HOME" ]
+
+name=$(date -u +%Y%m%d_%H%M%S)
+
+exec grimshot save output "${HOME}/Downloads/${name}.png"

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Hollow Knight
+Comment=A challenging 2D action-adventure
+Icon=hollow-knight
+Exec="/home/cameron/Documents/Games/Hollow Knight/start"
+Categories=Game;

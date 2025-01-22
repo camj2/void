@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+[ -n "${HOME}" ]
+[ -n "${XDG_RUNTIME_DIR}" ]
+
+XDG_CONFIG_HOME="${HOME}/.config"
+TMP="${XDG_RUNTIME_DIR}/code-oss"
+LOW="${XDG_CONFIG_HOME}/Code - OSS"
+BAK="${XDG_CONFIG_HOME}/Code - OSS.bak"
+
+[ -e "${TMP}" ] && rm -rf "${TMP}"
+[ -e "${LOW}" ] && rm -rf "${LOW}"
+
+install -d -m 0700 "${TMP}"
+ln -fs "${TMP}" "${LOW}"
+
+[ -d "${BAK}" ] && rsync -a "${BAK}/" "${TMP}/"
+
+exec chpst -b code-oss pause

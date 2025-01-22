@@ -1,0 +1,4 @@
+date: "+%a %b %d %H:%M:%S %Y"
+
+icons:
+  when: never

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+date=$(date -u +%Y-%m-%d-%H%M)
+
+ZFS_ROOT=$(awk '$2 == "/" && $3 == "zfs" {print $1}' /proc/mounts)
+ZFS_HOME=$(awk '$2 == "/home" && $3 == "zfs" {print $1}' /proc/mounts)
+
+[ -n "$ZFS_ROOT" ]
+[ -n "$ZFS_HOME" ]
+
+zfs snapshot "$ZFS_ROOT"@backup_"$date"
+zfs snapshot "$ZFS_HOME"@backup_"$date"
+
+printf "%s\n" "$ZFS_ROOT"@backup_"$date"
+printf "%s\n" "$ZFS_HOME"@backup_"$date"
+
+{
+  zfs list -t snapshot -s creation -o name -H "$ZFS_ROOT" | grep @backup_ | head -n -10
+  zfs list -t snapshot -s creation -o name -H "$ZFS_HOME" | grep @backup_ | head -n -10
+} |
+  while IFS= read -r snap; do
+    zfs destroy "$snap" || continue
+  done

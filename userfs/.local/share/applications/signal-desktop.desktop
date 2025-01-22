@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Signal
+Comment=Private messaging from your desktop
+Icon=signal-desktop
+Exec=signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland --no-sandbox %U
+Categories=Network;InstantMessaging;Chat;

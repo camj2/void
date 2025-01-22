@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=2FA
+Comment=Keys
+Icon=password-manager
+Exec=otpclient
+Categories=System;Security;GTK;GNOME;
+Keywords=otp;totp;hotp;2fa

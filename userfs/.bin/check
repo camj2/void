@@ -1,0 +1,3 @@
+#!/bin/sh
+cat /var/log/socklog/errors/current
+dmesg -T -l 1,2,3,4

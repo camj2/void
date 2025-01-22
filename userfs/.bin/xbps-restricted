@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+cd /storage
+
+pkg="$1"
+
+[ -n "$pkg" ]
+
+if [ -d xpkgs ]; then
+  cd xpkgs
+  git pull
+  ./xbps-src bootstrap-update
+else
+  git clone https://github.com/void-linux/void-packages xpkgs
+  cd xpkgs
+  echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+  ./xbps-src binary-bootstrap
+fi
+
+./xbps-src pkg "$pkg"
+./xbps-src clean "$pkg"
+./xbps-src clean-repocache
+
+doas xbps-install -Syu -R hostdir/binpkgs/nonfree "$pkg"

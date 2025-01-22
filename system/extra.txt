@@ -1,0 +1,17 @@
+dmidecode
+exiftool
+fscrypt
+fuse-overlayfs
+gamemode
+inadyn
+lvm2
+mdadm
+mkinitcpio
+mkinitcpio-zfs
+mono
+nnn
+python3-pipx
+unbound
+wlogout
+xdg-utils
+zfs-lts

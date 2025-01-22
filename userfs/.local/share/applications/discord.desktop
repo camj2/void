@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Discord
+Comment=All-in-one voice and text chat
+Icon=discord
+Exec=/usr/lib/discord/Discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+Categories=Network;InstantMessaging;

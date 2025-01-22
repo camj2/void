@@ -1,0 +1,50 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 30,
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "sway/mode"
+    ],
+    "modules-right": [
+        "network",
+        "battery",
+        "wireplumber",
+        "clock#date",
+        "clock"
+    ],
+    "clock": {
+        "tooltip": false,
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%H:%M}"
+    },
+    "clock#date": {
+        "tooltip": false,
+        "format": "{:%a %b %d}",
+        "format-alt": "{:%Y/%m/%d}"
+    },
+    "wireplumber": {
+        "tooltip": false,
+        "format": " {volume}%",
+        "format-muted": " {volume}%",
+        "on-click": "env GDK_DISABLE=vulkan pavucontrol"
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 15
+        },
+        "tooltip": false,
+        "format": "{icon} {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["","","","",""]
+    },
+    "network": {
+        "tooltip": false,
+        "format": "",
+        "format-wifi": " {essid}",
+        "format-alt": "{ipaddr}"
+    }
+}

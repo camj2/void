@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Calculator
+Comment=Perform arithmetic, scientific or financial calculations
+Icon=org.gnome.Calculator
+Exec=env GSK_RENDERER=ngl gnome-calculator
+Categories=GNOME;GTK;Utility;Calculator;
+Keywords=calculation;arithmetic;scientific;financial;

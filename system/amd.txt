@@ -1,0 +1,7 @@
+linux-firmware-amd
+mesa-dri
+vulkan-loader
+mesa-vulkan-radeon
+amdvlk
+mesa-vaapi
+mesa-vdpau

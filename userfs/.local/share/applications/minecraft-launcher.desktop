@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Minecraft (Launcher)
+Comment=A 3D sandbox game
+Icon=minecraft
+Exec=/home/cameron/Documents/Games/Minecraft/start launcher
+Categories=Game;

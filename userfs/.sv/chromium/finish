@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+[ -n "${HOME}" ]
+[ -n "${XDG_RUNTIME_DIR}" ]
+
+XDG_CONFIG_HOME="${HOME}/.config"
+TMP="${XDG_RUNTIME_DIR}/chromium"
+LOW="${XDG_CONFIG_HOME}/chromium"
+
+[ -L "${LOW}" ] && rm -f "${LOW}"
+[ -d "${TMP}" ] && rm -rf "${TMP}"

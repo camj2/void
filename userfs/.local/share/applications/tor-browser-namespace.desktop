@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Tor Browser (Namespace)
+Comment=Tor Browser
+Icon=tor-browser
+Exec=/home/cameron/Documents/Tor/Browser/start-ro
+Categories=Network;WebBrowser;Security;

@@ -1,0 +1,33 @@
+font=Iosevka Extended 12
+
+background-color=#32302f
+text-color=#dfbf8e
+
+width=300
+height=500
+
+outer-margin=0
+margin=10
+padding=5
+
+border-size=2
+border-color=#dfbf8e
+border-radius=0
+
+progress-color=source #dfbf8e
+
+on-button-left=dismiss
+
+#on-notify=exec cvlc --play-and-exit /home/cameron/sound.mp3
+
+icon-path=/home/cameron/.icons/Gruvbox-Material-Dark
+
+actions=0
+history=0
+
+default-timeout=0
+ignore-timeout=1
+max-visible=-1
+
+anchor=top-right
+layer=overlay

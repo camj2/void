@@ -1,0 +1,66 @@
+toggle_actions
+toggle_aliasing
+toggle_caption
+toggle_filenames
+toggle_exif
+toggle_fullscreen
+toggle_fixed_geometry
+toggle_pause
+toggle_info
+toggle_keep_vp
+save_filelist
+toggle_menu
+next_img Right Return space
+toggle_pointer
+prev_img Left BackSpace
+quit Escape
+reload_image
+save_image
+size_to_image
+close
+jump_random r
+toggle_auto_zoom
+prev_dir
+next_dir
+orient_3
+orient_1
+flip
+mirror
+action_0
+action_1
+action_2
+action_3
+action_4
+action_5
+action_6
+action_7
+action_8
+action_9
+# jump_first
+# jump_last
+# jump_fwd
+# jump_back
+reload_plus
+reload_minus
+remove
+delete
+scroll_left
+scroll_right
+scroll_up
+scroll_down
+scroll_left_page
+scroll_right_page
+scroll_up_page
+scroll_down_page
+render
+zoom_in
+zoom_out
+zoom_default
+zoom_fit
+zoom_fill
+menu_close
+menu_up
+menu_down
+menu_parent
+menu_child
+menu_select

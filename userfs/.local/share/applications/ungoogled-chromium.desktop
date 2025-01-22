@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Browser
+Comment=Access the Internet
+Icon=brave
+Exec=/usr/bin/ungoogled-chromium --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Categories=Network;WebBrowser;

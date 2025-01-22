@@ -1,0 +1,51 @@
+#!/bin/sh
+
+set -e
+
+date=$(date -u +%Y-%m-%d-%H%M)
+
+ZFS_ROOT=$(awk '$2 == "/" && $3 == "zfs" {print $1}' /proc/mounts)
+ZFS_HOME=$(awk '$2 == "/home" && $3 == "zfs" {print $1}' /proc/mounts)
+
+[ -n "$ZFS_ROOT" ]
+[ -n "$ZFS_HOME" ]
+
+zfs snapshot "$ZFS_ROOT"@update_"$date"
+zfs snapshot "$ZFS_HOME"@update_"$date"
+
+printf "%s\n" "$ZFS_ROOT"@update_"$date"
+printf "%s\n" "$ZFS_HOME"@update_"$date"
+
+set +e
+
+xbps-install -Syu
+ret=$?
+
+set -e
+
+if [ $ret -ne 0 ]; then
+  # error 16 means xbps needs to be updated
+  if [ $ret -eq 16 ]; then
+    xbps-install -yu xbps
+    xbps-install -Syu
+  else
+    exit $ret
+  fi
+fi
+
+xbps-remove -yo
+xbps-remove -yO
+
+vkpurge rm all
+
+# generate-zbm
+
+# zpool upgrade -a
+
+{
+  zfs list -t snapshot -s creation -o name -H "$ZFS_ROOT" | grep @update_ | head -n -10
+  zfs list -t snapshot -s creation -o name -H "$ZFS_HOME" | grep @update_ | head -n -10
+} |
+  while IFS= read -r snap; do
+    zfs destroy "$snap" || continue
+  done

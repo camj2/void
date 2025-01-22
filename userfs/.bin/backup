@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+mount -o remount,rw /backup
+
+rsync -aAXHvh --delete /home/ /backup/
+
+sync
+
+mount -o remount,ro /backup

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+if [ $# -eq 0 ]; then
+  exit 1
+fi
+
+: > /etc/resolv.conf
+
+while [ $# -gt 0 ]; do
+  printf "nameserver %s\n" "$1" >> /etc/resolv.conf
+  shift
+done

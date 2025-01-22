@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Code
+Comment=Code Editor
+Icon=code-oss
+Exec=/usr/lib/code-oss/bin/code-oss --enable-features=UseOzonePlatform --ozone-platform=wayland %F
+Keywords=vscode;
+Categories=TextEditor;Development;IDE;

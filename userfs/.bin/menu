@@ -1,0 +1,45 @@
+#!/bin/sh
+
+set -e
+
+SWAYSOCK=$(sway --get-socketpath)
+export SWAYSOCK
+
+run() {
+  # https://github.com/swaywm/sway/issues/5931
+  swaymsg exec -- "$@"
+}
+
+case $1 in
+  p | pause | play)
+    run playerctl play-pause
+    ;;
+  s | next)
+    run playerctl next
+    ;;
+  b | prev)
+    run playerctl previous
+    ;;
+  m | mute)
+    run pactl set-sink-mute @DEFAULT_SINK@ toggle
+    ;;
+  u | up)
+    run pactl set-sink-volume @DEFAULT_SINK@ +5%
+    ;;
+  d | down)
+    run pactl set-sink-volume @DEFAULT_SINK@ -5%
+    ;;
+  shell)
+    exec "${SHELL:?}"
+    ;;
+  exec)
+    shift
+    run "$@"
+    ;;
+  kill)
+    swaymsg kill
+    ;;
+  *)
+    exit 1
+    ;;
+esac

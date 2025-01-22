@@ -1,0 +1,257 @@
+# https://github.com/leahneukirchen/hrmpf
+
+# ./mkhrmpf.sh # build fresh image before proceeding
+
+#################
+###   hrmpf   ###
+#################
+
+ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
+
+ln -fs /etc/sv/chronyd /var/service/
+
+date # wait until clock is synced
+
+printf "PermitRootLogin yes\n" >> /etc/ssh/sshd_config # nano /etc/ssh/sshd_config
+sv restart sshd
+
+ip addr # get ip address used for ssh
+
+# rsync -a ./ root@<addr>:~/ # copy configuration files to hrmpf
+
+###############
+###   SSH   ###
+###############
+
+. system/nvme.txt # drives
+export nvme1      # chroot
+export nvme2      # chroot
+export nvme3      # chroot
+
+blkdiscard -fv "$nvme1" # zfs1
+blkdiscard -fv "$nvme2" # zfs2
+blkdiscard -fv "$nvme3" # boot
+
+nvme id-ctrl /dev/nvme0 -H | grep "Crypto Erase Sanitize" # support
+nvme id-ctrl /dev/nvme1 -H | grep "Crypto Erase Sanitize" # support
+nvme id-ctrl /dev/nvme2 -H | grep "Crypto Erase Sanitize" # support
+
+nvme sanitize /dev/nvme0 -a start-crypto-erase
+nvme sanitize /dev/nvme1 -a start-crypto-erase
+nvme sanitize /dev/nvme2 -a start-crypto-erase
+
+nvme sanitize-log /dev/nvme0 -H # wait
+nvme sanitize-log /dev/nvme1 -H # wait
+nvme sanitize-log /dev/nvme2 -H # wait
+
+nvme reset /dev/nvme0
+nvme reset /dev/nvme1
+nvme reset /dev/nvme2
+
+udevadm trigger
+
+sgdisk -n 1:0:+512m -t 1:ef00 "$nvme3"
+sgdisk -n 2 "$nvme3"
+
+mkfs.vfat -F32 "$nvme3"-part1
+mkfs.xfs "$nvme3"-part2
+
+zgenhostid -f
+
+zpool create \
+  -o ashift=12 \
+  -o autotrim=on \
+  -O atime=off \
+  -O xattr=sa \
+  -O acltype=posix \
+  -O compression=lz4 \
+  -O primarycache=metadata \
+  -m none system mirror "$nvme1" "$nvme2"
+
+zfs create -o mountpoint=/ -o canmount=noauto system/root
+zfs create -o mountpoint=/home system/home
+
+# create any other filesystems here
+
+zpool set bootfs=system/root system
+
+zpool export system
+zpool import -N -R /mnt system
+
+zfs mount system/root
+zfs mount system/home
+
+# note: you could create the storage pool after installation instead
+
+# secure erase storage drives first
+
+zpool create \
+  -o ashift=12 \
+  -O atime=off \
+  -O xattr=sa \
+  -O acltype=posix \
+  -O compression=lz4 \
+  -m /storage storage zraid /dev/disk/by-id/ /dev/disk/by-id/ /dev/disk/by-id/
+
+chown 1000:1000 /storage
+chmod 700 /storage
+
+mkdir -p /mnt/storage
+
+# create any other filesystems here
+
+zpool export storage
+
+udevadm trigger
+
+grep zfs /proc/mounts # check
+
+### Mount
+
+mkdir -p /mnt/dev
+mount --rbind /dev /mnt/dev
+mount --make-rslave /mnt/dev
+
+mkdir -p /mnt/proc
+mount --rbind /proc /mnt/proc
+mount --make-rslave /mnt/proc
+
+mkdir -p /mnt/sys
+mount --rbind /sys /mnt/sys
+mount --make-rslave /mnt/sys
+
+mkdir -p /mnt/etc
+touch /mnt/etc/resolv.conf
+mount --bind /etc/resolv.conf /mnt/etc/resolv.conf
+
+mkdir -p /mnt/tmp
+mount -o nosuid,nodev,noatime -t tmpfs tmpfs /mnt/tmp
+
+mkdir -p /mnt/boot/efi
+mount -o discard,noatime "$nvme3"-part1 /mnt/boot/efi
+
+mkdir -p /mnt/backup
+mount -o discard,noatime "$nvme3"-part2 /mnt/backup
+
+### Void
+
+mkdir -p /mnt/etc/xbps.d
+
+printf "syslog=false\n" >> /mnt/etc/xbps.d/xbps.conf
+printf "ignorepkg=linux\n" >> /mnt/etc/xbps.d/xbps.conf
+printf "ignorepkg=linux-headers\n" >> /mnt/etc/xbps.d/xbps.conf
+printf "ignorepkg=sudo\n" >> /mnt/etc/xbps.d/xbps.conf
+
+printf "repository=https://repo-fastly.voidlinux.org/current\n" > /mnt/etc/xbps.d/00-repository-main.conf
+printf "repository=https://repo-fastly.voidlinux.org/current/nonfree\n" > /mnt/etc/xbps.d/10-repository-nonfree.conf
+# /current/musl
+# /current/musl/nonfree
+
+mkdir -p /mnt/var/db/xbps/keys
+cp -f /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
+
+XBPS_ARCH=x86_64 xbps-install -Syu -R https://repo-fastly.voidlinux.org/current -r /mnt base-system
+# XBPS_ARCH=x86_64-musl
+
+### ZFS
+
+cp -f /etc/hostid /mnt/etc/
+
+### Locales
+
+# /etc/locale.conf
+# /etc/rc.conf
+sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /mnt/etc/default/libc-locales
+sed -i '/en_US ISO-8859-1/s/^#//g' /mnt/etc/default/libc-locales
+
+chroot /mnt /bin/xbps-reconfigure -f glibc-locales
+
+### Packages
+
+cat system/void.txt system/amd.txt | xargs chroot /mnt /bin/xbps-install -Syu
+
+chroot /mnt /bin/sh
+
+##################
+###   CHROOT   ###
+##################
+
+ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
+
+printf "system\n" > /etc/hostname
+
+sed -i 's/[[:space:]]/ /g;s/ \+/ /g;/^#/!d' /etc/fstab
+printf "PARTUUID=%s /backup xfs ro,discard,noatime 0 0\n" "$(blkid -o value -s PARTUUID "$nvme3"-part2)" >> /etc/fstab
+printf "PARTUUID=%s /boot/efi vfat ro,discard,noatime 0 2\n" "$(blkid -o value -s PARTUUID "$nvme3"-part1)" >> /etc/fstab
+printf "tmpfs /tmp tmpfs nosuid,nodev,noatime 0 0\n" >> /etc/fstab
+cat /etc/fstab # check
+
+mkdir -p /etc/dracut.conf.d
+printf 'add_dracutmodules+=" zfs "\n' > /etc/dracut.conf.d/zfs.conf
+printf "compress=zstd\n" >> /etc/dracut.conf
+
+printf "\n" >> /etc/rc.local
+printf "ip link set dev eth0 up\n" >> /etc/rc.local
+printf "ip addr add 10.0.0.4/24 brd + dev eth0\n" >> /etc/rc.local
+printf "ip route add default via 10.0.0.1\n" >> /etc/rc.local
+
+printf "PermitRootLogin yes\n" > /etc/ssh/sshd_config.d/login.conf
+printf "PasswordAuthentication no\n" >> /etc/ssh/sshd_config.d/login.conf
+printf "PrintLastLog no\n" >> /etc/ssh/sshd_config.d/login.conf
+
+printf "permit nopass :wheel\n" > /etc/doas.conf
+
+useradd -M -s /bin/zsh -U -G wheel,socklog,audio,video,input,bluetooth,wireshark,plugdev,_seatd,_pipewire cameron
+install -d -m 700 -o cameron -g cameron /home/cameron
+
+passwd -dl root
+passwd cameron
+
+sed -i 's/GETTY_ARGS=.*/GETTY_ARGS="--autologin cameron"/' /etc/sv/agetty-tty1/conf
+cat /etc/sv/agetty-tty1/conf # check
+
+mkdir -p /etc/pipewire/pipewire.conf.d
+ln -fs /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+ln -fs /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+
+mkdir -p /etc/alsa/conf.d
+ln -fs /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d/
+ln -fs /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
+
+mkdir -p /etc/fonts/conf.d
+ln -fs /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+
+xbps-alternatives -l # check
+xbps-alternatives -s openbsd-netcat
+
+xbps-reconfigure -fa
+
+exit
+
+###############
+###   SSH   ###
+###############
+
+cat system/runit.txt | while IFS= read -r sv; do ln -fsv /etc/sv/"$sv" /mnt/etc/runit/runsvdir/default/; done
+
+rsync -a --chown=root:root rootfs/ /mnt/
+rsync -a --chown=1000:1000 userfs/ /mnt/home/cameron/
+chmod 700 /mnt/home/cameron
+
+chroot /mnt /bin/generate-zbm
+chroot /mnt /bin/generate-zbm
+
+zfs set org.zfsbootmenu:commandline="quiet loglevel=0 net.ifnames=0 rfkill.default_state=0" system
+
+umount -R /mnt
+zpool export system
+
+efibootmgr -b 0000 -B
+efibootmgr -b 0001 -B
+
+efibootmgr -c -d "$nvme3" -p 1 -L 'ZFSBootMenu' -l '\EFI\ZBM\VMLINUZ.EFI'
+efibootmgr -c -d "$nvme3" -p 1 -L 'ZFSBootMenu (Backup)' -l '\EFI\ZBM\VMLINUZ-BACKUP.EFI'
+
+efibootmgr -o 0000,0001
+
+efibootmgr -t 0

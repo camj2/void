@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+[ -n "${HOME}" ]
+[ -n "${XDG_RUNTIME_DIR}" ]
+
+XDG_CACHE_HOME="${HOME}/.cache"
+TMP="${XDG_RUNTIME_DIR}/.cache"
+
+[ -e "${TMP}" ] && rm -rf "${TMP}"
+[ -e "${XDG_CACHE_HOME}" ] && rm -rf "${XDG_CACHE_HOME}"
+
+install -d -m 0700 "${TMP}"
+ln -fs "${TMP}" "${XDG_CACHE_HOME}"
+
+exec chpst -b cache pause

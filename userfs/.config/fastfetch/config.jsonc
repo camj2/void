@@ -1,0 +1,29 @@
+{
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "bios",
+    "bootmgr",
+    "kernel",
+    "uptime",
+    "loadavg",
+    "packages",
+    "shell",
+    "wm",
+    "cpu",
+    "gpu",
+    {
+      "type": "memory",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "zpool",
+      "format": "{state}"
+    },
+    "break",
+    "colors",
+    "break"
+  ]
+}
