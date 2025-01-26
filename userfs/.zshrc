@@ -58,7 +58,6 @@ bindkey '^L' clear_screen
 
 alias sudo=doas
 alias nano=rnano
-alias tar=bsdtar
 alias cal="cal -y"
 
 alias f=fastfetch
@@ -122,6 +121,10 @@ function fl() {
   grep -i "$*" "${HOME}/Documents/Notes/Linux.txt"
 }
 
+function tt() {
+  nano +-1 "${HOME}/Documents/Notes/TO-DO.txt"
+}
+
 function feh() {
   command feh \
     --quiet \
@@ -160,11 +163,11 @@ function update() {
 }
 
 function vault() {
-  rsync -xaAXHvh --delete /storage/vault/ laptop:/storage/vault/
+  rsync -aAXHvh --delete /storage/vault/ laptop:/storage/vault/
 }
 
 function laptop() {
-  rsync -xaAXHvh --delete \
+  rsync -aAXHvh --delete \
     --exclude=/.config/alacritty \
     --exclude=/.config/mako \
     --exclude=/.config/spotify \

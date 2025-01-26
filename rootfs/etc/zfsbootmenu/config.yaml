@@ -1,8 +1,7 @@
 Global:
   ManageImages: true
   InitCPIO: false
-  PreHooksDir: /etc/zfsbootmenu/generate-zbm.pre.d
-  PostHooksDir: /etc/zfsbootmenu/generate-zbm.post.d
+  BootMountPoint: /boot/efi
 Components:
   Enabled: false
 EFI:

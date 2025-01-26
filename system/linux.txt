@@ -61,6 +61,8 @@ mount -o ro,norecovery /dev/mapper/backup /mnt
 
 cryptsetup close backup
 
+git config --global -e
+
 git remote add github git@github.com:camj2/server.git
 git remote add gitlab git@gitlab.com:camj/server.git
 
@@ -109,6 +111,8 @@ zpool sync
 zfs allow <user> snapshot,rollback,diff <dataset>
 
 zfs snapshot -r <pool>@<snapshot>
+
+zfs list -t snapshot -s creation -o name,creation -r <dataset>
 
 ls -la /.zfs /home/.zfs
 
@@ -233,8 +237,32 @@ zpool status -t
 zfs list -t fs
 
 bsdtar -cp --acls --xattrs -C <dir> . | xz -T0 -9 > backup.tar.xz
+xz -cd backup.tar.xz | bsdtar -xp --acls --xattrs -C <dir>
+
+bsdtar -cp --acls --xattrs -C <dir> . | zstd -T0 -9 > backup.tar.zst
+zstd -cd backup.tar.zst | bsdtar -xp --acls --xattrs -C <dir>
 
 rustup update
 
 uuidgen
 cat /proc/sys/kernel/random/uuid
+
+udevadm settle
+udevadm trigger
+
+wipefs -fa <dev>
+blkdiscard -fv <dev>
+hdparm -I <dev>
+smartctl -g security <dev>
+hdparm --user-master u --security-set-pass password <dev> # make sure the drive is not frozen (suspend to unfreeze)
+hdparm --user-master u --security-erase password <dev>
+hdparm --user-master u --security-erase-enhanced password <dev>
+
+hdparm -y <dev> # unmount first
+
+du -sh <dir>
+
+smartctl -c <dev>
+smartctl -t short <dev>
+smartctl -t long <dev>
+smartctl -l selftest <dev>

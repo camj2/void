@@ -169,7 +169,7 @@ ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
 printf "system\n" > /etc/hostname
 
 sed -i 's/[[:space:]]/ /g;s/ \+/ /g;/^#/!d' /etc/fstab
-printf "PARTUUID=%s /boot/efi vfat ro,discard,noatime 0 2\n" "$(blkid -o value -s PARTUUID "$nvme"-part1)" >> /etc/fstab
+printf "PARTUUID=%s /boot/efi vfat noauto,discard,noatime 0 2\n" "$(blkid -o value -s PARTUUID "$nvme"-part1)" >> /etc/fstab
 printf "tmpfs /tmp tmpfs nosuid,nodev,noatime 0 0\n" >> /etc/fstab
 cat /etc/fstab # check
 
@@ -178,10 +178,7 @@ printf 'add_dracutmodules+=" zfs "\n' > /etc/dracut.conf.d/zfs.conf
 printf 'install_items+=" /etc/zfs/system.key "\n' >> /etc/dracut.conf.d/zfs.conf
 printf "compress=zstd\n" >> /etc/dracut.conf
 
-printf "\n" >> /etc/dhcpcd.conf
-printf "denyinterfaces wlan0\n" >> /etc/dhcpcd.conf
-
-printf "PermitRootLogin yes\n" > /etc/ssh/sshd_config.d/login.conf
+printf "PermitRootLogin no\n" > /etc/ssh/sshd_config.d/login.conf
 printf "PasswordAuthentication no\n" >> /etc/ssh/sshd_config.d/login.conf
 printf "PrintLastLog no\n" >> /etc/ssh/sshd_config.d/login.conf
 

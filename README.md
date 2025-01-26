@@ -2,8 +2,6 @@
 
 ![desktop](fetch/computer.png)
 
-Many of these notes are just for reference.
-
 ## Hardware
 
 ### Desktop
@@ -14,6 +12,8 @@ Many of these notes are just for reference.
 * 2 x 32 GB ECC (https://www.kingston.com/dataSheets/KSM32ED8_32ME.pdf)
 * 3 x Samsung 970 Evo Plus
 
+<!-- https://serverpartdeals.com/collections/hard-drives -->
+
 <details>
 <summary>Firmware</summary>
 
@@ -22,7 +22,7 @@ Many of these notes are just for reference.
 * 2 x NVMe -> ZFS mirror (root/home)
 * 1 x NVMe -> FAT32 (boot) / XFS (backup)
 * 3 x SATA -> ZFS zraid (storage) **OR**:
-* 1 x SATA -> XFS (storage)
+* 1 x SATA -> ZFS (storage)
 
 #### Keys
 
@@ -50,6 +50,20 @@ That way the fan only kicks in at 85C.
 
 *Note: The only way to make persistent changes to the fan curve is by dragging with the mouse.
 Manually entering numbers into the text boxes below does not work.*
+
+#### Memory
+
+```
+dmidecode -t memory | grep "Total Width"
+```
+
+`72 bits` means ECC is working.
+
+<!-- dmesg | grep EDAC -->
+
+#### Test
+
+https://www.mersenne.org/download/
 
 </details>
 
@@ -79,14 +93,12 @@ fwupdtool update
 
 #### Settings
 
-```
-TPM State: Disabled
-Virtualization Technology: Enabled
-Adaptive Battery Optimizer: Enabled
-Keyboard Backlight Timeout: Never
-Network Boot: Disabled
-Secure Boot: Disabled
-```
+* TPM State: Disabled
+* Virtualization Technology: Enabled
+* Adaptive Battery Optimizer: Enabled
+* Keyboard Backlight Timeout: Never
+* Network Boot: Disabled
+* Secure Boot: Disabled
 
 </details>
 
@@ -94,39 +106,6 @@ Secure Boot: Disabled
 
 * Razer Naga Chroma
 * [8BitDo Pro 2](https://www.8bitdo.com/pro2/)
-
-### ZFS Topology
-
-```
-system/root
-system/home
-```
-
-### EFI
-
-```
-BootCurrent: 0000
-Timeout: 0 seconds
-BootOrder: 0000,0001
-Boot0000* ZFSBootMenu
-Boot0001* ZFSBootMenu (Backup)
-```
-
-<!-- *Note: Press `CTRL + W` in ZFSBootMenu to mount zpool rw* -->
-
-### Memory
-
-```
-dmidecode -t memory | grep "Total Width"
-```
-
-`72 bits` means ECC is working.
-
-<!-- dmesg | grep EDAC -->
-
-### Test
-
-https://www.mersenne.org/download/
 
 ## Install
 
@@ -142,29 +121,90 @@ Laptop:
 install-laptop.txt
 ```
 
-<!-- ## Update
+<details>
+<summary>Update</summary>
 
-Use the latest lts kernel:
+### Linux
 
-https://kernel.org/
+Instead of using `linux` / `linux-headers`, I prefer to manually select and install the kernel:
 
-Make sure zfs supports said kernel:
+1. Find the latest lts kernel: https://kernel.org/
+2. Make sure zfs supports said kernel: https://github.com/openzfs/zfs/blob/master/META
+3. Compare against: `zfs --version`
 
-https://github.com/openzfs/zfs/blob/master/META
-
-Manually update the kernel with:
+Install the new kernel with:
 
 ```
-xbps-install -yu linux6.6 linux6.6-headers # example
-``` -->
+xbps-install linux6.12 linux6.12-headers
+```
+
+Remove the previous kernel with:
+
+```
+xbps-remove linux6.6 linux6.6-headers
+```
+
+### ZFS
+
+<!-- *Note: Press `CTRL + W` in ZFSBootMenu to mount zpool rw* -->
+
+Generate the ZFSBootMenu EFI image with:
+
+```
+generate-zbm
+```
+
+Upgrade the zpool with:
+
+```
+zpool upgrade <pool>
+```
+
+If you have multiple kernels installed, you can set the default with:
+
+```
+zfs set org.zfsbootmenu:kernel=6.6 <pool>
+
+zfs inherit org.zfsbootmenu:kernel <pool> # unset
+```
+
+You can prevent the zpool from being upgraded with:
+
+```
+find /usr/share/zfs/compatibility.d
+
+zpool set compatibility=openzfs-2.2 <pool>
+
+zpool set compatibility=off <pool> # unset
+```
+
+Or, you could prevent `zfs` from being updated with:
+
+```
+xbps-pkgdb -m hold zfs libzfs
+
+xbps-pkgdb -m unhold zfs libzfs # unset
+```
+
+</details>
 
 ## Post
 
-<!-- https://notabug.org/Marcoapc/voidxanmodK -->
+<!-- https://github.com/swaywm/sway/wiki/VRR-setups -->
+
+<!-- https://github.com/Alexays/Waybar/issues/1351#issuecomment-1001559391 -->
 
 ### Laptop
 
-*Note: Many applications can be zoomed in using `CTRL +`*
+<!-- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 -->
+
+Uncomment any laptop related keybindings:
+
+```
+~/.config/sway/config
+```
+
+Bump up the font size:
 
 ```
 ~/.config/alacritty/alacritty.toml : 16
@@ -177,31 +217,17 @@ xbps-install -yu linux6.6 linux6.6-headers # example
 about:config                       : layout.css.devPixelsPerPx = 1.25 # firefox
 ```
 
-Consider bumping up scale instead:
+Or, bump up the scale instead (not recommended):
 
 ```
 output eDP-1 scale 1.25
 ```
 
-Uncomment laptop related keybindings:
-
-```
-~/.config/sway/config
-```
-
-<!-- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 -->
-
-<!-- ### Wayland -->
-
-<!-- https://github.com/swaywm/sway/wiki/VRR-setups -->
-
-<!-- https://github.com/Alexays/Waybar/issues/1351#issuecomment-1001559391 -->
-
-<!-- https://github.com/void-linux/void-packages?tab=readme-ov-file#quick-start -->
+*Note: Many applications can be zoomed in using `CTRL +`*
 
 ### Packages
 
-Install the following packages not included in the default repository:
+Install the following packages (not included in the default repository):
 
 ```
 xbps-restricted spotify
@@ -209,7 +235,7 @@ xbps-restricted discord
 xbps-restricted msttcorefonts # laptop
 ```
 
-https://github.com/DAINRA/ungoogled-chromium-void
+[ungoogled-chromium](https://github.com/DAINRA/ungoogled-chromium-void)
 
 ### Firefox
 
@@ -247,9 +273,7 @@ network.dnsCacheExpiration = 0
 network.dnsCacheExpirationGracePeriod = 0
 ```
 
-<!-- /home/cameron/.mozilla/firefox/<profile>/chrome/userChrome.css -->
-
-`userChrome.css`:
+`~/.mozilla/firefox/<profile>/chrome/userChrome.css`:
 
 ```
 * {
@@ -390,7 +414,8 @@ xdg-mime default org.gnome.eog.desktop image/webp
 Passphrase=<password>
 ```
 
-`/var/lib/iwd/<ssid>.psk`: (manual)
+<details>
+<summary>Manual</summary>
 
 ```
 [Security]
@@ -400,9 +425,20 @@ Passphrase=<password>
 AutoConnect=false
 ```
 
+</details>
+
+#### Key
+
+You can generate the preshared key with `wpa_passphrase`:
+
+```
+[Security]
+PreSharedKey=<key>
+```
+
 ### Wireguard
 
-Add peers to `/etc/wireguard`.
+`/etc/wireguard/wg0.conf`
 
 #### DNS
 
@@ -466,13 +502,13 @@ usermod -a -G lpadmin <user>
 
 `/etc/cups/cupsd.conf`:
 
-<!-- cancel -a -x -->
-
 ```
 LogLevel none
 PreserveJobFiles No
 PreserveJobHistory No
 ```
+
+<!-- cancel -a -x -->
 
 `/etc/hosts`:
 
@@ -500,7 +536,7 @@ system-config-printer
 
 #### Firewall
 
-Flush the firewall ruleset if printer network discovery is not working:
+Flush the ruleset if printer network discovery is not working:
 
 ```
 nft flush ruleset

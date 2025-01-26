@@ -1,2 +1,2 @@
-event=button/sleep.*
+event=button/sleep
 action=<drop>

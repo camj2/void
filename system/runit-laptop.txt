@@ -1,3 +1,2 @@
-dhcpcd
 iwd
 tlp

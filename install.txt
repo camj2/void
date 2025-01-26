@@ -181,8 +181,8 @@ ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
 printf "system\n" > /etc/hostname
 
 sed -i 's/[[:space:]]/ /g;s/ \+/ /g;/^#/!d' /etc/fstab
-printf "PARTUUID=%s /backup xfs ro,discard,noatime 0 0\n" "$(blkid -o value -s PARTUUID "$nvme3"-part2)" >> /etc/fstab
-printf "PARTUUID=%s /boot/efi vfat ro,discard,noatime 0 2\n" "$(blkid -o value -s PARTUUID "$nvme3"-part1)" >> /etc/fstab
+printf "PARTUUID=%s /backup xfs noauto,discard,noatime 0 0\n" "$(blkid -o value -s PARTUUID "$nvme3"-part2)" >> /etc/fstab
+printf "PARTUUID=%s /boot/efi vfat noauto,discard,noatime 0 2\n" "$(blkid -o value -s PARTUUID "$nvme3"-part1)" >> /etc/fstab
 printf "tmpfs /tmp tmpfs nosuid,nodev,noatime 0 0\n" >> /etc/fstab
 cat /etc/fstab # check
 
@@ -195,7 +195,7 @@ printf "ip link set dev eth0 up\n" >> /etc/rc.local
 printf "ip addr add 10.0.0.4/24 brd + dev eth0\n" >> /etc/rc.local
 printf "ip route add default via 10.0.0.1\n" >> /etc/rc.local
 
-printf "PermitRootLogin yes\n" > /etc/ssh/sshd_config.d/login.conf
+printf "PermitRootLogin no\n" > /etc/ssh/sshd_config.d/login.conf
 printf "PasswordAuthentication no\n" >> /etc/ssh/sshd_config.d/login.conf
 printf "PrintLastLog no\n" >> /etc/ssh/sshd_config.d/login.conf
 

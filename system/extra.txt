@@ -4,6 +4,7 @@ fscrypt
 fuse-overlayfs
 gamemode
 inadyn
+linux-firmware-broadcom
 lvm2
 mdadm
 mkinitcpio

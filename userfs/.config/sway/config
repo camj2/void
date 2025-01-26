@@ -24,8 +24,8 @@ seat seat0 xcursor_theme Adwaita
 
 ### Background
 
-set $bg /home/cameron/Pictures/Background/Fog.jpg
-# set $bg /home/cameron/Pictures/Background/Forest.jpg
+# set $bg /home/cameron/Pictures/Background/Fog.jpg
+set $bg /home/cameron/Pictures/Background/Forest.jpg
 # set $bg /home/cameron/Pictures/Background/Frozen.jpg
 # set $bg /home/cameron/Pictures/Background/Leaves.jpg
 # set $bg /home/cameron/Pictures/Background/Mist.jpg
@@ -66,10 +66,8 @@ bindsym $mod+l exec "bluetoothctl disconnect; doas -n rfkill block all"
 
 ### Brightness
 
-# /etc/acpi/handler.sh
-
 # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-# bindsym XF86MonBrightnessDown exec brightnessctl set -5%
+# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # bindsym $mod+y exec brightnessctl set 0
 
