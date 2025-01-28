@@ -9,4 +9,4 @@ EFI:
   Versions: false
   ImageDir: /boot/efi/EFI/zbm
 Kernel:
-  CommandLine: quiet loglevel=0 zbm.show zbm.sort_key=creation zbm.skip_hooks=20-console-autosize.sh video=efifb:1920x1080
+  CommandLine: quiet loglevel=0 zbm.show zbm.sort_key=creation zbm.skip_hooks=30-console-autosize.sh video=efifb:1920x1080
