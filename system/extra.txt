@@ -11,8 +11,10 @@ mkinitcpio
 mkinitcpio-zfs
 mono
 nnn
+openrgb
 python3-pipx
 unbound
 wlogout
 xdg-utils
+xwininfo
 zfs-lts

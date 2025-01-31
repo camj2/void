@@ -2,11 +2,9 @@
 
 set -e
 
-for dir in /tmp/overlay /tmp/upper /tmp/work; do
-  if [ -e "$dir" ]; then
-    exit 1
-  fi
-done
+[ ! -e /tmp/overlay ]
+[ ! -e /tmp/upper ]
+[ ! -e /tmp/work ]
 
 install -d -m 700 -o cameron -g cameron \
   /tmp/overlay \

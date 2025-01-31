@@ -7,17 +7,14 @@
 #################
 
 ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
-
 ln -fs /etc/sv/chronyd /var/service/
+date # wait
 
-date # wait until clock is synced
-
-printf "PermitRootLogin yes\n" >> /etc/ssh/sshd_config # nano /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config # PermitRootLogin yes
 sv restart sshd
 
-ip addr # get ip address used for ssh
-
-# rsync -a ./ root@<addr>:~/ # copy configuration files to hrmpf
+ip addr
+# rsync -a ./ root@<ip>:~/ # copy repo to hrmpf
 
 ###############
 ###   SSH   ###
@@ -28,9 +25,9 @@ export nvme1      # chroot
 export nvme2      # chroot
 export nvme3      # chroot
 
-blkdiscard -fv "$nvme1" # zfs1
-blkdiscard -fv "$nvme2" # zfs2
-blkdiscard -fv "$nvme3" # boot
+blkdiscard -fv "$nvme1"
+blkdiscard -fv "$nvme2"
+blkdiscard -fv "$nvme3"
 
 nvme id-ctrl /dev/nvme0 -H | grep "Crypto Erase Sanitize" # support
 nvme id-ctrl /dev/nvme1 -H | grep "Crypto Erase Sanitize" # support
@@ -68,17 +65,19 @@ zpool create \
   -O primarycache=metadata \
   -m none system mirror "$nvme1" "$nvme2"
 
-zfs create -o mountpoint=/ -o canmount=noauto system/root
+zfs create -o mountpoint=/ -o canmount=noauto system/void
+# zfs create -o mountpoint=/ -o canmount=noauto system/void-musl
+
 zfs create -o mountpoint=/home system/home
 
 # create any other filesystems here
 
-zpool set bootfs=system/root system
+zpool set bootfs=system/void system
 
 zpool export system
 zpool import -N -R /mnt system
 
-zfs mount system/root
+zfs mount system/void
 zfs mount system/home
 
 # note: you could create the storage pool after installation instead
@@ -135,6 +134,12 @@ mount -o discard,noatime "$nvme3"-part2 /mnt/backup
 
 ### Void
 
+REPO=https://repo-fastly.voidlinux.org/current
+ARCH=x86_64
+
+# REPO=https://repo-fastly.voidlinux.org/current/musl
+# ARCH=x86_64-musl
+
 mkdir -p /mnt/etc/xbps.d
 
 printf "syslog=false\n" >> /mnt/etc/xbps.d/xbps.conf
@@ -142,16 +147,13 @@ printf "ignorepkg=linux\n" >> /mnt/etc/xbps.d/xbps.conf
 printf "ignorepkg=linux-headers\n" >> /mnt/etc/xbps.d/xbps.conf
 printf "ignorepkg=sudo\n" >> /mnt/etc/xbps.d/xbps.conf
 
-printf "repository=https://repo-fastly.voidlinux.org/current\n" > /mnt/etc/xbps.d/00-repository-main.conf
-printf "repository=https://repo-fastly.voidlinux.org/current/nonfree\n" > /mnt/etc/xbps.d/10-repository-nonfree.conf
-# /current/musl
-# /current/musl/nonfree
+printf "repository=%s\n" "$REPO" > /mnt/etc/xbps.d/00-repository-main.conf
+printf "repository=%s/nonfree\n" "$REPO" > /mnt/etc/xbps.d/10-repository-nonfree.conf
 
 mkdir -p /mnt/var/db/xbps/keys
 cp -f /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 
-XBPS_ARCH=x86_64 xbps-install -Syu -R https://repo-fastly.voidlinux.org/current -r /mnt base-system
-# XBPS_ARCH=x86_64-musl
+XBPS_ARCH="$ARCH" xbps-install -Syu -R "$REPO" -r /mnt base-system
 
 ### ZFS
 

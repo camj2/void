@@ -10,6 +10,8 @@ exec exec runsvdir /home/cameron/.sv
 
 seat seat0 xcursor_theme Adwaita
 
+client.focused #000000 #000000 #000000 #dfbf8e
+
 # swaymsg -t get_outputs
 
 # output <output> adaptive_sync on
@@ -45,6 +47,26 @@ set $down Down
 set $left Left
 set $right Right
 
+### Hardware
+
+input type:keyboard {
+    xkb_numlock enabled
+}
+
+input type:pointer {
+    accel_profile flat
+    pointer_accel -0.10
+}
+
+input type:touchpad {
+    accel_profile flat
+    # pointer_accel -0.10
+    natural_scroll enabled
+    # middle_emulation enabled
+    dwt disabled
+    tap enabled
+}
+
 ### Power
 
 # bindsym $mod+Control+Shift+z exec doas -n zzz
@@ -62,7 +84,6 @@ bindsym $mod+l exec "bluetoothctl disconnect; doas -n rfkill block all"
 # workspace 1 output eDP-1
 
 # bindsym $mod+Shift+p exec swaymsg output eDP-1 power toggle
-# bindsym $mod+Shift+k exec /home/cameron/.bin/switch
 
 ### Brightness
 
@@ -102,7 +123,7 @@ bindsym $mod+o exec playerctl previous
 # bindsym XF86AudioNext exec playerctl next
 bindsym $mod+p exec playerctl next
 
-### Keybindings
+### Custom
 
 # bindsym $mod+a exec makoctl dismiss -a
 bindsym $mod+t exec alacritty
@@ -111,9 +132,9 @@ bindsym $mod+n exec env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spot
 bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+l exec swaylock --daemonize --ignore-empty-password --no-unlock-indicator --image $bg --scaling fill
 
-bindsym $mod+d exec wofi
-bindsym $mod+g exec wofi --search=game
-bindsym $mod+k exec rofi -modi emoji -show emoji -emoji-mode copy -emoji-format '{emoji} <span weight="bold">{name}</span>' -display-emoji "" -theme-str 'entry {blink:false;}'
+bindsym $mod+d exec tofi-drun
+bindsym $mod+g exec /home/cameron/.bin/unicode
+bindsym $mod+k exec /home/cameron/.bin/output
 
 bindsym $mod+s exec /home/cameron/.bin/capture
 # bindsym $mod+Shift+h exec /home/cameron/.bin/record
@@ -146,26 +167,6 @@ default_floating_border none
 
 bindsym $mod+space focus mode_toggle
 floating_modifier $mod normal
-
-### Hardware
-
-input type:keyboard {
-    xkb_numlock enabled
-}
-
-input type:pointer {
-    accel_profile flat
-    pointer_accel -0.10
-}
-
-input type:touchpad {
-    accel_profile flat
-    # pointer_accel -0.10
-    natural_scroll enabled
-    # middle_emulation enabled
-    dwt disabled
-    tap enabled
-}
 
 ### Mode
 

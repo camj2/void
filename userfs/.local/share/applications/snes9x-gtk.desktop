@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Snes9x (SNES)
+Comment=SNES Emulator
+Icon=snes9x
+Exec=snes9x-gtk %F
+MimeType=application/vnd.nintendo.snes.rom;application/x-snes-rom;
+Categories=Game;Emulator;
+Keywords=Game;NES;SNES;

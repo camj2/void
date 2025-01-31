@@ -1,2 +1,2 @@
 #!/bin/sh
-wl-paste | sort -u | sed '/^$/d' | wl-copy
+wl-paste | sort -u | sed '/^$/d' | wl-copy -n

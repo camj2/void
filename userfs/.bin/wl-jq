@@ -1,2 +1,2 @@
 #!/bin/sh
-wl-paste | jq --indent "${1:-2}" | wl-copy
+wl-paste | jq --indent "${1:-2}" | wl-copy -n

@@ -3,7 +3,7 @@ if [[ -z "$DISPLAY" && "$(tty)" = /dev/tty1 ]]; then
   export GTK_THEME=Gruvbox-Material-Dark
 
   # QT
-  export QT_QPA_PLATFORMTHEME=gtk2 # qt5-styleplugins
+  export QT_QPA_PLATFORMTHEME=gtk2
   export GTK2_RC_FILES="${HOME}/.themes/${GTK_THEME}/gtk-2.0/gtkrc"
 
   # LibreOffice

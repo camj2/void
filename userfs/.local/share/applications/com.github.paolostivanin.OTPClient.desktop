@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=2FA
-Comment=Keys
+Name=Keys (2FA)
+Comment=Multi-factor authentication
 Icon=password-manager
 Exec=otpclient
 Categories=System;Security;GTK;GNOME;
-Keywords=otp;totp;hotp;2fa
+Keywords=otp;totp;hotp;mfa;2fa

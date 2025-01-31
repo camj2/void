@@ -3,31 +3,22 @@
 # ./mkhrmpf.sh # build fresh image before proceeding
 
 #################
-###   Wi-Fi   ###
-#################
-
-rfkill unblock wlan
-
-wpa_passphrase network password > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
-
-ln -fs /etc/sv/wpa_supplicant /var/service/
-
-#################
 ###   hrmpf   ###
 #################
 
+rfkill unblock wlan
+wpa_passphrase network password > /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+ln -fs /etc/sv/wpa_supplicant /var/service/
+
 ln -fs /usr/share/zoneinfo/America/Phoenix /etc/localtime
-
 ln -fs /etc/sv/chronyd /var/service/
+date # wait
 
-date # wait until clock is synced
-
-printf "PermitRootLogin yes\n" >> /etc/ssh/sshd_config # nano /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config # PermitRootLogin yes
 sv restart sshd
 
-ip addr # get ip address used for ssh
-
-# rsync -a ./ root@<addr>:~/ # copy configuration files to hrmpf
+ip addr
+# rsync -a ./ root@<ip>:~/ # copy repo to hrmpf
 
 ###############
 ###   SSH   ###
@@ -55,7 +46,7 @@ mkfs.vfat -F32 "$nvme"-part1
 
 zgenhostid -f
 
-# printf '\n' > /etc/zfs/system.key # zfs passphrase
+printf '%s\n' '' > /etc/zfs/system.key # set passphrase
 chmod 000 /etc/zfs/system.key
 
 zpool create \
@@ -71,24 +62,26 @@ zpool create \
   -O keyformat=passphrase \
   -m /storage system "$nvme"-part2
 
-zfs create -o mountpoint=/ -o canmount=noauto system/root
+chown 1000:1000 /storage
+chmod 700 /storage
+
+zfs create -o mountpoint=/ -o canmount=noauto system/void
+# zfs create -o mountpoint=/ -o canmount=noauto system/void-musl
+
 zfs create -o mountpoint=/home system/home
 
 # create any other filesystems here
 
-zpool set bootfs=system/root system
+zpool set bootfs=system/void system
 
 zpool export system
 zpool import -N -R /mnt system
 
 zfs load-key -L prompt system
 
-zfs mount system/root
+zfs mount system/void
 zfs mount system/home
 zfs mount system
-
-chown 1000:1000 /storage
-chmod 700 /storage
 
 udevadm trigger
 
@@ -120,6 +113,12 @@ mount -o discard,noatime "$nvme"-part1 /mnt/boot/efi
 
 ### Void
 
+REPO=https://repo-fastly.voidlinux.org/current
+ARCH=x86_64
+
+# REPO=https://repo-fastly.voidlinux.org/current/musl
+# ARCH=x86_64-musl
+
 mkdir -p /mnt/etc/xbps.d
 
 printf "syslog=false\n" >> /mnt/etc/xbps.d/xbps.conf
@@ -127,16 +126,13 @@ printf "ignorepkg=linux\n" >> /mnt/etc/xbps.d/xbps.conf
 printf "ignorepkg=linux-headers\n" >> /mnt/etc/xbps.d/xbps.conf
 printf "ignorepkg=sudo\n" >> /mnt/etc/xbps.d/xbps.conf
 
-printf "repository=https://repo-fastly.voidlinux.org/current\n" > /mnt/etc/xbps.d/00-repository-main.conf
-printf "repository=https://repo-fastly.voidlinux.org/current/nonfree\n" > /mnt/etc/xbps.d/10-repository-nonfree.conf
-# /current/musl
-# /current/musl/nonfree
+printf "repository=%s\n" "$REPO" > /mnt/etc/xbps.d/00-repository-main.conf
+printf "repository=%s/nonfree\n" "$REPO" > /mnt/etc/xbps.d/10-repository-nonfree.conf
 
 mkdir -p /mnt/var/db/xbps/keys
 cp -f /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 
-XBPS_ARCH=x86_64 xbps-install -Syu -R https://repo-fastly.voidlinux.org/current -r /mnt base-system
-# XBPS_ARCH=x86_64-musl
+XBPS_ARCH="$ARCH" xbps-install -Syu -R "$REPO" -r /mnt base-system
 
 ### ZFS
 
@@ -225,7 +221,6 @@ chroot /mnt /bin/generate-zbm
 chroot /mnt /bin/generate-zbm
 
 zfs set org.zfsbootmenu:commandline="quiet loglevel=0 net.ifnames=0 rfkill.default_state=0" system
-zfs set org.zfsbootmenu:keysource=system/root system
 
 umount -R /mnt
 zpool export system

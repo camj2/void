@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Fceux (NES)
+Comment=NES Emulator
+Icon=/usr/share/pixmaps/fceux1.png
+Exec=/usr/bin/fceux %F
+MimeType=application/x-nes-rom
+Categories=Game;Emulator;
+Keywords=Game;NES;SNES;

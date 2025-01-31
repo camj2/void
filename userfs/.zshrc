@@ -117,6 +117,10 @@ function fo() {
   find "$@" -printf '%T@ %Tc %p\n' | sort -r
 }
 
+function fd() {
+  find /dev/disk/by-id -type l | sort | grep -i "$*"
+}
+
 function fl() {
   grep -i "$*" "${HOME}/Documents/Notes/Linux.txt"
 }
@@ -169,11 +173,9 @@ function vault() {
 function laptop() {
   rsync -aAXHvh --delete \
     --exclude=/.config/alacritty \
-    --exclude=/.config/mako \
     --exclude=/.config/spotify \
     --exclude=/.config/sway \
     --exclude=/.config/waybar \
-    --exclude=/.config/wofi \
     --exclude=/.local/state \
     --exclude=/.mozilla \
     --exclude=/.sv \

@@ -1,0 +1,24 @@
+font = "Iosevka Extended"
+font-size = 16
+
+text-color = #d4be98
+selection-color = #e78a4e
+background-color = #282828
+
+prompt-text = ""
+text-cursor = true
+text-cursor-style = underscore
+
+width = 750
+height = 500
+
+border-width = 0
+outline-width = 0
+
+padding-top = 12
+padding-bottom = 12
+padding-left = 12
+padding-right = 12
+
+drun-launch = true
+history = false

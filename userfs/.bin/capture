@@ -4,6 +4,8 @@ set -e
 
 [ -n "$HOME" ]
 
-name=$(date -u +%Y%m%d_%H%M%S)
+name=$(swaymsg -t get_outputs | jq -r '.[] | select( .focused ) | .name')
 
-exec grimshot save output "${HOME}/Downloads/${name}.png"
+date=$(date -u +%Y%m%d_%H%M%S)
+
+exec grim -o "$name" "${HOME}/Downloads/${date}.png"

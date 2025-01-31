@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+name=$(swaymsg -t get_outputs | jq -r '.[] | select( .focused ) | .name')
+[ -n "$name" ]
+
+mode=$(
+  swaymsg -t get_outputs |
+    jq -r '.[] | select( .focused ) | .modes[] |
+    ( .width | tostring ) + "x" + ( .height | tostring ) + "@" + ( .refresh | tostring ) + "Hz"' |
+    tofi
+)
+[ -n "$mode" ]
+
+card=$(pactl -f json list sinks | jq -r '.[] | .name' | tofi)
+[ -n "$card" ]
+
+swaymsg output "$name" res "$mode"
+pactl set-default-sink "$card"

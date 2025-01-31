@@ -89,7 +89,6 @@ dd if=/dev/zero of=/dev/<dev> bs=1M count=1024 status=progress
 
 rsync -avh --inplace --chown=root:root <dir> /mnt # exFAT
 
-# fix metadata
 chown -R cameron:cameron /mnt
 chmod -R 0755 /mnt
 find /mnt -type f -exec chmod 0644 {} +
@@ -117,6 +116,8 @@ zfs list -t snapshot -s creation -o name,creation -r <dataset>
 ls -la /.zfs /home/.zfs
 
 mount -t zfs <snapshot> /mnt
+
+zfs clone -o mountpoint=/ -o canmount=noauto <snapshot> <dataset>
 
 find /usr/share/zfs/compatibility.d
 
@@ -151,6 +152,8 @@ zfs-prune-snapshots 4w
 
 https://docs.zfsbootmenu.org
 
+xbps-reconfigure -f zfsbootmenu
+
 generate-zbm -k /boot/vmlinuz-<version>
 
 zfs set org.zfsbootmenu:kernel=6.6 <pool>
@@ -173,7 +176,7 @@ rename -v .jpeg .jpg -- *.jpeg
 
 qrencode -r <file> -o output.png
 
-wpa_passphrase <ssid> <password> # /var/lib/iwd/<network>.psk
+wpa_passphrase <ssid> <passphrase> # /var/lib/iwd/<ssid>.psk
 
 cbonsai -li
 
@@ -185,11 +188,17 @@ xbps-pkgdb -a
 
 xbps-pkgdb -m hold <pkg>
 
+xbps-pkgdb -m unhold <pkg>
+
+xbps-pkgdb -m auto <pkg>
+
+xbps-pkgdb -m manual <pkg>
+
 rm -rf ~/.local/state/wireplumber # reset
 
 rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir>
 
-rsync -aAX -f"+ */" -f"- *" <src> <dst> # copy tree
+rsync -aAX -f"+ */" -f"- *" <src> <dst>
 
 lsd -la --total-size <dir>
 
@@ -199,10 +208,10 @@ stat -c "%n: %h" <dir>/* | column -t
 
 cp -rfal <src> <dst>
 
-dir="${0%/*}"    # dir
-sub="${0##*/}"   # dirname
-pre="${src%.*}"  # prefix
-ext="${src##*.}" # extension
+"${0%/*}"    # dir
+"${0##*/}"   # dirname
+"${src%.*}"  # name
+"${src##*.}" # extension
 
 feh --quiet --auto-zoom --scale-down --image-bg=black --sort=name --version-sort --start-at <file>
 feh --quiet --auto-zoom --scale-down --image-bg=black --randomize <dir>
@@ -217,6 +226,9 @@ showkey -a
 
 fastfetch -h zpool-format
 
+man 5 sway
+man 5 tofi
+
 curl -fsSLO --skip-existing <url>
 
 echo "   " | tr -s " "
@@ -230,7 +242,7 @@ nmap 10.0.0.0/24
 nmap 192.168.0.0/16
 nmap 192.168.0.0/24
 
-tzupdate
+tzupdate # update timezone
 
 zpool status -t
 
@@ -246,6 +258,11 @@ rustup update
 
 uuidgen
 cat /proc/sys/kernel/random/uuid
+
+cat /proc/cmdline
+cat /proc/modules
+cat /proc/mounts
+cat /proc/diskstats
 
 udevadm settle
 udevadm trigger
@@ -266,3 +283,48 @@ smartctl -c <dev>
 smartctl -t short <dev>
 smartctl -t long <dev>
 smartctl -l selftest <dev>
+
+hdparm -W <dev>
+hdparm -W 0 <dev>
+hdparm -W 1 <dev>
+
+https://wiki.archlinux.org/title/LVM
+
+pvcreate <dev>
+vgcreate <vg_name> <dev>
+lvcreate -L 5G -n <name> <vg_name>
+lvcreate -l 100%FREE -n <name> <vg_name>
+mkfs.xfs -L <name> /dev/<vg_name>/<name>
+
+man xfs_freeze
+
+vgs
+lvs
+
+lvremove <vg_name>/<name>
+
+lvresize -L +5G <vg_name>/<name>
+lvresize -L 50G <vg_name>/<name>
+xfs_growfs /mnt
+
+vgrename <vg_name> <new_vg_name>
+lvrename <vg_name> <name> <new_name>
+
+vgchange -an <vg_name>
+vgchange -ay <vg_name>
+
+vgexport <vg_name>
+vgimport <vg_name>
+
+pw-top
+
+find <dir> -type f -exec stat -c "%n: %h" {} +
+
+xlocate -S
+xlocate bin/<pkg>
+
+svlogtail
+
+jq -r
+jq -j
+jq -e

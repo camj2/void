@@ -135,13 +135,13 @@ Instead of using `linux` / `linux-headers`, I prefer to manually select and inst
 Install the new kernel with:
 
 ```
-xbps-install linux6.12 linux6.12-headers
+xbps-install -yu linux6.12 linux6.12-headers
 ```
 
 Remove the previous kernel with:
 
 ```
-xbps-remove linux6.6 linux6.6-headers
+xbps-remove -yu linux6.6 linux6.6-headers
 ```
 
 ### ZFS
@@ -211,8 +211,6 @@ Bump up the font size:
 ~/.config/waybar/config            : 40 # height
 ~/.config/waybar/style.css         : 18
 ~/.config/waybar/style.css         : margin: 0 5px; # spacing
-~/.config/wofi/style.css           : 18
-~/.config/mako/config              : 14
 
 about:config                       : layout.css.devPixelsPerPx = 1.25 # firefox
 ```
@@ -231,8 +229,10 @@ Install the following packages (not included in the default repository):
 
 ```
 xbps-restricted spotify
-xbps-restricted discord
 xbps-restricted msttcorefonts # laptop
+
+xbps-install -yu spotify-adblock
+xbps-install -yu Signal-Desktop # does not support musl
 ```
 
 [ungoogled-chromium](https://github.com/DAINRA/ungoogled-chromium-void)
@@ -317,7 +317,7 @@ network.dnsCacheExpirationGracePeriod = 0
 <!-- * CanvasBlocker -->
 <!-- * LocalCDN -->
 * ClearURLs
-* Dark Reader
+* Dark Reader (*Note: Toggle with `Alt + Shift + A`*)
 * I don't care about cookies
 * Privacy Badger
 * Return YouTube Dislike
@@ -470,7 +470,7 @@ https://www.pwg.org/printers/
 Main:
 
 ```
-xbps-install -Syu \
+xbps-install -yu \
   cups \
   cups-filters \
   system-config-printer \
@@ -565,6 +565,10 @@ https://github.com/camj2/written
 ```
 curl -s -o /etc/udev/rules.d/51-trezor.rules https://data.trezor.io/udev/51-trezor.rules
 ```
+
+### Speedtest
+
+https://www.speedtest.net/apps/cli
 
 ### MP3Gain
 
