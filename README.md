@@ -194,6 +194,20 @@ xbps-pkgdb -m unhold zfs libzfs # unset
 
 <!-- https://github.com/Alexays/Waybar/issues/1351#issuecomment-1001559391 -->
 
+<details>
+<summary>More</summary>
+
+If you have multiple root datasets, I recommend keeping the following directories synced together:
+
+```
+/etc/ssh
+/etc/wireguard
+/var/lib/bluetooth
+/var/lib/iwd
+```
+
+</details>
+
 ### Laptop
 
 <!-- wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 -->
@@ -531,7 +545,6 @@ system-config-printer
 ```
 
 <details>
-
 <summary>More</summary>
 
 #### Firewall

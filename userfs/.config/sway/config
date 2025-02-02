@@ -22,6 +22,8 @@ client.focused #000000 #000000 #000000 #dfbf8e
 # workspace 1 output <output1>
 # workspace 2 output <output2>
 
+# workspace 1
+
 # focus output <output1>
 
 ### Background
@@ -140,7 +142,7 @@ bindsym $mod+s exec /home/cameron/.bin/capture
 # bindsym $mod+Shift+h exec /home/cameron/.bin/record
 # bindsym $mod+h exec pkill -SIGINT wf-recorder
 
-bindsym $mod+Control+Shift+v exec /storage/vault/random
+# bindsym $mod+Control+Shift+v exec /storage/vault/random
 
 ### Sway
 

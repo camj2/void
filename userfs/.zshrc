@@ -106,15 +106,15 @@ alias zl="zfs list -t snapshot -s creation -o name,creation"
 alias zu="zfs list -t snapshot -s used -o name,used"
 
 function ff() {
-  find "$HOME" -iname "*${*}*"
+  find . -iname "*${*}*"
 }
 
 function fn() {
-  find "$@" -printf '%T@ %Tc %p\n' | sort
+  find "$@" -printf '%T@ %Tc %p\n' | sort -n
 }
 
 function fo() {
-  find "$@" -printf '%T@ %Tc %p\n' | sort -r
+  find "$@" -printf '%T@ %Tc %p\n' | sort -nr
 }
 
 function fd() {

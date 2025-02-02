@@ -11,6 +11,7 @@ pkg="$1"
 if [ -d xpkgs ]; then
   cd xpkgs
   git pull
+  ./xbps-src binary-bootstrap
   ./xbps-src bootstrap-update
 else
   git clone https://github.com/void-linux/void-packages xpkgs
@@ -23,4 +24,4 @@ fi
 ./xbps-src clean "$pkg"
 ./xbps-src clean-repocache
 
-doas xbps-install -Syu -R hostdir/binpkgs/nonfree "$pkg"
+doas xbps-install -Syu -R hostdir/binpkgs -R hostdir/binpkgs/nonfree "$pkg"

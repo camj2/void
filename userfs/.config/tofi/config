@@ -22,3 +22,4 @@ padding-right = 12
 
 drun-launch = true
 history = false
+multi-instance = true

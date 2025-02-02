@@ -5,4 +5,4 @@ Comment=Wireless network management utility
 Icon=iwgtk
 Exec=iwgtk
 Categories=GTK;Settings;HardwareSettings;
-Keywords=WiFi;Wi-Fi;
+Keywords=iwd;WiFi;Wi-Fi;

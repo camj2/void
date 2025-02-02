@@ -328,3 +328,15 @@ svlogtail
 jq -r
 jq -j
 jq -e
+
+mkdir /tmp/android
+aft-mtp-mount /tmp/android
+
+7z x -o<dir> <zip>
+
+cat /dev/input/js0
+
+cd .
+cd ..
+cd ~
+cd -
