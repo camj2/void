@@ -20,10 +20,7 @@ ip addr
 ###   SSH   ###
 ###############
 
-. system/nvme.txt # drives
-export nvme1      # chroot
-export nvme2      # chroot
-export nvme3      # chroot
+. ./system/nvme.txt
 
 blkdiscard -fv "$nvme1"
 blkdiscard -fv "$nvme2"
@@ -65,19 +62,23 @@ zpool create \
   -O primarycache=metadata \
   -m none system mirror "$nvme1" "$nvme2"
 
-zfs create -o mountpoint=/ -o canmount=noauto system/void
+zfs create -o mountpoint=/ -o canmount=noauto system/root
+
+# note: consider the following alternate dataset layout
+
+# zfs create -o mountpoint=/ -o canmount=noauto system/void
 # zfs create -o mountpoint=/ -o canmount=noauto system/void-musl
 
 zfs create -o mountpoint=/home system/home
 
 # create any other filesystems here
 
-zpool set bootfs=system/void system
+zpool set bootfs=system/root system
 
 zpool export system
 zpool import -N -R /mnt system
 
-zfs mount system/void
+zfs mount system/root
 zfs mount system/home
 
 # note: you could create the storage pool after installation instead
@@ -170,7 +171,7 @@ chroot /mnt /bin/xbps-reconfigure -f glibc-locales
 
 ### Packages
 
-cat system/void.txt system/amd.txt | xargs chroot /mnt /bin/xbps-install -Syu
+cat system/root.txt system/amd.txt | xargs chroot /mnt /bin/xbps-install -Syu
 
 chroot /mnt /bin/sh
 

@@ -46,7 +46,6 @@ git
 gnome-calculator
 gptfdisk
 grim
-gummiboot-efistub
 hdparm
 htop
 inetutils-telnet
@@ -101,6 +100,7 @@ strace
 stremio-shell
 sway
 swaylock
+systemd-boot-efistub
 time
 tlp
 tofi

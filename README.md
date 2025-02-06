@@ -194,10 +194,10 @@ xbps-pkgdb -m unhold zfs libzfs # unset
 
 <!-- https://github.com/Alexays/Waybar/issues/1351#issuecomment-1001559391 -->
 
-<details>
+<!-- <details>
 <summary>More</summary>
 
-If you have multiple root datasets, I recommend keeping the following directories synced together:
+Keep the following directories synced together when using multiple `/` datasets:
 
 ```
 /etc/ssh
@@ -206,7 +206,7 @@ If you have multiple root datasets, I recommend keeping the following directorie
 /var/lib/iwd
 ```
 
-</details>
+</details> -->
 
 ### Laptop
 
@@ -583,9 +583,9 @@ curl -s -o /etc/udev/rules.d/51-trezor.rules https://data.trezor.io/udev/51-trez
 
 https://www.speedtest.net/apps/cli
 
-### MP3Gain
+<!-- ### MP3Gain
 
-https://sourceforge.net/projects/mp3gain/
+https://sourceforge.net/projects/mp3gain/ -->
 
 </details>
 

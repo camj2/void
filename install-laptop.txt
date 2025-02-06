@@ -24,8 +24,7 @@ ip addr
 ###   SSH   ###
 ###############
 
-. system/nvme-laptop.txt # drives
-export nvme              # chroot
+. ./system/nvme-laptop.txt
 
 blkdiscard -fv "$nvme"
 
@@ -65,21 +64,25 @@ zpool create \
 chown 1000:1000 /storage
 chmod 700 /storage
 
-zfs create -o mountpoint=/ -o canmount=noauto system/void
+zfs create -o mountpoint=/ -o canmount=noauto system/root
+
+# note: consider the following alternate dataset layout
+
+# zfs create -o mountpoint=/ -o canmount=noauto system/void
 # zfs create -o mountpoint=/ -o canmount=noauto system/void-musl
 
 zfs create -o mountpoint=/home system/home
 
 # create any other filesystems here
 
-zpool set bootfs=system/void system
+zpool set bootfs=system/root system
 
 zpool export system
 zpool import -N -R /mnt system
 
 zfs load-key -L prompt system
 
-zfs mount system/void
+zfs mount system/root
 zfs mount system/home
 zfs mount system
 
@@ -152,7 +155,7 @@ chroot /mnt /bin/xbps-reconfigure -f glibc-locales
 
 ### Packages
 
-cat system/void.txt system/amd.txt | xargs chroot /mnt /bin/xbps-install -Syu
+cat system/root.txt system/amd.txt | xargs chroot /mnt /bin/xbps-install -Syu
 
 chroot /mnt /bin/sh
 

@@ -167,11 +167,11 @@ function update() {
 }
 
 function vault() {
-  rsync -aAXHvh --delete /storage/vault/ laptop:/storage/vault/
+  rsync -xaAXHvh --delete /storage/vault/ laptop:/storage/vault/
 }
 
 function laptop() {
-  rsync -aAXHvh --delete \
+  rsync -xaAXHvh --delete \
     --exclude=/.config/alacritty \
     --exclude=/.config/spotify \
     --exclude=/.config/sway \

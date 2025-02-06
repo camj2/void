@@ -260,6 +260,7 @@ uuidgen
 cat /proc/sys/kernel/random/uuid
 
 cat /proc/cmdline
+cat /proc/crypto
 cat /proc/modules
 cat /proc/mounts
 cat /proc/diskstats
@@ -340,3 +341,5 @@ cd .
 cd ..
 cd ~
 cd -
+
+https://wiki.archlinux.org/title/RAID
