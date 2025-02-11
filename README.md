@@ -314,7 +314,7 @@ network.dnsCacheExpirationGracePeriod = 0
   display: none !important;
 }
 
-:root[tabsintitlebar] .browser-titlebar {
+:root[customtitlebar] .browser-titlebar {
   will-change: unset !important;
   transition: none !important;
 

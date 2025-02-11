@@ -1,0 +1,124 @@
+#!/bin/sh
+
+palette() {
+  for name in none gray red green yellow blue purple cyan white; do
+
+    case $name in
+      none)
+        printf %s "$none"
+        printf ' = '
+        printf %b "$none"
+        ;;
+      gray)
+        printf %s "$gray"
+        printf ' = '
+        printf %b "$gray"
+        ;;
+      red)
+        printf %s "$red"
+        printf ' = '
+        printf %b "$red"
+        ;;
+      green)
+        printf %s "$green"
+        printf ' = '
+        printf %b "$green"
+        ;;
+      yellow)
+        printf %s "$yellow"
+        printf ' = '
+        printf %b "$yellow"
+        ;;
+      blue)
+        printf %s "$blue"
+        printf ' = '
+        printf %b "$blue"
+        ;;
+      purple)
+        printf %s "$purple"
+        printf ' = '
+        printf %b "$purple"
+        ;;
+      cyan)
+        printf %s "$cyan"
+        printf ' = '
+        printf %b "$cyan"
+        ;;
+      white)
+        printf %s "$white"
+        printf ' = '
+        printf %b "$white"
+        ;;
+      *)
+        return 1
+        ;;
+    esac
+
+    printf %s "$name"
+
+    printf %b "$none"
+
+    printf '\n'
+
+  done
+}
+
+{
+
+  # reset
+
+  none='\033[0;00m'
+
+  # foreground
+
+  gray='\033[0;30m'
+  red='\033[0;31m'
+  green='\033[0;32m'
+  yellow='\033[0;33m'
+  blue='\033[0;34m'
+  purple='\033[0;35m'
+  cyan='\033[0;36m'
+  white='\033[0;37m'
+
+  palette
+
+  # background
+
+  gray='\033[0;100m'
+  red='\033[0;101m'
+  green='\033[0;102m'
+  yellow='\033[0;103m'
+  blue='\033[0;104m'
+  purple='\033[0;105m'
+  cyan='\033[0;106m'
+  white='\033[0;107m'
+
+  palette
+
+  # foreground (bold)
+
+  gray='\033[1;30m'
+  red='\033[1;31m'
+  green='\033[1;32m'
+  yellow='\033[1;33m'
+  blue='\033[1;34m'
+  purple='\033[1;35m'
+  cyan='\033[1;36m'
+  white='\033[1;37m'
+
+  palette
+
+  # background (bold)
+
+  gray='\033[1;100m'
+  red='\033[1;101m'
+  green='\033[1;102m'
+  yellow='\033[1;103m'
+  blue='\033[1;104m'
+  purple='\033[1;105m'
+  cyan='\033[1;106m'
+  white='\033[1;107m'
+
+  palette
+
+} | column -t

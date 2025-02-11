@@ -196,13 +196,21 @@ xbps-pkgdb -m manual <pkg>
 
 rm -rf ~/.local/state/wireplumber # reset
 
-rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir>
+fdupes -R <dir> ...
+
+fdupes -R -d -N <dir> ...
+
+rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir> ...
 
 rsync -aAX -f"+ */" -f"- *" <src> <dst>
 
-lsd -la --total-size <dir>
-
 lsd -la --tree --depth 2 <dir>
+
+lsd -la --total-size --sizesort <dir>
+
+lsd -la --timesort
+
+stat -c "%n: %a" <dir>/* | column -t
 
 stat -c "%n: %h" <dir>/* | column -t
 
@@ -216,7 +224,8 @@ cp -rfal <src> <dst>
 feh --quiet --auto-zoom --scale-down --image-bg=black --sort=name --version-sort --start-at <file>
 feh --quiet --auto-zoom --scale-down --image-bg=black --randomize <dir>
 
-bat -l sh < <script>
+bat -l sh <file>
+bat -l json <file>
 
 shfmt -mn <script>
 
@@ -343,3 +352,11 @@ cd ~
 cd -
 
 https://wiki.archlinux.org/title/RAID
+
+zip -r <output> <dir>
+
+unzip -l <zip>
+unzip -d <dir> <zip>
+
+find <dir> -type f -exec lsd -la {} '+'
+find <dir> -type f -exec lsd -la {} ';'
