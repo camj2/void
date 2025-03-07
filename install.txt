@@ -16,10 +16,10 @@ date # wait
 
 nano /etc/ssh/sshd_config # PermitRootLogin yes
 sv restart sshd
-passwd root
 
 ip addr
 # rsync -a ./ root@<addr>:~/ # copy repo to hrmpf
+# ssh root@<addr> # password: voidlinux
 
 ###############
 ###   SSH   ###
@@ -63,7 +63,6 @@ mkfs.vfat -F32 -n boot "$nvme"-part1
 cryptsetup luksFormat "$nvme"-part2
 cryptsetup open --allow-discards --persistent "$nvme"-part2 system
 
-pvcreate system /dev/mapper/system # TODO: No device found for system. (what does this error mean? It worked fine regardless though)
 vgcreate system /dev/mapper/system
 
 lvcreate -L 64G -n root system
@@ -162,7 +161,7 @@ efibootmgr # check
 printf 'MODIFY_EFI_ENTRIES=1\n' > /mnt/etc/default/efibootmgr-kernel-hook
 printf 'DISK=%s\n' "$nvme" >> /mnt/etc/default/efibootmgr-kernel-hook
 printf 'PART=1\n' >> /mnt/etc/default/efibootmgr-kernel-hook
-printf 'OPTIONS="quiet loglevel=0 root=UUID=%s rootflags=discard,noatime"\n' "$ROOT_UUID" >> /mnt/etc/default/efibootmgr-kernel-hook
+printf 'OPTIONS="quiet loglevel=0"\n' >> /mnt/etc/default/efibootmgr-kernel-hook
 cat /mnt/etc/default/efibootmgr-kernel-hook # check
 
 printf 'tmpfs /tmp tmpfs nosuid,nodev,noatime 0 0\n' > /mnt/etc/fstab
@@ -171,7 +170,7 @@ printf 'UUID=%s /home xfs discard,noatime 0 0\n' "$HOME_UUID" >> /mnt/etc/fstab
 cat /mnt/etc/fstab # check
 
 mkdir -p /mnt/etc/dracut.conf.d
-printf 'kernel_cmdline="rd.luks.uuid=%s rd.luks.name=%s=system rd.lvm.vg=system"\n' "$LUKS_UUID" "$LUKS_UUID" > /mnt/etc/dracut.conf.d/system.conf
+printf 'kernel_cmdline="rd.luks.uuid=%s rd.luks.name=%s=system rd.lvm.vg=system root=UUID=%s rootfstype=xfs rootflags=discard,noatime"\n' "$LUKS_UUID" "$LUKS_UUID" "$ROOT_UUID" > /mnt/etc/dracut.conf.d/system.conf
 printf 'compress=zstd\n' > /mnt/etc/dracut.conf.d/compress.conf
 cat /mnt/etc/dracut.conf.d/system.conf # check
 

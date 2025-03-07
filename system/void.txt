@@ -12,7 +12,6 @@ android-file-transfer-linux
 android-tools
 arduino-cli
 audacity
-base-system
 bat
 bind-utils
 binfmt-support
@@ -27,7 +26,6 @@ curl
 dbus
 dejavu-fonts-ttf
 dmidecode
-dracut
 dumb_runtime_dir
 efibootmgr
 eog

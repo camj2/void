@@ -205,6 +205,10 @@ xbps-pkgdb -m hold <pkg>
 
 xbps-pkgdb -m unhold <pkg>
 
+xbps-pkgdb -m repolock <pkg>
+
+xbps-pkgdb -m repounlock <pkg>
+
 xbps-pkgdb -m auto <pkg>
 
 xbps-pkgdb -m manual <pkg>
@@ -336,6 +340,7 @@ lvs
 lvremove <vg_name>/<name>
 
 lvextend -L +50G <vg_name>/<name>
+lvextend -L 100G <vg_name>/<name>
 xfs_growfs <dir>
 
 vgrename <vg_name> <new_vg_name>
@@ -439,3 +444,5 @@ sv alarm <service> # snooze
 
 passwd <user>
 passwd -dl <user>
+
+tshark

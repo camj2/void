@@ -115,7 +115,24 @@ cd void
 install.txt
 ```
 
-Note: You could omit encryption for the desktop since it may not be necessary.
+Note: For desktop I just use plain partitions. No encryption or logical volumes.
+
+### Update
+
+```
+xbps-install -Syu
+
+xbps-remove -yo
+xbps-remove -yO
+
+vkpurge rm all
+```
+
+### Downgrade
+
+```
+xdowngrade /var/cache/xbps/<pkg>
+```
 
 ### Extend
 
