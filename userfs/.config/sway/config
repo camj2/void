@@ -10,7 +10,7 @@ exec exec runsvdir /home/cameron/.sv
 
 seat seat0 xcursor_theme Adwaita
 
-client.focused #000000 #000000 #000000 #dfbf8e
+client.focused #000000 #000000 #000000 #89b482
 
 # swaymsg -t get_outputs
 
@@ -69,16 +69,6 @@ input type:touchpad {
     tap enabled
 }
 
-### Power
-
-# bindsym $mod+Control+Shift+z exec doas -n zzz
-bindsym $mod+Control+Shift+r exec doas -n shutdown -r now
-bindsym $mod+Control+Shift+s exec doas -n shutdown -P now
-
-# bindsym $mod+w exec doas -n rfkill toggle wlan
-bindsym $mod+u exec doas -n rfkill toggle bluetooth
-bindsym $mod+l exec "bluetoothctl disconnect; doas -n rfkill block all"
-
 ### Laptop
 
 # output eDP-1 scale 1.25
@@ -125,24 +115,35 @@ bindsym $mod+o exec playerctl previous
 # bindsym XF86AudioNext exec playerctl next
 bindsym $mod+p exec playerctl next
 
-### Custom
+### System
 
-# bindsym $mod+a exec makoctl dismiss -a
-bindsym $mod+t exec alacritty
-bindsym $mod+b exec firefox
-bindsym $mod+n exec env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
-bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+l exec swaylock --daemonize --ignore-empty-password --no-unlock-indicator --image $bg --scaling fill
+bindsym $mod+Control+Shift+z exec doas -n zzz
+bindsym $mod+Control+Shift+s exec doas -n shutdown -P now
+bindsym $mod+Control+Shift+r exec doas -n shutdown -r now
+
+bindsym $mod+w exec rfkill toggle wlan
+bindsym $mod+u exec rfkill toggle bluetooth
+bindsym $mod+l exec "bluetoothctl disconnect; rfkill block all"
 
 bindsym $mod+d exec tofi-drun
 bindsym $mod+g exec /home/cameron/.bin/unicode
 bindsym $mod+k exec /home/cameron/.bin/output
+# bindsym $mod+a exec makoctl dismiss -a
 
 bindsym $mod+s exec /home/cameron/.bin/capture
 # bindsym $mod+Shift+h exec /home/cameron/.bin/record
 # bindsym $mod+h exec pkill -SIGINT wf-recorder
 
-bindsym $mod+Control+Shift+v exec /storage/vault/random
+### Custom
+
+bindsym $mod+t exec alacritty
+bindsym $mod+b exec firefox
+bindsym $mod+n exec env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+l exec swaylock --daemonize --ignore-empty-password --no-unlock-indicator --image $bg --scaling fill
+
+bindsym $mod+Control+Shift+v exec /home/cameron/Vault/random
 
 ### Sway
 

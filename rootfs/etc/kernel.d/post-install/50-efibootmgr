@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# Kernel hook for efibootmgr.
+#
+# Arguments passed to this script: $1 pkgname, $2 version.
+#
+VERSION="$2"
+
+. "${ROOTDIR}/etc/default/efibootmgr-kernel-hook"
+if [ "x${MODIFY_EFI_ENTRIES}" != x1 ]; then
+	exit 0
+fi
+
+OPTIONS="${OPTIONS} initrd=/initramfs-${VERSION}.img"
+
+args=""
+if [ "x${DISK}" != x ]; then
+	args="-d $DISK"
+fi
+if [ "x${PART}" != x ]; then
+	args="$args -p $PART"
+fi
+
+existing_entry=$(efibootmgr | grep "Void Linux (${VERSION})")
+
+if [ "$existing_entry" != "" ]; then
+	exit 0
+fi
+
+efibootmgr -qc $args -L "Void Linux (${VERSION})" -l /vmlinuz-${VERSION} -u "${OPTIONS}"

@@ -12,17 +12,12 @@
 * 2 x 32 GB ECC (https://www.kingston.com/dataSheets/KSM32ED8_32ME.pdf)
 * 3 x Samsung 970 Evo Plus
 
+<!-- https://cultists.network/140/psu-tier-list/ -->
+
 <!-- https://serverpartdeals.com/collections/hard-drives -->
 
 <details>
 <summary>Firmware</summary>
-
-#### Layout
-
-* 2 x NVMe -> ZFS mirror (root/home)
-* 1 x NVMe -> FAT32 (boot) / XFS (backup)
-* 3 x SATA -> ZFS zraid (storage) **OR**:
-* 1 x SATA -> ZFS (storage)
 
 #### Keys
 
@@ -48,8 +43,8 @@
 Make sure to use step instead of gradual when adjusting the fan curve.
 That way the fan only kicks in at 85C.
 
-*Note: The only way to make persistent changes to the fan curve is by dragging with the mouse.
-Manually entering numbers into the text boxes below does not work.*
+Note: The only way to make persistent changes to the fan curve is by dragging with the mouse.
+Manually entering numbers into the text boxes below does not work.
 
 #### Memory
 
@@ -107,86 +102,29 @@ fwupdtool update
 * Razer Naga Chroma
 * [8BitDo Pro 2](https://www.8bitdo.com/pro2/)
 
-## Install
+## Download
 
-Desktop:
+```
+git clone https://github.com/camj2/void
+cd void
+```
+
+## Install
 
 ```
 install.txt
 ```
 
-Laptop:
+Note: You could omit encryption for the desktop since it may not be necessary.
+
+### Extend
+
+If you ever need more space, extend the xfs volume with:
 
 ```
-install-laptop.txt
+lvextend -L +16G system/home
+xfs_growfs /home
 ```
-
-<details>
-<summary>Update</summary>
-
-### Linux
-
-Instead of using `linux` / `linux-headers`, I prefer to manually select and install the kernel:
-
-1. Find the latest lts kernel: https://kernel.org/
-2. Make sure zfs supports said kernel: https://github.com/openzfs/zfs/blob/master/META
-3. Compare against: `zfs --version`
-
-Install the new kernel with:
-
-```
-xbps-install -yu linux6.12 linux6.12-headers
-```
-
-Remove the previous kernel with:
-
-```
-xbps-remove -yu linux6.6 linux6.6-headers
-```
-
-### ZFS
-
-<!-- *Note: Press `CTRL + W` in ZFSBootMenu to mount zpool rw* -->
-
-Generate the ZFSBootMenu EFI image with:
-
-```
-generate-zbm
-```
-
-Upgrade the zpool with:
-
-```
-zpool upgrade <pool>
-```
-
-If you have multiple kernels installed, you can set the default with:
-
-```
-zfs set org.zfsbootmenu:kernel=6.6 <pool>
-
-zfs inherit org.zfsbootmenu:kernel <pool> # unset
-```
-
-You can prevent the zpool from being upgraded with:
-
-```
-find /usr/share/zfs/compatibility.d
-
-zpool set compatibility=openzfs-2.2 <pool>
-
-zpool set compatibility=off <pool> # unset
-```
-
-Or, you could prevent `zfs` from being updated with:
-
-```
-xbps-pkgdb -m hold zfs libzfs
-
-xbps-pkgdb -m unhold zfs libzfs # unset
-```
-
-</details>
 
 ## Post
 
@@ -207,6 +145,10 @@ Keep the following directories synced together when using multiple `/` datasets:
 ```
 
 </details> -->
+
+### Desktop
+
+Set static ip address in router interface.
 
 ### Laptop
 
@@ -235,18 +177,18 @@ Or, bump up the scale instead (not recommended):
 output eDP-1 scale 1.25
 ```
 
-*Note: Many applications can be zoomed in using `CTRL +`*
+Note: Many applications can be zoomed in using `CTRL +`
 
 ### Packages
 
-Install the following packages (not included in the default repository):
+Install the following additional packages:
 
 ```
 xbps-restricted spotify
 xbps-restricted msttcorefonts # laptop
 
 xbps-install -yu spotify-adblock
-xbps-install -yu Signal-Desktop # does not support musl
+xbps-install -yu razergenie # desktop
 ```
 
 [ungoogled-chromium](https://github.com/DAINRA/ungoogled-chromium-void)
@@ -324,14 +266,14 @@ network.dnsCacheExpirationGracePeriod = 0
 }
 ```
 
-*Note: Use `CTRL + W` or the mouse scroll wheel to close tabs*
+Note: Use `CTRL + W` or the mouse scroll wheel to close tabs
 
 #### Extensions
 
 <!-- * CanvasBlocker -->
 <!-- * LocalCDN -->
 * ClearURLs
-* Dark Reader (*Note: Toggle with `Alt + Shift + A`*)
+* Dark Reader (Toggle: `Alt + Shift + A`)
 * I don't care about cookies
 * Privacy Badger
 * Return YouTube Dislike
@@ -390,6 +332,8 @@ gsettings set org.gnome.desktop.interface icon-theme Gruvbox-Material-Dark
 gsettings set org.gnome.desktop.interface cursor-theme Adwaita
 
 gsettings set org.gnome.desktop.privacy remember-recent-files false
+
+gsettings set org.gnome.calculator refresh-interval 0
 ```
 
 #### Apps
@@ -405,6 +349,7 @@ xdg-mime default code-oss.desktop text/plain
 xdg-mime default vlc.desktop video/mp4
 xdg-mime default vlc.desktop video/x-matroska
 
+xdg-mime default vlc.desktop video/webm
 xdg-mime default vlc.desktop video/quicktime
 
 xdg-mime default vlc.desktop audio/mpeg

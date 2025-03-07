@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+arrange() {
+  int="$1"
+  end="$2"
+
+  for file in *.*; do
+    if [ -f "$file" ]; then
+      printf '%s\n' "$file"
+    fi
+  done | sort -n |
+    while IFS= read -r src; do
+      int=$((int + 1))
+      dst="${int}${end}.${src##*.}"
+
+      mv -nv "$src" "$dst"
+    done
+}
+
+arrange "${1:-0}" _
+arrange "${1:-0}"

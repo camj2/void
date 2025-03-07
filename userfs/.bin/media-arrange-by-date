@@ -1,0 +1,55 @@
+#!/bin/sh
+
+set -e
+
+MOD='+%Y%m%d_%H%M%S'
+
+while getopts s opt; do
+  case $opt in
+    s) MOD='+%s' ;;
+    *) exit 1 ;;
+  esac
+done
+
+list() {
+  for file in *.*; do
+    if [ -f "$file" ]; then
+      printf '%s\n' "$file"
+    fi
+  done | sort -n
+}
+
+move() {
+  src="$1"
+  dst="$2"
+
+  pre="${dst%.*}"
+  ext="${dst##*.}"
+
+  int=0
+  while [ -e "$dst" ]; do
+    int=$((int + 1))
+    dst="${pre}_${int}.${ext}"
+  done
+
+  mv -nv "$src" "$dst"
+}
+
+# by number
+
+num=0
+list | while IFS= read -r src; do
+  num=$((num + 1))
+  dst="${num}_.${src##*.}"
+
+  move "$src" "$dst"
+done
+
+# by date
+
+list | while IFS= read -r src; do
+  mod=$(date -u -r "$src" "$MOD")
+  dst="${mod}.${src##*.}"
+
+  move "$src" "$dst"
+done

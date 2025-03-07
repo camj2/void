@@ -2,7 +2,16 @@
 
 set -e
 
-cd /storage
+DIR=/tmp
+
+while getopts o: opt; do
+  case $opt in
+    o) DIR="$OPTARG" ;;
+    ?) exit 1 ;;
+  esac
+done
+
+cd -- "$DIR"
 
 pkg="$1"
 

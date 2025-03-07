@@ -145,29 +145,10 @@ function c() {
   code-oss --enable-features=UseOzonePlatform --ozone-platform=wayland "$@" &> /dev/null
 }
 
-function v() {
-  sv restart cache chromium code-oss
-}
-
-alias server="ssh server"
-alias backup="ssh backup"
-alias renter="ssh renter"
-alias router="ssh router"
-
 function restart() {
   for host in renter backup server router; do
     ssh -l root "$host" reboot
   done
-}
-
-function update() {
-  for host in server backup renter; do
-    ssh "$host" doas .bin/update
-  done
-}
-
-function vault() {
-  rsync -xaAXHvh --delete /storage/vault/ laptop:/storage/vault/
 }
 
 function laptop() {

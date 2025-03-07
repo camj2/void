@@ -3,5 +3,5 @@ Type=Application
 Name=Volume Control
 Comment=Adjust the volume level
 Icon=multimedia-volume-control
-Exec=env GDK_DISABLE=vulkan pavucontrol
+Exec=pavucontrol
 Categories=AudioVideo;Audio;Mixer;GTK;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;

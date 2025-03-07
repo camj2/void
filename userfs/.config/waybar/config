@@ -29,7 +29,7 @@
         "tooltip": false,
         "format": " {volume}%",
         "format-muted": " {volume}%",
-        "on-click": "env GDK_DISABLE=vulkan pavucontrol"
+        "on-click": "pavucontrol"
     },
     "battery": {
         "states": {

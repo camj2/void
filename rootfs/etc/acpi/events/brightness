@@ -1,2 +1,2 @@
-event=video/(up|down)
+event=video/(brightnessup|brightnessdown)
 action=<drop>

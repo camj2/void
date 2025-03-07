@@ -1,4 +1,3 @@
-linux-firmware-intel
 intel-ucode
 mesa-dri
 vulkan-loader

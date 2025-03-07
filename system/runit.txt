@@ -2,6 +2,7 @@ acpid
 binfmt-support
 bluetoothd
 dbus
+iwd
 nanoklogd
 ntpd
 seatd
@@ -12,4 +13,3 @@ snooze-weekly
 socklog-unix
 sshd
 wireguard
-zed

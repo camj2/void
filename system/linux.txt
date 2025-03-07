@@ -27,6 +27,9 @@ ffmpeg -i <input> -c:v libx264 -c:a libopus -to 00:00:00 <output>
 ffplay -i <input> -vf cropdetect 2>&1 | grep -o 'crop=[^ ]*'
 ffmpeg -i <input> -vf crop=<crop> -c:v libx264 -c:a copy <output>
 
+ffplay -i <input> -vf crop=w:h:x:y
+ffmpeg -i <input> -vf crop=w:h:x:y -c:v libx264 -c:a copy <output> # top-left: x:0,y:0
+
 gpg --full-gen-key --expert
 gpg --export --armor --output key.asc cameron
 
@@ -35,21 +38,26 @@ chmod 640 ~/.gnupg/gpg.conf
 
 printf ",,c" | sfdisk <dev> # FAT32
 mkfs.vfat -F32 <dev>
+fatlabel <dev> <label>
 
 printf ",,7" | sfdisk <dev> # exFAT
 mkfs.exfat <dev>
+exfatlabel <dev> <label>
 
 sgdisk -n 1 <dev> # xfs
 mkfs.xfs <dev>
+xfs_admin -L <label> <dev>
 
 readlink -f /usr/bin/mount.ntfs
 mount -t ntfs-3g -o ro <dev> /mnt
 
 cryptsetup luksFormat <dev>
+cryptsetup luksFormat <dev> <keyfile>
 cryptsetup luksFormat --sector-size 4096 <dev>
 cryptsetup luksFormat --integrity hmac-sha256 <dev>
 
-cryptsetup --allow-discards --persistent open <dev> backup
+cryptsetup open --allow-discards --persistent <dev> backup
+cryptsetup open --key-file <keyfile> <dev> backup
 
 mkfs.xfs /dev/mapper/backup
 
@@ -79,8 +87,15 @@ git restore --staged .
 
 git add .
 git commit -m <commit>
+git commit --amend
 git revert <commit> # :wq
 git grep <pattern>
+
+git branch <branch>
+git checkout <branch>
+git checkout -b <branch>
+git pull --rebase <remote> <branch>
+git merge <branch>
 
 https://calver.org/
 
@@ -194,6 +209,12 @@ xbps-pkgdb -m auto <pkg>
 
 xbps-pkgdb -m manual <pkg>
 
+xbps-rindex -a <dir>/*.xbps
+
+xbps-install -R <dir> <pkg>
+
+https://repo-fastly.voidlinux.org/void-updates/void-updates.txt
+
 rm -rf ~/.local/state/wireplumber # reset
 
 fdupes -R <dir> ...
@@ -288,6 +309,7 @@ hdparm --user-master u --security-erase-enhanced password <dev>
 hdparm -y <dev> # unmount first
 
 du -sh <dir>
+df -h <dir>
 
 smartctl -c <dev>
 smartctl -t short <dev>
@@ -313,9 +335,8 @@ lvs
 
 lvremove <vg_name>/<name>
 
-lvresize -L +5G <vg_name>/<name>
-lvresize -L 50G <vg_name>/<name>
-xfs_growfs /mnt
+lvextend -L +50G <vg_name>/<name>
+xfs_growfs <dir>
 
 vgrename <vg_name> <new_vg_name>
 lvrename <vg_name> <name> <new_name>
@@ -325,6 +346,43 @@ vgchange -ay <vg_name>
 
 vgexport <vg_name>
 vgimport <vg_name>
+
+vgdisplay
+lvdisplay
+
+xfs_admin -L <label> <dev>
+
+dd if=/dev/urandom of=/etc/system.key bs=64 count=1
+chmod 000 /etc/system.key
+cryptsetup luksAddKey <dev> /etc/system.key
+# /etc/crypttab:
+# system UUID=<uuid> /etc/system.key
+
+cryptsetup luksDump <dev>
+cryptsetup luksRemoveKey <dev> <keyfile>
+cryptsetup luksChangeKey <dev>
+cryptsetup open --test-passphrase --verbose <dev>
+
+mdadm --create --level 1 --raid-devices 2 --metadata 1.2 --homehost system --assume-clean /dev/md/system <dev1> <dev2>
+
+cat /proc/mdstat
+
+echo check > /sys/block/mdX/md/sync_action
+echo repair > /sys/block/mdX/md/sync_action
+echo idle > /sys/block/md0/md/sync_action
+
+cat /sys/block/md0/md/mismatch_cnt
+
+mdadm --stop /dev/md/system
+
+mdadm --detail --scan > /etc/mdadm.conf
+
+ln -s /etc/sv/mdadm /var/service/
+
+mdadmconf=yes # dracut
+
+https://wiki.archlinux.org/title/RAID#Calculating_the_stride_and_stripe_width
+https://wiki.archlinux.org/title/RAID#RAID_Maintenance
 
 pw-top
 
@@ -360,3 +418,24 @@ unzip -d <dir> <zip>
 
 find <dir> -type f -exec lsd -la {} '+'
 find <dir> -type f -exec lsd -la {} ';'
+
+dmidecode
+
+lspci
+lsusb
+
+lsblk
+lsof | grep <pattern>
+
+noauto # fstab
+nofail # fstab
+
+blkid -s PARTUUID -o value <dev>
+
+git clone <repo> <dir>
+make -C <dir>
+
+sv alarm <service> # snooze
+
+passwd <user>
+passwd -dl <user>
