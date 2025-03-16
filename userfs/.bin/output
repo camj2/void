@@ -13,8 +13,12 @@ mode=$(
 )
 [ -n "$mode" ]
 
+size=$(seq 4 | tofi)
+[ -n "$size" ]
+
 card=$(pactl -f json list sinks | jq -r '.[] | .name' | tofi)
 [ -n "$card" ]
 
 swaymsg output "$name" res "$mode"
+swaymsg output "$name" scale "$size"
 pactl set-default-sink "$card"

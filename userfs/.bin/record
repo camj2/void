@@ -2,10 +2,10 @@
 
 set -e
 
-[ -d /storage ]
+[ -d /archive ]
 
 pgrep wf-recorder && exit 1
 
 date=$(date -u +%Y%m%d_%H%M%S)
 
-exec wf-recorder -a -c libx264rgb -C libopus -f "/storage/${date}.mp4"
+exec wf-recorder -a -c libx264rgb -C libopus -f "/archive/${date}.mp4"

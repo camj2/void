@@ -18,6 +18,10 @@
       "type": "memory",
       "format": "{used} / {total}"
     },
+    {
+      "type": "zpool",
+      "format": "{state}"
+    },
     "break",
     "colors"
   ]

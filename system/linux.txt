@@ -30,6 +30,7 @@ ffmpeg -i <input> -vf crop=<crop> -c:v libx264 -c:a copy <output>
 ffplay -i <input> -vf crop=w:h:x:y
 ffmpeg -i <input> -vf crop=w:h:x:y -c:v libx264 -c:a copy <output> # top-left: x:0,y:0
 
+export GNUPGHOME=<dir>
 gpg --full-gen-key --expert
 gpg --export --armor --output key.asc cameron
 
@@ -47,6 +48,7 @@ exfatlabel <dev> <label>
 sgdisk -n 1 <dev> # xfs
 mkfs.xfs <dev>
 xfs_admin -L <label> <dev>
+chmod 700 <dir>
 
 readlink -f /usr/bin/mount.ntfs
 mount -t ntfs-3g -o ro <dev> /mnt
@@ -217,7 +219,9 @@ xbps-rindex -a <dir>/*.xbps
 
 xbps-install -R <dir> <pkg>
 
-https://repo-fastly.voidlinux.org/void-updates/void-updates.txt
+https://xmirror.voidlinux.org/
+
+https://repo-default.voidlinux.org/void-updates/void-updates.txt
 
 rm -rf ~/.local/state/wireplumber # reset
 
@@ -228,6 +232,8 @@ fdupes -R -d -N <dir> ...
 rdfind -checksum sha256 -makehardlinks true -makeresultsfile false <dir> ...
 
 rsync -aAX -f"+ */" -f"- *" <src> <dst>
+
+find <dir> -newermt 20240101 ! -newermt 20250101 -print -exec mv {} <dir> ';'
 
 lsd -la --tree --depth 2 <dir>
 
@@ -313,7 +319,7 @@ hdparm --user-master u --security-erase-enhanced password <dev>
 hdparm -y <dev> # unmount first
 
 du -sh <dir>
-df -h <dir>
+df -h -t <fs> <dir>
 
 smartctl -c <dev>
 smartctl -t short <dev>

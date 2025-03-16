@@ -119,6 +119,8 @@ Note: For desktop I just use plain partitions. No encryption or logical volumes.
 
 ### Update
 
+Change tty with `CTRL + ALT + F2` and after logging in as root update with:
+
 ```
 xbps-install -Syu
 
@@ -128,7 +130,7 @@ xbps-remove -yO
 vkpurge rm all
 ```
 
-### Downgrade
+#### Downgrade
 
 ```
 xdowngrade /var/cache/xbps/<pkg>
