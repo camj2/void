@@ -53,6 +53,8 @@ chmod 700 <dir>
 readlink -f /usr/bin/mount.ntfs
 mount -t ntfs-3g -o ro <dev> /mnt
 
+mount -o uid=<user>,gid=<user> <dev> /mnt
+
 cryptsetup luksFormat <dev>
 cryptsetup luksFormat <dev> <keyfile>
 cryptsetup luksFormat --sector-size 4096 <dev>
@@ -235,6 +237,8 @@ rsync -aAX -f"+ */" -f"- *" <src> <dst>
 
 find <dir> -newermt 20240101 ! -newermt 20250101 -print -exec mv {} <dir> ';'
 
+rsync -aAXHvhn --delete /home/ /mnt/ | less # diff
+
 lsd -la --tree --depth 2 <dir>
 
 lsd -la --total-size --sizesort <dir>
@@ -320,6 +324,7 @@ hdparm -y <dev> # unmount first
 
 du -sh <dir>
 df -h -t <fs> <dir>
+df -h -i -t <fs> <dir>
 
 smartctl -c <dev>
 smartctl -t short <dev>
@@ -398,6 +403,8 @@ https://wiki.archlinux.org/title/RAID#RAID_Maintenance
 pw-top
 
 find <dir> -type f -exec stat -c "%n: %h" {} +
+
+lsinitrd /boot/initramfs-<version>.img # microcode
 
 xlocate -S
 xlocate bin/<pkg>

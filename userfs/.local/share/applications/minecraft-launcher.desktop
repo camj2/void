@@ -3,6 +3,6 @@ Type=Application
 Name=Minecraft (Launcher)
 Comment=A 3D sandbox game
 Icon=minecraft
-Exec=/home/cameron/Documents/Games/Mojang/mcpe/start launcher
+Exec=flatpak run io.mrarm.mcpelauncher
 Categories=Game;
 Keywords=Game;

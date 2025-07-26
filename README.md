@@ -148,6 +148,7 @@ xfs_growfs /home
 ## Post
 
 <!-- https://github.com/swaywm/sway/wiki/VRR-setups -->
+<!-- https://github.com/swaywm/sway/wiki#hidpi -->
 
 <!-- https://github.com/Alexays/Waybar/issues/1351#issuecomment-1001559391 -->
 

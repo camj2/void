@@ -16,26 +16,32 @@ client.focused #000000 #000000 #000000 #89b482
 
 # output <output> adaptive_sync on
 
-# output <output1> pos 0 0 res 1920x1080@60Hz
-# output <output2> pos 1920 0 res 1920x1080@60Hz
+# output <output1> pos 1920 0 mode 1920x1080@60Hz
+# output <output2> pos 0 0 mode 1920x1080@60Hz
 
 # workspace 1 output <output1>
 # workspace 2 output <output2>
 
-# workspace 1
-
 # focus output <output1>
+
+output DP-1 {
+    # pos 0 0
+    mode 3840x2160@60Hz
+    scale 2
+    adaptive_sync on
+    # hdr on
+}
 
 ### Background
 
 # set $bg /home/cameron/Pictures/Background/Fog.jpg
-set $bg /home/cameron/Pictures/Background/Forest.jpg
+# set $bg /home/cameron/Pictures/Background/Forest.jpg
 # set $bg /home/cameron/Pictures/Background/Frozen.jpg
 # set $bg /home/cameron/Pictures/Background/Leaves.jpg
 # set $bg /home/cameron/Pictures/Background/Mist.jpg
 # set $bg /home/cameron/Pictures/Background/Rain.jpg
 # set $bg /home/cameron/Pictures/Background/Space.png
-# set $bg /home/cameron/Pictures/Background/Tree.jpg
+set $bg /home/cameron/Pictures/Background/Tree.jpg
 # set $bg /home/cameron/Pictures/Background/Wind.jpg
 # set $bg /home/cameron/Pictures/Background/Yellow.jpg
 
@@ -69,21 +75,6 @@ input type:touchpad {
     tap enabled
 }
 
-### Laptop
-
-# output eDP-1 scale 1.25
-
-# workspace 1 output eDP-1
-
-# bindsym $mod+Shift+p exec swaymsg output eDP-1 power toggle
-
-### Brightness
-
-# bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-
-# bindsym $mod+y exec brightnessctl set 0
-
 ### Speaker
 
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
@@ -98,11 +89,20 @@ bindsym XF86AudioLowerVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5
 
 # bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 # bindsym XF86Fn_Esc exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-# bindsym $mod+Shift+j exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+# bindsym $mod+Shift+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # bindsym XF86Fn_Esc exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-# bindsym $mod+Shift+j exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# bindsym $mod+Shift+m exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+### Brightness
+
+# bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+# bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# bindsym $mod+y exec brightnessctl set 0
+
+# bindsym $mod+Shift+p exec swaymsg output eDP-1 power toggle
 
 ### Player
 
@@ -118,8 +118,8 @@ bindsym $mod+p exec playerctl next
 ### System
 
 bindsym $mod+Control+Shift+z exec doas -n zzz
-bindsym $mod+Control+Shift+s exec doas -n shutdown -P now
 bindsym $mod+Control+Shift+r exec doas -n shutdown -r now
+bindsym $mod+Control+Shift+s exec doas -n shutdown -P now
 
 bindsym $mod+w exec rfkill toggle wlan
 bindsym $mod+u exec rfkill toggle bluetooth
@@ -138,12 +138,11 @@ bindsym $mod+s exec /home/cameron/.bin/capture
 
 bindsym $mod+t exec alacritty
 bindsym $mod+b exec firefox
+bindsym $mod+j exec thunar
 bindsym $mod+n exec env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
 
-bindsym $mod+Shift+f exec thunar
-bindsym $mod+Shift+l exec swaylock --daemonize --ignore-empty-password --no-unlock-indicator --image $bg --scaling fill
-
 bindsym $mod+Control+Shift+v exec /home/cameron/Pictures/Vault/random
+bindsym $mod+Shift+j exec /home/cameron/.bin/lamp
 
 ### Sway
 
@@ -158,6 +157,8 @@ bindsym $mod+Shift+o move scratchpad
 bindsym $mod+Shift+i scratchpad show
 
 bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+l exec swaylock --daemonize --ignore-empty-password --no-unlock-indicator --image $bg --scaling fill
 
 ### Window
 

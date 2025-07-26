@@ -18,7 +18,7 @@ SAVEHIST=10000
 
 PS1='%B%F{green}%n@%M %F{blue}%~ $%b%f '
 
-export PATH="${PATH}:${HOME}/.bin:${HOME}/.cargo/bin"
+export PATH="${HOME}/.bin:${HOME}/.cargo/bin:${PATH}"
 export SVDIR="${HOME}/.sv"
 
 export LESSHISTFILE=-
@@ -105,6 +105,9 @@ alias lta="lsd -la --tree"
 alias zl="zfs list -t snapshot -s creation -o name,creation"
 alias zu="zfs list -t snapshot -s used -o name,used"
 
+function xl() {
+  awk '$3 == "xfs"' /proc/mounts
+}
 alias xu="df -h -t xfs"
 
 function ff() {
@@ -145,12 +148,6 @@ function feh() {
 
 function c() {
   code-oss --enable-features=UseOzonePlatform --ozone-platform=wayland "$@" &> /dev/null
-}
-
-function restart() {
-  for host in renter backup server router; do
-    ssh -l root "$host" reboot
-  done
 }
 
 function laptop() {

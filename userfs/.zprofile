@@ -6,6 +6,9 @@ if [[ -z "$DISPLAY" && "$(tty)" = /dev/tty1 ]]; then
   export QT_QPA_PLATFORMTHEME=gtk2
   export GTK2_RC_FILES="${HOME}/.themes/${GTK_THEME}/gtk-2.0/gtkrc"
 
+  # Arduino
+  export _JAVA_AWT_WM_NONREPARENTING=1
+
   # LibreOffice
   export SAL_USE_VCLPLUGIN=gtk3
 

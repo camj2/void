@@ -13,12 +13,14 @@ mode=$(
 )
 [ -n "$mode" ]
 
-size=$(seq 4 | tofi)
-[ -n "$size" ]
+zoom=$(seq 4 | tofi)
+[ -n "$zoom" ]
+
+sync=$(printf '%s\n%s\n' off on | tofi)
+[ -n "$sync" ]
 
 card=$(pactl -f json list sinks | jq -r '.[] | .name' | tofi)
 [ -n "$card" ]
 
-swaymsg output "$name" res "$mode"
-swaymsg output "$name" scale "$size"
+swaymsg output "$name" mode "$mode" scale "$zoom" adaptive_sync "$sync"
 pactl set-default-sink "$card"

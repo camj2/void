@@ -66,7 +66,7 @@ cryptsetup open --allow-discards --persistent "$nvme"-part2 system
 vgcreate system /dev/mapper/system
 
 lvcreate -L 64G -n root system
-lvcreate -L 256G -n home system
+lvcreate -L 512G -n home system
 
 mkfs.xfs -L root /dev/system/root
 mkfs.xfs -L home /dev/system/home
@@ -111,9 +111,11 @@ mount --bind /etc/resolv.conf /mnt/etc/resolv.conf
 mkdir -p /mnt/etc/xbps.d
 
 printf 'syslog=false\n' > /mnt/etc/xbps.d/xbps.conf
-printf 'virtualpkg=linux:linux-mainline\n' > /mnt/etc/xbps.d/base-system.conf
+printf 'virtualpkg=linux:linux-mainline\n' >> /mnt/etc/xbps.d/base-system.conf
 printf 'virtualpkg=linux-headers:linux-mainline-headers\n' >> /mnt/etc/xbps.d/base-system.conf
-printf 'virtualpkg=sudo:opendoas\n' >> /mnt/etc/xbps.d/base-system.conf
+printf 'ignorepkg=linux-firmware-nvidia\n' > /mnt/etc/xbps.d/base-system.conf
+printf 'ignorepkg=btrfs-progs\n' > /mnt/etc/xbps.d/base-system.conf
+printf 'ignorepkg=sudo\n' > /mnt/etc/xbps.d/base-system.conf
 
 printf 'repository=%s\n' https://repo-fastly.voidlinux.org/current > /mnt/etc/xbps.d/00-repository-main.conf
 printf 'repository=%s/nonfree\n' https://repo-fastly.voidlinux.org/current > /mnt/etc/xbps.d/10-repository-nonfree.conf
@@ -171,7 +173,7 @@ cat /mnt/etc/fstab # check
 
 mkdir -p /mnt/etc/dracut.conf.d
 printf 'kernel_cmdline="rd.luks.uuid=%s rd.luks.name=%s=system rd.lvm.vg=system root=UUID=%s rootfstype=xfs rootflags=discard,noatime"\n' "$LUKS_UUID" "$LUKS_UUID" "$ROOT_UUID" > /mnt/etc/dracut.conf.d/system.conf
-printf 'compress=zstd\n' > /mnt/etc/dracut.conf.d/compress.conf
+printf 'compress="zstd -19 -T0"\n' > /mnt/etc/dracut.conf.d/compress.conf
 cat /mnt/etc/dracut.conf.d/system.conf # check
 
 sed -i 's/# issue_discards = 0/issue_discards = 1/g' /mnt/etc/lvm/lvm.conf
@@ -191,7 +193,7 @@ printf 'permit nopass :wheel\n' > /etc/doas.conf
 
 groupadd -r netdev
 
-useradd -M -s /bin/zsh -U -G wheel,socklog,audio,video,input,bluetooth,wireshark,plugdev,netdev,_seatd,_pipewire cameron
+useradd -M -s /bin/zsh -U -G wheel,socklog,audio,video,input,bluetooth,wireshark,dialout,plugdev,netdev,_seatd,_pipewire cameron
 install -d -m 700 -o cameron -g cameron /home/cameron
 
 passwd root

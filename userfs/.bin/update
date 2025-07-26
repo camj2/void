@@ -1,0 +1,20 @@
+#!/bin/sh
+
+xbps-install -Syu
+ret=$?
+
+set -e
+
+if [ $ret -ne 0 ]; then
+  if [ $ret -eq 16 ]; then
+    xbps-install -yu xbps
+    xbps-install -Syu
+  else
+    exit $ret
+  fi
+fi
+
+xbps-remove -yo
+xbps-remove -yO
+
+vkpurge rm all

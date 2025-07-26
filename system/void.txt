@@ -10,7 +10,7 @@ alacritty
 alsa-pipewire
 android-file-transfer-linux
 android-tools
-arduino-cli
+arduino
 audacity
 bat
 bind-utils
@@ -43,6 +43,7 @@ font-awesome5
 font-iosevka
 gallery-dl
 gammastep
+gcc
 gimp
 git
 gnome-calculator
@@ -74,6 +75,7 @@ noto-fonts-emoji
 ntfs-3g
 nvme-cli
 openbsd-netcat
+opendoas
 openrgb
 parted
 pavucontrol
@@ -121,6 +123,7 @@ wine-mono
 wireguard-tools
 wireshark-qt
 wl-clipboard
+wol
 xdg-utils
 xsel
 xsv
