@@ -1,0 +1,107 @@
+#!/bin/sh
+
+set -e
+
+die() {
+  printf "audio: %s\n" "$*" >&2
+  exit 1
+}
+
+usage() {
+  cat << EOF
+USAGE:
+    audio [OPTIONS] <url> ...
+
+OPTIONS:
+    -t <temp>       temp dir
+    -o <output>     output dir
+    -p <prefix>     filename
+    -e <type>       container format
+    -b <browser>    cookie source
+    -h              print usage
+EOF
+}
+
+TMP="${XDG_RUNTIME_DIR:-/tmp}"
+DIR=$(pwd)
+PRE=$(date -u +%Y%m%d_%H%M%S)
+FMT="mp3"
+WEB="firefox"
+
+while getopts t:o:p:e:b:h opt; do
+  case $opt in
+    t) TMP="$OPTARG" ;;
+    o) DIR="$OPTARG" ;;
+    p) PRE="$OPTARG" ;;
+    e) FMT="$OPTARG" ;;
+    b) WEB="$OPTARG" ;;
+    h)
+      usage
+      exit 0
+      ;;
+    ?)
+      usage >&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+if [ $# -eq 0 ]; then
+  usage >&2
+  exit 1
+fi
+
+if [ ! -e "${TMP}" ]; then
+  die "temp dir not found"
+fi
+
+TMP="${TMP}/.audio"
+OUT="${PRE}.${FMT}"
+
+if [ -e "${TMP}" ]; then
+  die "temp dir already exists"
+fi
+
+if [ -e "${OUT}" ]; then
+  die "audio file already exists"
+fi
+
+mkdir -m 700 -- "${TMP}"
+
+clean() {
+  rm -f -- "${TMP}"/*
+  rmdir -- "${TMP}"
+}
+abort() {
+  clean
+  exit 1
+}
+trap abort HUP INT TERM
+
+while [ $# -gt 0 ]; do
+  printf 'file %s.webm\n' $# >> "${TMP}/ffmpeg"
+
+  yt-dlp \
+    --ignore-config \
+    --no-cache-dir \
+    --no-playlist \
+    --quiet \
+    --progress \
+    --default-search ytsearch \
+    --cookies-from-browser "$WEB" \
+    --paths "$TMP" \
+    --output "${#}.%(ext)s" \
+    --format 'ba[ext=webm][acodec=opus]' \
+    --sponsorblock-remove all \
+    -- \
+    "$1" || abort
+
+  shift
+done
+
+ffmpeg -loglevel error -f concat -i "${TMP}/ffmpeg" "${TMP}/${OUT}" || abort
+
+mv -n "${TMP}/${OUT}" "${DIR}/"
+
+clean

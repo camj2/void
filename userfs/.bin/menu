@@ -5,41 +5,42 @@ set -e
 SWAYSOCK=$(find "${XDG_RUNTIME_DIR:?}" -maxdepth 1 -type s -name "sway*" -print -quit)
 export SWAYSOCK
 
-run() {
+cmd() {
   # https://github.com/swaywm/sway/issues/5931
   swaymsg exec -- "$@"
 }
 
 case $1 in
   p | pause | play)
-    run playerctl play-pause
+    cmd playerctl play-pause
     ;;
   n | next)
-    run playerctl next
+    cmd playerctl next
     ;;
-  r | prev)
-    run playerctl previous
+  b | prev)
+    cmd playerctl previous
     ;;
   m | mute)
-    run pactl set-sink-mute @DEFAULT_SINK@ toggle
+    cmd pactl set-sink-mute @DEFAULT_SINK@ toggle
     ;;
   u | up)
-    run pactl set-sink-volume @DEFAULT_SINK@ +5%
+    cmd pactl set-sink-volume @DEFAULT_SINK@ +5%
     ;;
   d | down)
-    run pactl set-sink-volume @DEFAULT_SINK@ -5%
+    cmd pactl set-sink-volume @DEFAULT_SINK@ -5%
     ;;
-  shell)
+  s | shell)
     exec "${SHELL:?}"
     ;;
-  exec)
+  x | exec)
     shift
-    run "$@"
+    cmd "$@"
     ;;
-  kill)
+  k | kill)
     swaymsg kill
     ;;
   *)
+    printf "unknown command\n" >&2
     exit 1
     ;;
 esac

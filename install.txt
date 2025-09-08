@@ -66,7 +66,7 @@ cryptsetup open --allow-discards --persistent "$nvme"-part2 system
 vgcreate system /dev/mapper/system
 
 lvcreate -L 64G -n root system
-lvcreate -L 512G -n home system
+lvcreate -l 100%FREE -n home system
 
 mkfs.xfs -L root /dev/system/root
 mkfs.xfs -L home /dev/system/home
@@ -172,8 +172,8 @@ printf 'UUID=%s /home xfs discard,noatime 0 0\n' "$HOME_UUID" >> /mnt/etc/fstab
 cat /mnt/etc/fstab # check
 
 mkdir -p /mnt/etc/dracut.conf.d
-printf 'kernel_cmdline="rd.luks.uuid=%s rd.luks.name=%s=system rd.lvm.vg=system root=UUID=%s rootfstype=xfs rootflags=discard,noatime"\n' "$LUKS_UUID" "$LUKS_UUID" "$ROOT_UUID" > /mnt/etc/dracut.conf.d/system.conf
-printf 'compress="zstd -19 -T0"\n' > /mnt/etc/dracut.conf.d/compress.conf
+printf 'kernel_cmdline="rd.luks.uuid=%s rd.luks.name=%s=system rd.lvm.vg=system root=UUID=%s rootfstype=xfs rootflags=discard,noatime"\n' "$LUKS_UUID" "$LUKS_UUID" "$ROOT_UUID" > /mnt/etc/dracut.conf.d/root.conf
+printf 'compress="zstd -19 -T0"\n' > /mnt/etc/dracut.conf.d/zstd.conf
 cat /mnt/etc/dracut.conf.d/system.conf # check
 
 sed -i 's/# issue_discards = 0/issue_discards = 1/g' /mnt/etc/lvm/lvm.conf

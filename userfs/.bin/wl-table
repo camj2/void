@@ -1,2 +1,0 @@
-#!/bin/sh
-wl-paste | column -t -o " " | wl-copy -n

@@ -2,16 +2,7 @@
 
 set -e
 
-DIR=/archive
-
-while getopts o: opt; do
-  case $opt in
-    o) DIR="$OPTARG" ;;
-    ?) exit 1 ;;
-  esac
-done
-
-cd -- "$DIR"
+cd /archive
 
 pkg="$1"
 
@@ -20,7 +11,6 @@ pkg="$1"
 if [ -d xpkgs ]; then
   cd xpkgs
   git pull
-  ./xbps-src binary-bootstrap
   ./xbps-src bootstrap-update
 else
   git clone https://github.com/void-linux/void-packages xpkgs

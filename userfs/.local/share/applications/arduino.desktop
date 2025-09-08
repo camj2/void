@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Arduino
+Comment=Arduino IDE
+Icon=arduino
+Exec=arduino %U

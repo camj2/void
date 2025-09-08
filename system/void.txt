@@ -60,6 +60,7 @@ libreoffice-gnome
 libreoffice-i18n-en-US
 libreoffice-writer
 libspa-bluetooth
+lighttpd
 lsd
 lsof
 lvm2
@@ -88,6 +89,7 @@ qrencode
 qt5-styleplugins
 rclone
 rdfind
+rsgain
 rsync
 runit-nftables
 screen

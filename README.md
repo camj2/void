@@ -101,6 +101,9 @@ fwupdtool update
 
 * Razer Naga Chroma
 * [8BitDo Pro 2](https://www.8bitdo.com/pro2/)
+* [Scarlett 2i2](https://us.focusrite.com/products/scarlett-2i2)
+* [MR4 Speakers](https://www.edifier.com/global/p/studio-monitors/mr4)
+* [LG 4K](https://www.lg.com/us/monitors/lg-32uk550-b-4k-uhd-led-monitor)
 
 ## Download
 
@@ -134,15 +137,6 @@ vkpurge rm all
 
 ```
 xdowngrade /var/cache/xbps/<pkg>
-```
-
-### Extend
-
-If you ever need more space, extend the xfs volume with:
-
-```
-lvextend -L +16G system/home
-xfs_growfs /home
 ```
 
 ## Post
@@ -547,10 +541,6 @@ curl -s -o /etc/udev/rules.d/51-trezor.rules https://data.trezor.io/udev/51-trez
 ### Speedtest
 
 https://www.speedtest.net/apps/cli
-
-<!-- ### MP3Gain
-
-https://sourceforge.net/projects/mp3gain/ -->
 
 </details>
 

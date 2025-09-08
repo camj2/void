@@ -28,7 +28,7 @@ output DP-1 {
     # pos 0 0
     mode 3840x2160@60Hz
     scale 2
-    adaptive_sync on
+    # adaptive_sync on
     # hdr on
 }
 
@@ -41,7 +41,8 @@ output DP-1 {
 # set $bg /home/cameron/Pictures/Background/Mist.jpg
 # set $bg /home/cameron/Pictures/Background/Rain.jpg
 # set $bg /home/cameron/Pictures/Background/Space.png
-set $bg /home/cameron/Pictures/Background/Tree.jpg
+# set $bg /home/cameron/Pictures/Background/Tree.jpg
+set $bg /home/cameron/Pictures/Background/Triangle.jpg
 # set $bg /home/cameron/Pictures/Background/Wind.jpg
 # set $bg /home/cameron/Pictures/Background/Yellow.jpg
 
@@ -97,11 +98,14 @@ bindsym XF86AudioLowerVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5
 
 ### Brightness
 
+# exec_always brightnessctl set 25%
+
 # bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # bindsym $mod+y exec brightnessctl set 0
 
+bindsym $mod+Shift+p exec swaymsg output DP-1 power toggle
 # bindsym $mod+Shift+p exec swaymsg output eDP-1 power toggle
 
 ### Player
@@ -128,7 +132,7 @@ bindsym $mod+l exec "bluetoothctl disconnect; rfkill block all"
 bindsym $mod+d exec tofi-drun
 bindsym $mod+g exec /home/cameron/.bin/unicode
 bindsym $mod+k exec /home/cameron/.bin/output
-# bindsym $mod+a exec makoctl dismiss -a
+# bindsym $mod+x exec makoctl dismiss -a
 
 bindsym $mod+s exec /home/cameron/.bin/capture
 # bindsym $mod+Shift+h exec /home/cameron/.bin/record
@@ -138,7 +142,7 @@ bindsym $mod+s exec /home/cameron/.bin/capture
 
 bindsym $mod+t exec alacritty
 bindsym $mod+b exec firefox
-bindsym $mod+j exec thunar
+bindsym $mod+a exec thunar
 bindsym $mod+n exec env LD_PRELOAD=/usr/lib/spotify-adblock.so /usr/libexec/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
 
 bindsym $mod+Control+Shift+v exec /home/cameron/Pictures/Vault/random

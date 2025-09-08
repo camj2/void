@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SSID="$1"
+PASS="$2"
+
+data="WIFI:T:WPA;S:${SSID:?};P:${PASS:?};;"
+
+qrencode -t ansiutf8 "$data"

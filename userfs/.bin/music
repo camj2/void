@@ -1,0 +1,65 @@
+#!/bin/sh
+
+set -e
+
+die() {
+  printf "music: %s\n" "$*" >&2
+  exit 1
+}
+
+usage() {
+  cat << EOF
+USAGE:
+    music [OPTIONS] <url> ...
+
+OPTIONS:
+    -o <output>     output dir
+    -b <browser>    cookie source
+    -h              print usage
+EOF
+}
+
+DIR=$(pwd)
+WEB="firefox"
+
+while getopts t:o:p:e:b:h opt; do
+  case $opt in
+    o) DIR="$OPTARG" ;;
+    b) WEB="$OPTARG" ;;
+    h)
+      usage
+      exit 0
+      ;;
+    ?)
+      usage >&2
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+if [ $# -eq 0 ]; then
+  usage >&2
+  exit 1
+fi
+
+while [ $# -gt 0 ]; do
+  yt-dlp \
+    --ignore-config \
+    --no-cache-dir \
+    --no-playlist \
+    --quiet \
+    --progress \
+    --default-search ytsearch \
+    --cookies-from-browser "$WEB" \
+    --paths "$DIR" \
+    --output "${#}.%(ext)s" \
+    --format 'ba[ext=webm][acodec=opus]' \
+    --no-sponsorblock \
+    -- \
+    "$1"
+
+  shift
+done
+
+# todo: ffmpeg create ffmpeg file and convert all encode to mp3

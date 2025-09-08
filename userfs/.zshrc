@@ -150,6 +150,10 @@ function c() {
   code-oss --enable-features=UseOzonePlatform --ozone-platform=wayland "$@" &> /dev/null
 }
 
+function backup() {
+  rsync -xaAXHvh --delete /home/cameron/ /backup/cameron/
+}
+
 function laptop() {
   rsync -xaAXHvh --delete \
     --exclude=/.config/alacritty \

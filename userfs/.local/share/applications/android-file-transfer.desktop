@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Android File Transfer
+Comment=Transfer files via MTP
+Icon=android-file-transfer
+Exec=android-file-transfer
+Categories=Utility;Filesystem;
+Keywords=Android;MTP;
